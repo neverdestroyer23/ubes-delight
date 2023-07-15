@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 100,
+  "ingredients": [
+    {
+      "tag": "c:grain"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "ubesdelight:milk_powder"
+    },
+    {
+      "item": "ubesdelight:ube"
+    }
+  ],
+  "result": {
+    "item": "ubesdelight:raw_polvorone_ube",
+    "count": 4
+  }
+}

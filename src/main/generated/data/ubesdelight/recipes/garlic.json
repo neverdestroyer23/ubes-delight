@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "ubesdelight:garlic_cloves"
+    },
+    {
+      "item": "ubesdelight:garlic_cloves"
+    }
+  ],
+  "result": {
+    "item": "ubesdelight:garlic"
+  }
+}

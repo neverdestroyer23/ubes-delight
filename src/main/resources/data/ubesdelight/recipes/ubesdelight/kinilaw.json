@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    {
+      "tag": "c:raw_fishes"
+    },
+    {
+      "tag": "c:crops/onion"
+    },
+    {
+      "tag": "c:garlic/garlic"
+    },
+    {
+      "item": "ubesdelight:ginger"
+    },
+    {
+      "item": "ubesdelight:lemongrass"
+    }
+  ],
+  "result": {
+    "item": "ubesdelight:kinilaw"
+  }
+}

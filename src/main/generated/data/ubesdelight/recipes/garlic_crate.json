@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "ubesdelight:garlic"
+    },
+    {
+      "item": "ubesdelight:garlic"
+    },
+    {
+      "item": "ubesdelight:garlic"
+    },
+    {
+      "item": "ubesdelight:garlic"
+    },
+    {
+      "item": "ubesdelight:garlic"
+    },
+    {
+      "item": "ubesdelight:garlic"
+    },
+    {
+      "item": "ubesdelight:garlic"
+    },
+    {
+      "item": "ubesdelight:garlic"
+    },
+    {
+      "item": "ubesdelight:garlic"
+    }
+  ],
+  "result": {
+    "item": "ubesdelight:garlic_crate"
+  }
+}

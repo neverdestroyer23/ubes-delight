@@ -1,0 +1,29 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 4.0,
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    {
+      "tag": "c:raw_beef"
+    },
+    {
+      "tag": "c:crops/onion"
+    },
+    {
+      "tag": "c:garlic/garlic"
+    },
+    {
+      "item": "farmersdelight:tomato"
+    },
+    {
+      "tag": "c:vegetables"
+    },
+    {
+      "item": "ubesdelight:fish_sauce_bottle"
+    }
+  ],
+  "result": {
+    "item": "ubesdelight:mechado"
+  }
+}

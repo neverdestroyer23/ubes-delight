@@ -1,0 +1,26 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 4.0,
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    {
+      "tag": "c:raw_pork"
+    },
+    {
+      "tag": "c:raw_chicken"
+    },
+    {
+      "tag": "c:crops/onion"
+    },
+    {
+      "tag": "c:garlic/garlic"
+    },
+    {
+      "item": "ubesdelight:fish_sauce_bottle"
+    }
+  ],
+  "result": {
+    "item": "ubesdelight:sisig"
+  }
+}

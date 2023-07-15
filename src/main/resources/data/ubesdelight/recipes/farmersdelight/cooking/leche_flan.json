@@ -1,0 +1,24 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 100,
+  "experience": 0.5,
+  "recipe_book_tab": "drinks",
+  "ingredients": [
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "ubesdelight:condensed_milk_bottle"
+    }
+  ],
+  "result": {
+    "item": "ubesdelight:leche_flan",
+    "count": 4
+  }
+}

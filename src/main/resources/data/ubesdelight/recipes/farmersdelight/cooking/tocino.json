@@ -1,0 +1,24 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 2.0,
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    {
+      "tag": "c:raw_pork"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "c:garlic/garlic"
+    },
+    {
+      "item": "minecraft:beetroot"
+    }
+
+  ],
+  "result": {
+    "item": "ubesdelight:tocino"
+  }
+}

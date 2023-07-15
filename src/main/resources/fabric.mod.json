@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "ubesdelight",
+  "version": "${version}",
+
+  "name": "Ube's Delight",
+  "description": "An addon mod for Farmer's Delight that adds Filipino inspired crops and food.",
+  "authors": [
+    "MoOoNoGoO",
+    "potatomadz"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": ""
+  },
+
+  "license": "MIT",
+  "icon": "assets/ubesdelight/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "com.chefmoon.ubesdelight.data.DataGeneration"
+    ],
+    "main": [
+      "com.chefmoon.ubesdelight.UbesDelightMod"
+    ],
+    "client": [
+      "com.chefmoon.ubesdelight.UbesDelightModClient"
+    ]
+  },
+  "mixins": [
+    "ubesdelight.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": "*",
+    "fabric-api": "*",
+    "minecraft": "~1.19.2",
+    "java": ">=17",
+    "farmersdelight": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

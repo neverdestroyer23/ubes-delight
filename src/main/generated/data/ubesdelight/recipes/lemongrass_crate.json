@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "ubesdelight:lemongrass"
+    },
+    {
+      "item": "ubesdelight:lemongrass"
+    },
+    {
+      "item": "ubesdelight:lemongrass"
+    },
+    {
+      "item": "ubesdelight:lemongrass"
+    },
+    {
+      "item": "ubesdelight:lemongrass"
+    },
+    {
+      "item": "ubesdelight:lemongrass"
+    },
+    {
+      "item": "ubesdelight:lemongrass"
+    },
+    {
+      "item": "ubesdelight:lemongrass"
+    },
+    {
+      "item": "ubesdelight:lemongrass"
+    }
+  ],
+  "result": {
+    "item": "ubesdelight:lemongrass_crate"
+  }
+}

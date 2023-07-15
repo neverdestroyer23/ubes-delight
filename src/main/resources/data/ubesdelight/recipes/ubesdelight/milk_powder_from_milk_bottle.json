@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 25,
+  "experience": 0.2,
+  "ingredient": {
+    "item": "farmersdelight:milk_bottle"
+  },
+  "result": "ubesdelight:milk_powder"
+}

@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 2.0,
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    {
+      "tag": "c:raw_chicken"
+    },
+    {
+      "item": "ubesdelight:lemongrass"
+    },
+    {
+      "item": "ubesdelight:sugar_brown"
+    },
+    {
+      "item": "ubesdelight:ginger"
+    }
+  ],
+  "result": {
+    "item": "ubesdelight:chicken_inasal"
+  }
+}
