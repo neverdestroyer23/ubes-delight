@@ -1,6 +1,6 @@
 {
   "type": "farmersdelight:cooking",
-  "cookingtime": 200,
+  "cookingtime": 50,
   "recipie_book_tab": "drinks",
   "ingredients": [
     {

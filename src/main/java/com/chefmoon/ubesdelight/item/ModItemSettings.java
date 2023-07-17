@@ -24,6 +24,6 @@ public class ModItemSettings extends FabricItemSettings {
 
     public ModItemSettings() {
         super();
-        group(UbesDelightMod.ITEM_GROUP);
+        //group(UbesDelightMod.ITEM_GROUP);
     }
 }

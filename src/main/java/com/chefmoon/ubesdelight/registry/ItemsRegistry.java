@@ -5,12 +5,14 @@ import com.chefmoon.ubesdelight.item.ConsumableItem;
 import com.chefmoon.ubesdelight.item.DrinkableItem;
 import com.chefmoon.ubesdelight.item.ModBlockItem;
 import com.chefmoon.ubesdelight.item.enumeration.FoodItem;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registry;
 
 import java.util.function.Supplier;
 
@@ -100,7 +102,8 @@ public enum ItemsRegistry {
 
     public static void registerAll() {
         for (ItemsRegistry value : values()) {
-            Registry.register(Registry.ITEM, new Identifier(UbesDelightMod.MOD_ID, value.pathName), value.get());
+            Registry.register(Registries.ITEM, new Identifier(UbesDelightMod.MOD_ID, value.pathName), value.get());
+            ItemGroupEvents.modifyEntriesEvent(UbesDelightMod.ITEM_GROUP).register(entries -> entries.add(value.get()));
             if (value.burnTime != null && value.burnTime > 0) {
                 FuelRegistry.INSTANCE.add(value.get(), value.burnTime);
             }
@@ -115,6 +118,6 @@ public enum ItemsRegistry {
     }
 
     public String getId() {
-        return Registry.ITEM.getId(get()).toString();
+        return Registries.ITEM.getId(get()).toString();
     }
 }

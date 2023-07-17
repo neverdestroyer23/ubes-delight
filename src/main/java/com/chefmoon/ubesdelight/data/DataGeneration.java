@@ -8,11 +8,14 @@ public class DataGeneration implements DataGeneratorEntrypoint {
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
 
-        fabricDataGenerator.addProvider(RecipeGenerator::new);
-        fabricDataGenerator.addProvider(ModelGenerator::new);
-        fabricDataGenerator.addProvider(TranslationGenerator::new);
-        fabricDataGenerator.addProvider(new LootTableGenerator(fabricDataGenerator, LootContextTypes.BLOCK));
-        //fabricDataGenerator.addProvider(LootTableGenerator::new);
+        FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
+        pack.addProvider(TranslationGenerator::new);
+        pack.addProvider(RecipeGenerator::new);
+        pack.addProvider(ModelGenerator::new);
+        pack.addProvider(LootTableGenerator::new);
+
+        //pack.addProvider(new LootTableGenerator(fabricDataGenerator, LootContextTypes.BLOCK));
+
 
 
     }
