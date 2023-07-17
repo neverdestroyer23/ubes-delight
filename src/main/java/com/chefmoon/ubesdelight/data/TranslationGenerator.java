@@ -2,11 +2,11 @@ package com.chefmoon.ubesdelight.data;
 
 import com.chefmoon.ubesdelight.UbesDelightMod;
 import com.chefmoon.ubesdelight.registry.ItemsRegistry;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 
 public class TranslationGenerator extends FabricLanguageProvider {
-    protected TranslationGenerator(FabricDataGenerator dataGenerator) {
+    protected TranslationGenerator(FabricDataOutput dataGenerator) {
         super(dataGenerator);
     }
 

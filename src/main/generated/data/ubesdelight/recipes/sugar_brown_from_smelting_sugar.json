@@ -1,8 +1,9 @@
 {
   "type": "minecraft:smelting",
+  "category": "misc",
   "cookingtime": 100,
   "experience": 0.5,
-  "group": "net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder$1@2543d96d",
+  "group": "ResourceKey[minecraft:creative_mode_tab / ubesdelight:group]",
   "ingredient": {
     "item": "minecraft:sugar"
   },
