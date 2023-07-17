@@ -1,10 +1,8 @@
 package com.chefmoon.ubesdelight;
 
-import com.chefmoon.ubesdelight.registry.BlocksRegistry;
-import com.chefmoon.ubesdelight.registry.FeaturesRegistry;
-import com.chefmoon.ubesdelight.registry.ItemsRegistry;
-import com.chefmoon.ubesdelight.world.gen.FeatureGeneration;
+import com.chefmoon.ubesdelight.registry.*;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
@@ -14,6 +12,7 @@ import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTables;
 import net.minecraft.loot.entry.LootTableEntry;
 import net.minecraft.util.Identifier;
+import net.minecraft.world.gen.GenerationStep;
 
 import java.util.Set;
 
@@ -31,15 +30,16 @@ public class UbesDelightMod implements ModInitializer {
 
         ItemsRegistry.registerAll();
         BlocksRegistry.registerAll();
-        FeaturesRegistry.registerAll();
-        FeatureGeneration.generateAll();
+        ConfiguredFeaturesRegistry.registerAll();
+        PlacementModifiersRegistry.registerAll();
+        BiomeFeaturesRegistry.registerAll();
 
         registerCompostables();
         registerLootTable();
+
+        registerBiomeModifications();
+
         //registerVillagerTradeOffer()
-
-
-
     }
 
     private void initConfiguration() {
@@ -67,13 +67,6 @@ public class UbesDelightMod implements ModInitializer {
         CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.LECHE_FLAN.get(), 1.f);
 
     }
-
-    private void registerVillagerTradeOffer() {
-        if (UbesDelightMod.CONFIG.isFarmersBuyUDCrops()) {
-            //TODO: register trade offers
-        }
-    }
-
     private void registerLootTable() {
         Set<Identifier> chestsId = Set.of(
                 LootTables.VILLAGE_PLAINS_CHEST
@@ -88,5 +81,34 @@ public class UbesDelightMod implements ModInitializer {
         });
     }
 
+    private void registerBiomeModifications() {
+        if (UbesDelightMod.CONFIG.isGenerateWildUbe()) {
+            BiomeModifications.addFeature(context -> context.getBiome().getTemperature() > .3f && context.getBiome().getTemperature() < 1.f,
+                    GenerationStep.Feature.VEGETAL_DECORATION,
+                    ConfiguredFeaturesRegistry.PATCH_WILD_UBE.key());
+        }
 
+        if (UbesDelightMod.CONFIG.isGenerateWildGarlic()) {
+            BiomeModifications.addFeature(context -> context.getBiome().getTemperature() > .3f && context.getBiome().getTemperature() < 1.f,
+                    GenerationStep.Feature.VEGETAL_DECORATION,
+                    ConfiguredFeaturesRegistry.PATCH_WILD_GARLIC.key());
+        }
+
+        if (UbesDelightMod.CONFIG.isGenerateWildGinger()) {
+            BiomeModifications.addFeature(context -> context.getBiome().getTemperature() > .3f && context.getBiome().getTemperature() < 1.f,
+                    GenerationStep.Feature.VEGETAL_DECORATION,
+                    ConfiguredFeaturesRegistry.PATCH_WILD_GINGER.key());
+        }
+
+        if (UbesDelightMod.CONFIG.isGenerateWildLemongrass()) {
+            BiomeModifications.addFeature(context -> context.getBiome().getTemperature() > .3f && context.getBiome().getTemperature() < 1.f,
+                    GenerationStep.Feature.VEGETAL_DECORATION,
+                    ConfiguredFeaturesRegistry.PATCH_WILD_LEMONGRASS.key());
+        }
+    }
+    private void registerVillagerTradeOffer() {
+        if (UbesDelightMod.CONFIG.isFarmersBuyUDCrops()) {
+            //TODO: register trade offers
+        }
+    }
 }

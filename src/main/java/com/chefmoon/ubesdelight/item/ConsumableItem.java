@@ -95,18 +95,7 @@ public class ConsumableItem extends Item {
     @Environment(value= EnvType.CLIENT)
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         super.appendTooltip(stack, world, tooltip, context);
-        //config for tooltips
-        /*
-        if (FarmersDelightMod.CONFIG.isFoodEffectTooltip()) {
-            if (hasCustomTooltip) {
-                tooltip.add(FarmersDelightMod.i18n("tooltip." + this).formatted(Formatting.BLUE));
-            }
-            if (hasFoodEffectTooltip) {
-                addFoodEffectTooltip(stack, tooltip, 1.f);
-            }
-        }
-
-         */
+        //TODO:add tooltip support
     }
 
     @Environment(value= EnvType.CLIENT)
