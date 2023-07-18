@@ -1,8 +1,10 @@
 package com.chefmoon.ubesdelight;
 
+
 import com.chefmoon.ubesdelight.registry.*;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
@@ -15,6 +17,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.biome.Biome;
@@ -32,7 +35,12 @@ public class UbesDelightMod implements ModInitializer {
     public static final String MOD_ID = "ubesdelight";
     public static Configuration CONFIG = new Configuration();
     public static final RegistryKey<ItemGroup> ITEM_GROUP = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(MOD_ID, "group"));
-    public static Collection<RegistryKey<Biome>> BIOMES = List.of(new RegistryKey[]{BiomeKeys.PLAINS, BiomeKeys.SUNFLOWER_PLAINS, BiomeKeys.SNOWY_PLAINS});
+    public static Collection<RegistryKey<Biome>> PLAINS_BIOMES = List.of(new RegistryKey[]{BiomeKeys.PLAINS, BiomeKeys.SUNFLOWER_PLAINS});
+    public static Collection<RegistryKey<Biome>> JUNGLE_BIOMES = List.of(new RegistryKey[]{BiomeKeys.JUNGLE, BiomeKeys.BAMBOO_JUNGLE, BiomeKeys.SPARSE_JUNGLE});
+
+    public static MutableText tooltip(String key, Object... args) {
+        return Text.translatable(MOD_ID + "." + key, args);
+    }
 
     @Override
     public void onInitialize() {
@@ -101,25 +109,25 @@ public class UbesDelightMod implements ModInitializer {
 
     private void registerBiomeModifications() {
         if (UbesDelightMod.CONFIG.isGenerateWildUbe()) {
-            BiomeModifications.addFeature(context -> context.getBiome().getTemperature() > .3f && context.getBiome().getTemperature() < 1.f,
+            BiomeModifications.addFeature(context -> BiomeSelectors.includeByKey(JUNGLE_BIOMES).test(context),
                     GenerationStep.Feature.VEGETAL_DECORATION,
                     ConfiguredFeaturesRegistry.PATCH_WILD_UBE.key());
         }
 
         if (UbesDelightMod.CONFIG.isGenerateWildGarlic()) {
-            BiomeModifications.addFeature(context -> context.getBiome().getTemperature() > .3f && context.getBiome().getTemperature() < 1.f,
+            BiomeModifications.addFeature(context -> BiomeSelectors.includeByKey(PLAINS_BIOMES).test(context),
                     GenerationStep.Feature.VEGETAL_DECORATION,
                     ConfiguredFeaturesRegistry.PATCH_WILD_GARLIC.key());
         }
 
         if (UbesDelightMod.CONFIG.isGenerateWildGinger()) {
-            BiomeModifications.addFeature(context -> context.getBiome().getTemperature() > .3f && context.getBiome().getTemperature() < 1.f,
+            BiomeModifications.addFeature(context -> BiomeSelectors.includeByKey(PLAINS_BIOMES).test(context),
                     GenerationStep.Feature.VEGETAL_DECORATION,
                     ConfiguredFeaturesRegistry.PATCH_WILD_GINGER.key());
         }
 
         if (UbesDelightMod.CONFIG.isGenerateWildLemongrass()) {
-            BiomeModifications.addFeature(context -> context.getBiome().getTemperature() > .3f && context.getBiome().getTemperature() < 1.f,
+            BiomeModifications.addFeature(context -> BiomeSelectors.includeByKey(JUNGLE_BIOMES).test(context),
                     GenerationStep.Feature.VEGETAL_DECORATION,
                     ConfiguredFeaturesRegistry.PATCH_WILD_LEMONGRASS.key());
         }

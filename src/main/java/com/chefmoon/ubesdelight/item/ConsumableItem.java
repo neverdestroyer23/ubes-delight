@@ -1,4 +1,5 @@
 package com.chefmoon.ubesdelight.item;
+import com.chefmoon.ubesdelight.UbesDelightMod;
 import com.google.common.collect.Lists;
 import com.mojang.datafixers.util.Pair;
 import net.fabricmc.api.EnvType;
@@ -95,7 +96,14 @@ public class ConsumableItem extends Item {
     @Environment(value= EnvType.CLIENT)
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         super.appendTooltip(stack, world, tooltip, context);
-        //TODO:add tooltip support
+        if (UbesDelightMod.CONFIG.isFoodEffectTooltip()) {
+            if (hasCustomTooltip) {
+                tooltip.add(UbesDelightMod.tooltip("tooltip." + this).formatted(Formatting.BLUE));
+            }
+            if (hasFoodEffectTooltip) {
+                addFoodEffectTooltip(stack, tooltip, 1.f);
+            }
+        }
     }
 
     @Environment(value= EnvType.CLIENT)

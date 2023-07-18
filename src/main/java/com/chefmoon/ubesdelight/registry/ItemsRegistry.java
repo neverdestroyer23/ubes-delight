@@ -45,18 +45,18 @@ public enum ItemsRegistry {
     //Finger Foods
     SINANGAG("sinangag", () -> new ConsumableItem(food(FoodItem.SINANGAG, Items.BOWL, 16))),
     KINILAW("kinilaw", () -> new ConsumableItem(food(FoodItem.KINILAW, Items.BOWL, 16))),
-    LUMPIA("lumpia", () -> new ConsumableItem(food(FoodItem.LUMPIA,null, 32))),
-    TOCINO("tocino", () -> new ConsumableItem(food(FoodItem.TOCINO,null, 32))),
-    CHICKEN_INASAL("chicken_inasal", () -> new ConsumableItem(food(FoodItem.CHICKEN_INASAL,null, 32))),
+    LUMPIA("lumpia", () -> new Item(food(FoodItem.LUMPIA))),
+    TOCINO("tocino", () -> new Item(food(FoodItem.TOCINO))),
+    CHICKEN_INASAL("chicken_inasal", () -> new Item(food(FoodItem.CHICKEN_INASAL))),
 
     //Meals
-    CHICKEN_INASAL_RICE("chicken_inasal_rice", () -> new ConsumableItem(food(FoodItem.CHICKEN_INASAL_RICE, Items.BOWL, 16))),
-    TOSILOG("tosilog", () -> new ConsumableItem(food(FoodItem.TOSILOG, Items.BOWL, 16))),
-    BANGSILOG("bangsilog", () -> new ConsumableItem(food(FoodItem.BANGSILOG, Items.BOWL, 16))),
-    SISIG("sisig", () -> new ConsumableItem(food(FoodItem.SISIG, Items.BOWL, 16))),
-    BULALO("bulalo", () -> new ConsumableItem(food(FoodItem.BULALO, Items.BOWL, 16))),
-    ARROZ_CALDO("arroz_caldo", () -> new ConsumableItem(food(FoodItem.ARROZ_CALDO, Items.BOWL, 16))),
-    MECHADO("mechado", () -> new ConsumableItem(food(FoodItem.MECHADO, Items.BOWL, 16))),
+    CHICKEN_INASAL_RICE("chicken_inasal_rice", () -> new ConsumableItem(food(FoodItem.CHICKEN_INASAL_RICE, Items.BOWL, 16), true)),
+    TOSILOG("tosilog", () -> new ConsumableItem(food(FoodItem.TOSILOG, Items.BOWL, 16), true)),
+    BANGSILOG("bangsilog", () -> new ConsumableItem(food(FoodItem.BANGSILOG, Items.BOWL, 16), true)),
+    SISIG("sisig", () -> new ConsumableItem(food(FoodItem.SISIG, Items.BOWL, 16), true)),
+    BULALO("bulalo", () -> new ConsumableItem(food(FoodItem.BULALO, Items.BOWL, 16), true)),
+    ARROZ_CALDO("arroz_caldo", () -> new ConsumableItem(food(FoodItem.ARROZ_CALDO, Items.BOWL, 16), true)),
+    MECHADO("mechado", () -> new ConsumableItem(food(FoodItem.MECHADO, Items.BOWL, 16), true)),
 
     //Ingredients
     CONDENSED_MILK_BOTTLE("condensed_milk_bottle", () -> new DrinkableItem(food(FoodItem.CONDENSED_MILK_BOTTLE, Items.GLASS_BOTTLE, 16), true)),

@@ -1,6 +1,5 @@
 package com.chefmoon.ubesdelight.item;
 
-import com.chefmoon.ubesdelight.UbesDelightMod;
 import com.chefmoon.ubesdelight.item.enumeration.FoodItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
@@ -24,6 +23,5 @@ public class ModItemSettings extends FabricItemSettings {
 
     public ModItemSettings() {
         super();
-        //group(UbesDelightMod.ITEM_GROUP);
     }
 }
