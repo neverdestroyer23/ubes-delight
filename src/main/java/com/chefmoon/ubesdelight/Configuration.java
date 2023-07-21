@@ -17,17 +17,18 @@ public final class Configuration {
 
     //Basic Config
     private boolean farmersBuyUDCrops = false;
+    private boolean isFoodEffectTooltip = true;
 
     //World Generation
     private boolean generateUDChestLoot = true;
     private boolean generateWildUbe = true;
-    private int chanceWildUbe = 100;
+    private int chanceWildUbe = 50;
     private boolean generateWildGarlic = true;
-    private int chanceWildGarlic = 100;
+    private int chanceWildGarlic = 80;
     private boolean generateWildGinger = true;
-    private int chanceWildGinger = 100;
+    private int chanceWildGinger = 80;
     private boolean generateWildLemongrass = true;
-    private int chanceWildLemongrass = 100;
+    private int chanceWildLemongrass = 80;
 
 
     public Configuration() {
@@ -45,7 +46,7 @@ public final class Configuration {
             configuration = (new GsonBuilder().setPrettyPrinting().create()).fromJson(reader, Configuration.class);
             reader.close();
         } catch (IOException e) {
-            //UbesDelightMod.LOGGER.error("Error while trying to load configuration file. Default configuration used.", e);
+            UbesDelightMod.LOGGER.error("Error while trying to load configuration file. Default configuration used.", e);
             System.out.println("Error while trying to load configuration file. Default configuration used."+e);
         }
 
@@ -59,17 +60,9 @@ public final class Configuration {
 
             writer.close();
         } catch (IOException e) {
-            //FarmersDelightMod.LOGGER.error("Error while trying to save configuration file.", e);
+            UbesDelightMod.LOGGER.error("Error while trying to save configuration file.", e);
             System.out.println("Error while trying to save configuration file."+e);
         }
-    }
-
-    public boolean isGenerateUDChestLoot() {
-        return generateUDChestLoot;
-    }
-
-    public void setGenerateUDChestLood(boolean generateUDChestLoot) {
-        this.generateUDChestLoot = generateUDChestLoot;
     }
 
     public boolean isFarmersBuyUDCrops() {
@@ -80,6 +73,21 @@ public final class Configuration {
         this.farmersBuyUDCrops = farmersBuyUDCrops;
     }
 
+    public boolean isFoodEffectTooltip() {
+        return isFoodEffectTooltip;
+    }
+
+    public void setFoodEffectTooltip(boolean foodEffectTooltip) {
+        isFoodEffectTooltip = foodEffectTooltip;
+    }
+
+    public boolean isGenerateUDChestLoot() {
+        return generateUDChestLoot;
+    }
+
+    public void setGenerateUDChestLood(boolean generateUDChestLoot) {
+        this.generateUDChestLoot = generateUDChestLoot;
+    }
     public boolean isGenerateWildUbe() {
         return generateWildUbe;
     }

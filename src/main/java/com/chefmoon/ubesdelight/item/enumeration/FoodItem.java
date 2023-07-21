@@ -1,5 +1,6 @@
 package com.chefmoon.ubesdelight.item.enumeration;
 
+import com.nhoryzon.mc.farmersdelight.registry.EffectsRegistry;
 import com.chefmoon.ubesdelight.item.ConsumableItem;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -15,21 +16,21 @@ public enum FoodItem {
     GINGER(2, .4f),
     LEMONGRASS(2, .4f),
 
-    //Finger Foods TODO: Add status effects
-    SINANGAG(6, .4f, null ,.0f, false, false, false),
-    KINILAW(8, .6f, null ,.0f, true, false, false),
-    LUMPIA(8, .7f, null ,.0f, true, false, false),
-    TOCINO(10, .7f, null ,.0f, true, false, false),
-    CHICKEN_INASAL(10, .75f, null ,.0f, true, false, false),
+    //Finger Foods
+    SINANGAG(4, .35f, null ,.0f, false, false, false),
+    KINILAW(6, .6f, null ,.0f, true, false, false),
+    LUMPIA(7, .7f, null ,.0f, true, false, false),
+    TOCINO(8, .7f, null ,.0f, true, true, false),
+    CHICKEN_INASAL(8, .7f, null ,.0f, true, true, false),
 
-    //MealS TODO: Add status effects
-    CHICKEN_INASAL_RICE(13, .75f, null ,.0f, true, false, false),
-    TOSILOG(13, .75f, null ,.0f, true, false, false),
-    BANGSILOG(13, .75f, null ,.0f, true, false, false),
-    SISIG(13, .7f, null ,.0f, true, false, false),
-    BULALO(14, .75f, null ,.0f, true, false, false),
-    ARROZ_CALDO(14, .75f, null ,.0f, true, false, false),
-    MECHADO(14, .75f, null ,.0f, true, false, false),
+    //Meals
+    CHICKEN_INASAL_RICE(13, .75f, () -> new StatusEffectInstance(EffectsRegistry.NOURISHMENT.get(), ConsumableItem.LONG_DURATION, 0),1.f, true, false, false),
+    TOSILOG(13, .75f, () -> new StatusEffectInstance(EffectsRegistry.NOURISHMENT.get(), ConsumableItem.LONG_DURATION, 0),1.f, true, false, false),
+    BANGSILOG(13, .75f, () -> new StatusEffectInstance(EffectsRegistry.NOURISHMENT.get(), ConsumableItem.LONG_DURATION, 0),1.f, true, false, false),
+    SISIG(13, .7f, () -> new StatusEffectInstance(EffectsRegistry.NOURISHMENT.get(), ConsumableItem.LONG_DURATION, 0),1.f, true, false, false),
+    BULALO(14, .75f, () -> new StatusEffectInstance(EffectsRegistry.COMFORT.get(), ConsumableItem.LONG_DURATION, 0),1.f, true, false, false),
+    ARROZ_CALDO(14, .75f, () -> new StatusEffectInstance(EffectsRegistry.COMFORT.get(), ConsumableItem.LONG_DURATION, 0),1.f, true, false, false),
+    MECHADO(14, .75f, () -> new StatusEffectInstance(EffectsRegistry.COMFORT.get(), ConsumableItem.LONG_DURATION, 0),1.f, true, false, false),
 
 
     //Drinkables
@@ -38,15 +39,15 @@ public enum FoodItem {
 
     //Milk Teas
     MILK_TEA_UBE(0, 0, () -> new StatusEffectInstance(StatusEffects.NIGHT_VISION, ConsumableItem.SHORT_DURATION, 0), 1.f, false, false, true),
-    HALO_HALO(0, 0, null, .0f, false, false, true),
+    HALO_HALO(0, 0, () -> new StatusEffectInstance(EffectsRegistry.NOURISHMENT.get(), ConsumableItem.MEDIUM_DURATION, 0), 1.f, false, false, true),
 
     //Non-whole vegetables
     GARLIC_CLOVES(1, .4f),
 
     //Sweets
     LECHE_FLAN(3, .4f),
-    COOKIES(2, .1f, null ,.0f, false, true, false),
-    POLVORONE(2, .2f, null ,.0f, false, true, false);
+    COOKIES(2, .1f, null,.0f, false, true, false),
+    POLVORONE(2, .2f, null,.0f, false, true, false);
 
     private final Supplier<FoodComponent> food;
     FoodItem(int hunger, float saturation) {

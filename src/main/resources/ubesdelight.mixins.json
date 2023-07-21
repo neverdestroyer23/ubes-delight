@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "ChickenEntityBreedingMixin",
+    "PigEntityBreedingMixin",
     "accessors.StructurePoolAccessorMixin"
   ],
   "client": [

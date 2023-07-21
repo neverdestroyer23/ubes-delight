@@ -2,7 +2,7 @@
   "type": "farmersdelight:cooking",
   "cookingtime": 100,
   "experience": 0.5,
-  "recipe_book_tab": "drinks",
+  "recipe_book_tab": "meals",
   "ingredients": [
     {
       "tag": "c:eggs"
