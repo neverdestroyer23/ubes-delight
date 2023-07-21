@@ -5,7 +5,6 @@ import com.nhoryzon.mc.farmersdelight.registry.EffectsRegistry;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.FoodComponent;
-
 import java.util.function.Supplier;
 
 public enum FoodItem {
@@ -19,7 +18,7 @@ public enum FoodItem {
     //Finger Foods
     SINANGAG(4, .35f, null,.0f, false, false, false),
     KINILAW(6, .6f, null,.0f, true, false, false),
-    LUMPIA(7, .7f, null,1.f, true, false, false),
+    LUMPIA(7, .7f, null,0.f, true, false, false),
     TOCINO(8, .7f, null,.0f, true, true, false),
     CHICKEN_INASAL(8, .7f, null,.0f, true, true, false),
 
@@ -47,7 +46,10 @@ public enum FoodItem {
     //Sweets
     LECHE_FLAN(3, .4f),
     COOKIES(2, .1f, null,.0f, false, true, false),
-    POLVORONE(2, .2f, null,.0f, false, true, false);
+    POLVORONE(2, .2f, null,.0f, false, true, false),
+
+    //Slices
+    UBE_CAKE_SLICE(2, .1f, () -> new StatusEffectInstance(StatusEffects.NIGHT_VISION, ConsumableItem.BRIEF_DURATION, 0), 1.f, false, true, false);
 
     private final Supplier<FoodComponent> food;
     FoodItem(int hunger, float saturation) {

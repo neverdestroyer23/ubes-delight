@@ -1,7 +1,9 @@
 {
   "block.ubesdelight.garlic_crate": "Garlic Crate",
   "block.ubesdelight.ginger_crate": "Ginger Crate",
+  "block.ubesdelight.halo_halo_feast": "Halo Halo Feast",
   "block.ubesdelight.lemongrass_crate": "Lemongrass Crate",
+  "block.ubesdelight.ube_cake": "Ube Cake",
   "block.ubesdelight.ube_crate": "Ube Crate",
   "block.ubesdelight.wild_garlic": "Wild Garlic",
   "block.ubesdelight.wild_ginger": "Wild Ginger",
@@ -25,6 +27,7 @@
   "item.ubesdelight.lemongrass": "Lemongrass",
   "item.ubesdelight.lemongrass_seeds": "Lemongrass Seeds",
   "item.ubesdelight.lumpia": "Lumpia",
+  "item.ubesdelight.lumpia_wrapper": "Lumpia Wrapper",
   "item.ubesdelight.mechado": "Mechado",
   "item.ubesdelight.milk_powder": "Milk Powder",
   "item.ubesdelight.milk_tea_ube": "Ube Milk Tea",
@@ -42,5 +45,6 @@
   "item.ubesdelight.tocino": "Tocino",
   "item.ubesdelight.tosilog": "Tosilog",
   "item.ubesdelight.ube": "Ube",
+  "item.ubesdelight.ube_cake_slice": "Ube Cake Slice",
   "itemGroup.ubesdelight.group": "Ube's Delight"
 }

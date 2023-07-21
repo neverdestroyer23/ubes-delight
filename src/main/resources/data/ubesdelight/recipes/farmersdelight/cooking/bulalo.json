@@ -20,7 +20,7 @@
       "item": "ubesdelight:fish_sauce_bottle"
     },
     {
-      "item": "ubesdelight:lemongrass"
+      "tag": "c:crops/lemongrass"
     }
   ],
   "result": {

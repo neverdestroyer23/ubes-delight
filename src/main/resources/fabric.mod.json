@@ -10,8 +10,8 @@
     "potatomadz"
   ],
   "contact": {
-    "homepage": "",
-    "sources": ""
+    "homepage": "https://modrinth.com/mod/ubes-delight",
+    "issues": "https://github.com/ChefMooon/ubes-delight/issues"
   },
 
   "license": "MIT",
@@ -27,7 +27,8 @@
     ],
     "client": [
       "com.chefmoon.ubesdelight.UbesDelightModClient"
-    ]
+    ],
+    "modmenu": [ "com.chefmoon.ubesdelight.integration.modmenu.UbesDelightModMenu" ]
   },
   "mixins": [
     "ubesdelight.mixins.json"
@@ -41,6 +42,15 @@
     "farmersdelight": "*"
   },
   "suggests": {
-    "another-mod": "*"
+    "another-mod": "*",
+    "modmenu": "*"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.wiki": "https://github.com/ChefMooon/ubes-delight/wiki"
+      },
+      "update_checker": true
+    }
   }
 }

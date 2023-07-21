@@ -1,9 +1,11 @@
 package com.chefmoon.ubesdelight.registry;
 
 import com.chefmoon.ubesdelight.UbesDelightMod;
+import com.chefmoon.ubesdelight.block.HaloHaloFeast;
 import com.chefmoon.ubesdelight.item.ConsumableItem;
 import com.chefmoon.ubesdelight.item.DrinkableItem;
 import com.chefmoon.ubesdelight.item.ModBlockItem;
+import com.chefmoon.ubesdelight.item.ModItemSettings;
 import com.chefmoon.ubesdelight.item.enumeration.FoodItem;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
@@ -63,6 +65,7 @@ public enum ItemsRegistry {
     FISH_SAUCE_BOTTLE("fish_sauce_bottle", () -> new DrinkableItem(food(FoodItem.FISH_SAUCE_BOTTLE, Items.GLASS_BOTTLE, 16), true)),
     MILK_POWDER("milk_powder", () -> new Item(base())),
     SUGAR_BROWN("sugar_brown", () -> new Item(base())),
+    LUMPIA_WRAPPER("lumpia_wrapper", () -> new Item(base())),
     //Drinks
     MILK_TEA_UBE("milk_tea_ube", () -> new DrinkableItem(food(FoodItem.MILK_TEA_UBE, Items.GLASS_BOTTLE, 16), true)),
     HALO_HALO("halo_halo", () -> new DrinkableItem(food(FoodItem.HALO_HALO, Items.GLASS_BOTTLE, 16), true)),
@@ -81,8 +84,16 @@ public enum ItemsRegistry {
     RAW_POLVORONE("raw_polvorone", () -> new Item(base())),
     RAW_POLVORONE_PINIPIG("raw_polvorone_pinipig", () -> new Item(base())),
     RAW_POLVORONE_UBE("raw_polvorone_ube", () -> new Item(base())),
-    RAW_POLVORONE_CC("raw_polvorone_cc", () -> new Item(base()));
+    RAW_POLVORONE_CC("raw_polvorone_cc", () -> new Item(base())),
 
+    //Feasts
+    HALO_HALO_FEAST("halo_halo_feast", () -> new ModBlockItem(BlocksRegistry.HALO_HALO_FEAST.get(), new ModItemSettings().maxCount(1))),
+
+    //Cakes
+    UBE_CAKE("ube_cake", () -> new ModBlockItem(BlocksRegistry.UBE_CAKE.get(), new ModItemSettings().maxCount(1))),
+
+    //Cake Slices
+    UBE_CAKE_SLICE("ube_cake_slice", () -> new Item(food(FoodItem.UBE_CAKE_SLICE)));
 
 
     private final String pathName;

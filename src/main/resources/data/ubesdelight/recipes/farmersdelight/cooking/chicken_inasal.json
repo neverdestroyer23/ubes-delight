@@ -8,13 +8,13 @@
       "tag": "c:raw_chicken"
     },
     {
-      "item": "ubesdelight:lemongrass"
+      "tag": "c:crops/lemongrass"
     },
     {
       "item": "ubesdelight:sugar_brown"
     },
     {
-      "item": "ubesdelight:ginger"
+      "tag": "c:crops/ginger"
     }
   ],
   "result": {

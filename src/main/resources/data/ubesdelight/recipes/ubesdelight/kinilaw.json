@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "recipe_book_tab": "meals",
+  "category": "meals",
   "ingredients": [
     {
       "tag": "c:raw_fishes"
@@ -9,13 +9,13 @@
       "tag": "c:crops/onion"
     },
     {
-      "tag": "c:garlic/garlic"
+      "tag": "c:crops/garlic"
     },
     {
-      "item": "ubesdelight:ginger"
+      "tag": "c:crops/ginger"
     },
     {
-      "item": "ubesdelight:lemongrass"
+      "tag": "c:crops/lemongrass"
     },
     {
       "item": "minecraft:bowl"

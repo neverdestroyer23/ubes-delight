@@ -13,10 +13,10 @@ public final class Configuration {
 
     private static final File CONFIG_FILE = new File(FabricLoader.getInstance().getConfigDir().toFile(), "ubesdelight.json");
 
-
-
     //Basic Config
-    private boolean farmersBuyUDCrops = false;
+    private boolean enableUDCropCrates = true;
+    private boolean farmersBuyUDCrops = true;
+    private boolean wanderingTraderSellsUDItems = true;
     private boolean isFoodEffectTooltip = true;
 
     //World Generation
@@ -29,7 +29,6 @@ public final class Configuration {
     private int chanceWildGinger = 80;
     private boolean generateWildLemongrass = true;
     private int chanceWildLemongrass = 80;
-
 
     public Configuration() {
     }
@@ -65,12 +64,27 @@ public final class Configuration {
         }
     }
 
+    public boolean isEnableUDCropCrates() {
+        return enableUDCropCrates;
+    }
+
+    public void setEnableUDCropCrates(boolean enableUDCropCrates) {
+        this.enableUDCropCrates = enableUDCropCrates;
+    }
     public boolean isFarmersBuyUDCrops() {
         return farmersBuyUDCrops;
     }
 
     public void setFarmersBuyUDCrops(boolean farmersBuyUDCrops) {
         this.farmersBuyUDCrops = farmersBuyUDCrops;
+    }
+
+    public boolean isWanderingTraderSellsUDItems() {
+        return wanderingTraderSellsUDItems;
+    }
+
+    public void setWanderingTraderSellsUDItems(boolean wanderingTraderSellsUDItems) {
+        this.wanderingTraderSellsUDItems = wanderingTraderSellsUDItems;
     }
 
     public boolean isFoodEffectTooltip() {
@@ -85,7 +99,7 @@ public final class Configuration {
         return generateUDChestLoot;
     }
 
-    public void setGenerateUDChestLood(boolean generateUDChestLoot) {
+    public void setGenerateUDChestLoot(boolean generateUDChestLoot) {
         this.generateUDChestLoot = generateUDChestLoot;
     }
 

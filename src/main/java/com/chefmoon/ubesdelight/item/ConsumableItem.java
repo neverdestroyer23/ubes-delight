@@ -1,4 +1,5 @@
 package com.chefmoon.ubesdelight.item;
+
 import com.chefmoon.ubesdelight.UbesDelightMod;
 import com.google.common.collect.Lists;
 import com.mojang.datafixers.util.Pair;
