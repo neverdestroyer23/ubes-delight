@@ -1,4 +1,4 @@
-// 1.19.2	2023-07-21T18:03:29.7079646	Models
+// 1.19.2	2023-08-01T16:17:45.4007207	Models
 ee7fcbb3b6805eb2f4fb5e65bf420163621b15fb assets\ubesdelight\models\item\lemongrass.json
 728f39c7ff5ec93ddab73f1faaea58e1329c09e5 assets\ubesdelight\models\item\raw_polvorone_cc.json
 12e1351d99b98c201b5aadcac735bc322cc78882 assets\ubesdelight\models\item\cookie_ginger.json
@@ -16,6 +16,7 @@ baa3e0638ab21154a2b39389cf75d201bf5b08fa assets\ubesdelight\models\item\ube_cake
 e3a56c86a0aa15d35e599ab3ab5882da41737a6d assets\ubesdelight\models\item\mechado.json
 09f02950e466433edc14581766942c076ac2ce54 assets\ubesdelight\models\item\ube_cake.json
 8de458a3e824a909cbd53f4d36f7bfef742d7c0d assets\ubesdelight\models\item\wild_ube.json
+726f2a80eefae6d1bbbc97447fbd9b967951e26d assets\ubesdelight\models\item\milk_tea_ube_feast.json
 7f23d74eced6bc2d771d709fb04221c9e38087fa assets\ubesdelight\models\item\cookie_ube.json
 09a6c7ab266b33a59e126bd74889c44b2187eb04 assets\ubesdelight\models\item\ube.json
 3cff3e34d3f09a0163dd5fbd7fa440e8ccaa46b7 assets\ubesdelight\models\item\tosilog.json
@@ -38,6 +39,7 @@ a70584b1af7e5e1c269a8844abc92fc4a1ee4577 assets\ubesdelight\models\item\condense
 b93d064f3b52f3709af0d34a0f3a523fcfe798a2 assets\ubesdelight\models\item\chicken_inasal_rice.json
 106d41e03a567e7387fe67c1ab0823728130896e assets\ubesdelight\models\item\wild_ginger.json
 f020458179307b8926668131cb4aa448676a3b8a assets\ubesdelight\models\item\garlic.json
+2321e0c9098c3c57465181db03afcfa86c63b2c9 assets\ubesdelight\models\item\lumpia_feast.json
 06bb478cee3c3e44aebcb6bef0384608847f4a62 assets\ubesdelight\models\item\sisig.json
 92a67050114d986eccd839eca602d29aeb5941ef assets\ubesdelight\models\item\milk_powder.json
 c99f680364d41091751ef9bd6484f9a79978fe22 assets\ubesdelight\models\item\fish_sauce_bottle.json

@@ -16,8 +16,7 @@ public class ModelGenerator extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        //Figure out crop stuff
-        //blockStateModelGenerator.registerCrop(BlocksRegistry.LEMONGRASS_CROP.get(), AGE_PROPERTY, 3,4,4,4);
+
     }
 
     @Override
@@ -73,6 +72,8 @@ public class ModelGenerator extends FabricModelProvider {
         itemModelGenerator.register(ItemsRegistry.RAW_POLVORONE_CC.get(), Models.GENERATED);
 
         itemModelGenerator.register(ItemsRegistry.HALO_HALO_FEAST.get(), Models.GENERATED);
+        itemModelGenerator.register(ItemsRegistry.MILK_TEA_UBE_FEAST.get(), Models.GENERATED);
+        itemModelGenerator.register(ItemsRegistry.LUMPIA_FEAST.get(), Models.GENERATED);
 
         itemModelGenerator.register(ItemsRegistry.UBE_CAKE.get(), Models.GENERATED);
         itemModelGenerator.register(ItemsRegistry.UBE_CAKE_SLICE.get(), Models.GENERATED);

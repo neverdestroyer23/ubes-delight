@@ -1,6 +1,7 @@
 package com.chefmoon.ubesdelight;
 
 import com.chefmoon.ubesdelight.registry.*;
+import com.chefmoon.ubesdelight.util.GeneralRegistryUtil;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
@@ -32,11 +33,10 @@ import java.util.List;
 import java.util.Set;
 
 public class UbesDelightMod implements ModInitializer {
-
-    public static final Logger LOGGER = LoggerFactory.getLogger("Ube's Delight");
     public static final String MOD_ID = "ubesdelight";
+    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
     public static Configuration CONFIG = new Configuration();
-    public static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "group"),
+    public static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.build(new Identifier(MOD_ID),
             () -> new ItemStack(ItemsRegistry.UBE.get()));
 
     public static Collection<RegistryKey<Biome>> PLAINS_BIOMES = List.of(new RegistryKey[]{BiomeKeys.PLAINS, BiomeKeys.SUNFLOWER_PLAINS});
@@ -48,7 +48,6 @@ public class UbesDelightMod implements ModInitializer {
 
     @Override
     public void onInitialize() {
-
         initConfiguration();
 
         ItemsRegistry.registerAll();
@@ -56,151 +55,13 @@ public class UbesDelightMod implements ModInitializer {
         ConfiguredFeaturesRegistry.registerAll();
         PlacementModifiersRegistry.registerAll();
         BiomeFeaturesRegistry.registerAll();
-
-        registerCompostables();
-        registerLootTable();
-        registerBiomeModifications();
-        registerVillagerTradeOffer();
+        GeneralRegistryUtil.register();
     }
 
     private void initConfiguration() {
         CONFIG = Configuration.load();
 
-        //TODO: Fix JSONDataLoader?
         ResourceConditions.register(new Identifier(MOD_ID, "ud_crates_enabled"),
                 jsonObject -> UbesDelightMod.CONFIG.isEnableUDCropCrates());
-    }
-
-    private void registerCompostables() {
-
-        CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.LEMONGRASS_SEEDS.get(), .3f);
-
-        CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.GARLIC_CLOVES.get(), .4f);
-        CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.LUMPIA_WRAPPER.get(), .4f);
-
-        CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.WILD_UBE.get(), .65f);
-        CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.WILD_GARLIC.get(), .65f);
-        CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.WILD_GINGER.get(), .65f);
-        CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.WILD_LEMONGRASS.get(), .65f);
-        CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.UBE.get(), .65f);
-        CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.GARLIC.get(), .65f);
-        CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.GINGER.get(), .65f);
-        CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.LEMONGRASS.get(), .65f);
-
-        CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.COOKIE_UBE.get(), .85f);
-        CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.COOKIE_GINGER.get(), .85f);
-
-        CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.LECHE_FLAN.get(), 1.f);
-
-    }
-    private void registerLootTable() {
-        Set<Identifier> chestsId = Set.of(
-                LootTables.VILLAGE_PLAINS_CHEST
-        );
-
-        LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
-            Identifier injectId = new Identifier(UbesDelightMod.MOD_ID, "inject/" + id.getPath());
-
-            if (chestsId.contains(id) && UbesDelightMod.CONFIG.isGenerateUDChestLoot()) {
-                tableBuilder.pool(LootPool.builder().with(LootTableEntry.builder(injectId).weight(1).quality(0)).build());
-            }
-        });
-    }
-
-    private void registerBiomeModifications() {
-        if (UbesDelightMod.CONFIG.isGenerateWildUbe()) {
-            BiomeModifications.addFeature(context -> BiomeSelectors.includeByKey(JUNGLE_BIOMES).test(context),
-                    GenerationStep.Feature.VEGETAL_DECORATION,
-                    ConfiguredFeaturesRegistry.PATCH_WILD_UBE.key());
-        }
-
-        if (UbesDelightMod.CONFIG.isGenerateWildGarlic()) {
-            BiomeModifications.addFeature(context -> BiomeSelectors.includeByKey(PLAINS_BIOMES).test(context),
-                    GenerationStep.Feature.VEGETAL_DECORATION,
-                    ConfiguredFeaturesRegistry.PATCH_WILD_GARLIC.key());
-        }
-
-        if (UbesDelightMod.CONFIG.isGenerateWildGinger()) {
-            BiomeModifications.addFeature(context -> BiomeSelectors.includeByKey(PLAINS_BIOMES).test(context),
-                    GenerationStep.Feature.VEGETAL_DECORATION,
-                    ConfiguredFeaturesRegistry.PATCH_WILD_GINGER.key());
-        }
-
-        if (UbesDelightMod.CONFIG.isGenerateWildLemongrass()) {
-            BiomeModifications.addFeature(context -> BiomeSelectors.includeByKey(JUNGLE_BIOMES).test(context),
-                    GenerationStep.Feature.VEGETAL_DECORATION,
-                    ConfiguredFeaturesRegistry.PATCH_WILD_LEMONGRASS.key());
-        }
-    }
-    private void registerVillagerTradeOffer() {
-        if (UbesDelightMod.CONFIG.isFarmersBuyUDCrops()) {
-            TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER,1,
-                    factories -> {
-                        factories.add(((entity, random) -> new TradeOffer(
-                                new ItemStack(Items.EMERALD, 1),
-                                new ItemStack(ItemsRegistry.UBE.get(), 26),
-                                16, 2, 0.05f
-                        )));
-                    });
-            TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER,1,
-                    factories -> {
-                        factories.add(((entity, random) -> new TradeOffer(
-                                new ItemStack(Items.EMERALD, 1),
-                                new ItemStack(ItemsRegistry.GARLIC.get(), 26),
-                                16, 2, 0.05f
-                        )));
-                    });
-            TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER,1,
-                    factories -> {
-                        factories.add(((entity, random) -> new TradeOffer(
-                                new ItemStack(Items.EMERALD, 1),
-                                new ItemStack(ItemsRegistry.GINGER.get(), 26),
-                                16, 2, 0.05f
-                        )));
-                    });
-            TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER,2,
-                    factories -> {
-                        factories.add(((entity, random) -> new TradeOffer(
-                                new ItemStack(Items.EMERALD, 1),
-                                new ItemStack(ItemsRegistry.LEMONGRASS.get(), 20),
-                                16, 5, 0.05f
-                        )));
-                    });
-        }
-
-        if (UbesDelightMod.CONFIG.isWanderingTraderSellsUDItems()) {
-            TradeOfferHelper.registerWanderingTraderOffers(1,
-                    factories -> {
-                        factories.add(((entity, random) -> new TradeOffer(
-                                new ItemStack(Items.EMERALD, 1),
-                                new ItemStack(ItemsRegistry.UBE.get(), 1),
-                                1, 12, 0.05f
-                        )));
-                    });
-            TradeOfferHelper.registerWanderingTraderOffers(1,
-                    factories -> {
-                        factories.add(((entity, random) -> new TradeOffer(
-                                new ItemStack(Items.EMERALD, 1),
-                                new ItemStack(ItemsRegistry.GARLIC.get(), 1),
-                                1, 12, 0.05f
-                        )));
-                    });
-            TradeOfferHelper.registerWanderingTraderOffers(1,
-                    factories -> {
-                        factories.add(((entity, random) -> new TradeOffer(
-                                new ItemStack(Items.EMERALD, 1),
-                                new ItemStack(ItemsRegistry.GINGER.get(), 1),
-                                1, 12, 0.05f
-                        )));
-                    });
-            TradeOfferHelper.registerWanderingTraderOffers(1,
-                    factories -> {
-                        factories.add(((entity, random) -> new TradeOffer(
-                                new ItemStack(Items.EMERALD, 1),
-                                new ItemStack(ItemsRegistry.LEMONGRASS_SEEDS.get(), 1),
-                                1, 12, 0.05f
-                        )));
-                    });
-        }
     }
 }

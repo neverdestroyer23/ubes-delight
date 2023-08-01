@@ -2,7 +2,10 @@
   "block.ubesdelight.garlic_crate": "Garlic Crate",
   "block.ubesdelight.ginger_crate": "Ginger Crate",
   "block.ubesdelight.halo_halo_feast": "Halo Halo Feast",
+  "block.ubesdelight.kalan": "Kalan",
   "block.ubesdelight.lemongrass_crate": "Lemongrass Crate",
+  "block.ubesdelight.lumpia_feast": "Lumpia Feast",
+  "block.ubesdelight.milk_tea_ube_feast": "Ube Milk Tea Feast",
   "block.ubesdelight.ube_cake": "Ube Cake",
   "block.ubesdelight.ube_crate": "Ube Crate",
   "block.ubesdelight.wild_garlic": "Wild Garlic",
@@ -46,5 +49,8 @@
   "item.ubesdelight.tosilog": "Tosilog",
   "item.ubesdelight.ube": "Ube",
   "item.ubesdelight.ube_cake_slice": "Ube Cake Slice",
-  "itemGroup.ubesdelight.group": "Ube's Delight"
+  "itemGroup.minecraft.ubesdelight": "Ube's Delight",
+  "ubesdelight.container.halo_halo_feast": "Glass Bottle Required.",
+  "ubesdelight.tooltip.kalan": "Traditional Filipino Clay Oven.",
+  "ubesdelight.tooltip.knife": "Knife Required."
 }

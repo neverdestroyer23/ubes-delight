@@ -15,6 +15,13 @@ public class TranslationGenerator extends FabricLanguageProvider {
 
         translationBuilder.add(UbesDelightMod.ITEM_GROUP, "Ube's Delight");
 
+        translationBuilder.add("ubesdelight.container."+ItemsRegistry.HALO_HALO_FEAST.get(), "Glass Bottle Required.");
+
+        translationBuilder.add("ubesdelight.tooltip."+ItemsRegistry.KALAN.get(), "Traditional Filipino Clay Oven.");
+        translationBuilder.add("ubesdelight.tooltip.knife", "Knife Required.");
+
+        translationBuilder.add(ItemsRegistry.KALAN.get(), "Kalan");
+
         translationBuilder.add(ItemsRegistry.UBE_CRATE.get(), "Ube Crate");
         translationBuilder.add(ItemsRegistry.GARLIC_CRATE.get(), "Garlic Crate");
         translationBuilder.add(ItemsRegistry.GINGER_CRATE.get(), "Ginger Crate");
@@ -72,6 +79,8 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(ItemsRegistry.RAW_POLVORONE_CC.get(), "Raw Cookies and Cream Polvorone");
 
         translationBuilder.add(ItemsRegistry.HALO_HALO_FEAST.get(), "Halo Halo Feast");
+        translationBuilder.add(ItemsRegistry.MILK_TEA_UBE_FEAST.get(), "Ube Milk Tea Feast");
+        translationBuilder.add(ItemsRegistry.LUMPIA_FEAST.get(), "Lumpia Feast");
 
         translationBuilder.add(ItemsRegistry.UBE_CAKE.get(), "Ube Cake");
         translationBuilder.add(ItemsRegistry.UBE_CAKE_SLICE.get(), "Ube Cake Slice");

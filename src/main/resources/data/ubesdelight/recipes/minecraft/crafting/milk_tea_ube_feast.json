@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "   ",
+    "ABA",
+    " A "
+  ],
+  "key": {
+    "A": {
+      "item": "ubesdelight:milk_tea_ube_feast"
+    },
+    "B": {
+      "tag": "c:milk"
+    }
+  },
+  "result": {
+    "item": "ubesdelight:milk_tea_ube_feast"
+  }
+}

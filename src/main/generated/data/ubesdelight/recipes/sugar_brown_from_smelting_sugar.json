@@ -2,7 +2,7 @@
   "type": "minecraft:smelting",
   "cookingtime": 100,
   "experience": 0.5,
-  "group": "net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder$1@eb89a4b",
+  "group": "net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder$1@220700c1",
   "ingredient": {
     "item": "minecraft:sugar"
   },

@@ -2,7 +2,7 @@
   "type": "minecraft:smelting",
   "cookingtime": 25,
   "experience": 0.3,
-  "group": "net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder$1@eb89a4b",
+  "group": "minecraft.ubesdelight",
   "ingredient": {
     "item": "ubesdelight:raw_polvorone_ube"
   },

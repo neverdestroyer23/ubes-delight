@@ -17,6 +17,7 @@ import net.minecraft.util.registry.Registry;
 
 public enum BlocksRegistry {
 
+    KALAN("kalan", KalanBlock::new),
     UBE_CRATE("ube_crate", () -> new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).hardness(2.f).resistance(3.f).sounds(BlockSoundGroup.WOOD))),
     GARLIC_CRATE("garlic_crate", () -> new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).hardness(2.f).resistance(3.f).sounds(BlockSoundGroup.WOOD))),
     GINGER_CRATE("ginger_crate", () -> new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).hardness(2.f).resistance(3.f).sounds(BlockSoundGroup.WOOD))),
@@ -30,11 +31,12 @@ public enum BlocksRegistry {
     UBE_CROP("ube_crop", UbeCropBlock::new, true),
     GARLIC_CROP("garlic_crop", GarlicCropBlock::new, true),
     GINGER_CROP("ginger_crop", GingerCropBlock::new, true),
-    LEMONGRASS_CROP("lemongrass_crop", GingerCropBlock::new, true),
+    LEMONGRASS_CROP("lemongrass_crop", LemongrassCropBlock::new, true),
 
     UBE_CAKE("ube_cake", () -> new UbesDelightCakeBlock(ItemsRegistry.UBE_CAKE_SLICE.get()), true),
-    HALO_HALO_FEAST("halo_halo_feast", () -> new HaloHaloFeast(ItemsRegistry.HALO_HALO.get()), true);
-
+    HALO_HALO_FEAST("halo_halo_feast", () -> new HaloHaloFeast(ItemsRegistry.HALO_HALO.get()), true),
+    MILK_TEA_UBE_FEAST("milk_tea_ube_feast", () -> new DrinkableFeastBlock(ItemsRegistry.MILK_TEA_UBE.get()), true),
+    LUMPIA_FEAST("lumpia_feast", () -> new LumpiaFeast(ItemsRegistry.LUMPIA.get()), true);
     private static FlammableBlockRegistry.Entry flammable(int burnChance, @SuppressWarnings("SameParameterValue") int spreadChance) {
         return new FlammableBlockRegistry.Entry(burnChance, spreadChance);
     }

@@ -31,13 +31,13 @@ public class RecipeGenerator extends FabricRecipeProvider {
         offerShapelessRecipe(exporter, ItemsRegistry.LEMONGRASS_SEEDS.get(), ItemsRegistry.LEMONGRASS.get(), null, 1);
 
         //Crate to Vegetable
-        offerShapelessRecipe(exporter, ItemsRegistry.UBE.get(), ItemsRegistry.UBE_CRATE.get(), null, 9);
-        offerShapelessRecipe(exporter, ItemsRegistry.GARLIC.get(), ItemsRegistry.GARLIC_CRATE.get(), null, 9);
-        offerShapelessRecipe(exporter, ItemsRegistry.GINGER.get(), ItemsRegistry.GINGER_CRATE.get(), null, 9);
-        offerShapelessRecipe(exporter, ItemsRegistry.LEMONGRASS.get(), ItemsRegistry.LEMONGRASS_CRATE.get(), null, 9);
+        offerShapelessRecipe(exporter, ItemsRegistry.UBE.get(), ItemsRegistry.UBE_CRATE.get(), UbesDelightMod.ITEM_GROUP.getName(), 9);
+        offerShapelessRecipe(exporter, ItemsRegistry.GARLIC.get(), ItemsRegistry.GARLIC_CRATE.get(), UbesDelightMod.ITEM_GROUP.getName(), 9);
+        offerShapelessRecipe(exporter, ItemsRegistry.GINGER.get(), ItemsRegistry.GINGER_CRATE.get(), UbesDelightMod.ITEM_GROUP.getName(), 9);
+        offerShapelessRecipe(exporter, ItemsRegistry.LEMONGRASS.get(), ItemsRegistry.LEMONGRASS_CRATE.get(), UbesDelightMod.ITEM_GROUP.getName(), 9);
 
         //Vegetable to Crate
-        /* Moved to Manual, Must research how to add a custom condition type *//*
+        /* Moved to Manual *//*
         ShapelessRecipeJsonBuilder.create(ItemsRegistry.UBE_CRATE.get(), 1)
                 .input(ItemsRegistry.UBE.get(), 9)
                 .criterion(RecipeProvider.hasItem(ItemsRegistry.UBE.get()),
@@ -74,6 +74,7 @@ public class RecipeGenerator extends FabricRecipeProvider {
                         RecipeProvider.conditionsFromItem(ItemsRegistry.GARLIC.get()))
                 .criterion(RecipeProvider.hasItem(ItemsRegistry.GARLIC_CLOVES.get()),
                         RecipeProvider.conditionsFromItem(ItemsRegistry.GARLIC_CLOVES.get()))
+                .group(UbesDelightMod.ITEM_GROUP.getName())
                 .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(ItemsRegistry.GARLIC.get()))
                         + "_from_"
                         + RecipeProvider.getRecipeName(ItemsRegistry.GARLIC_CLOVES.get()));
@@ -85,6 +86,7 @@ public class RecipeGenerator extends FabricRecipeProvider {
                         RecipeProvider.conditionsFromItem(ItemsRegistry.UBE_CAKE.get()))
                 .criterion(RecipeProvider.hasItem(ItemsRegistry.UBE_CAKE_SLICE.get()),
                         RecipeProvider.conditionsFromItem(ItemsRegistry.UBE_CAKE_SLICE.get()))
+                .group(UbesDelightMod.ITEM_GROUP.getName())
                 .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(ItemsRegistry.UBE_CAKE.get()))
                         + "_from_"
                         + RecipeProvider.getRecipeName(ItemsRegistry.UBE_CAKE_SLICE.get()));
