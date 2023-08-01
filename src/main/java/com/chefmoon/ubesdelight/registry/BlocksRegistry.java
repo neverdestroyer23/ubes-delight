@@ -1,19 +1,14 @@
 package com.chefmoon.ubesdelight.registry;
 
 import com.chefmoon.ubesdelight.UbesDelightMod;
-import com.chefmoon.ubesdelight.block.UbeCropBlock;
-import com.chefmoon.ubesdelight.block.GarlicCropBlock;
-import com.chefmoon.ubesdelight.block.GingerCropBlock;
-import com.chefmoon.ubesdelight.block.WildCropBlock;
+import com.chefmoon.ubesdelight.block.*;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.minecraft.block.Block;
-
 import java.util.function.Supplier;
-
 import net.minecraft.block.Blocks;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.sound.BlockSoundGroup;
@@ -27,19 +22,18 @@ public enum BlocksRegistry {
     GINGER_CRATE("ginger_crate", () -> new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).hardness(2.f).resistance(3.f).sounds(BlockSoundGroup.WOOD))),
     LEMONGRASS_CRATE("lemongrass_crate", () -> new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).hardness(2.f).resistance(3.f).sounds(BlockSoundGroup.WOOD))),
 
-    //TODO: Add wild variations of each crop
     WILD_UBE("wild_ube", WildCropBlock::new, true, flammable(100,60)),
     WILD_GARLIC("wild_garlic", WildCropBlock::new, true, flammable(100,60)),
     WILD_GINGER("wild_ginger", WildCropBlock::new, true, flammable(100,60)),
     WILD_LEMONGRASS("wild_lemongrass", WildCropBlock::new, true, flammable(100,60)),
 
-
     UBE_CROP("ube_crop", UbeCropBlock::new, true),
     GARLIC_CROP("garlic_crop", GarlicCropBlock::new, true),
     GINGER_CROP("ginger_crop", GingerCropBlock::new, true),
-    LEMONGRASS_CROP("lemongrass_crop", GingerCropBlock::new, true);
+    LEMONGRASS_CROP("lemongrass_crop", GingerCropBlock::new, true),
 
-
+    UBE_CAKE("ube_cake", () -> new UbesDelightCakeBlock(ItemsRegistry.UBE_CAKE_SLICE.get()), true),
+    HALO_HALO_FEAST("halo_halo_feast", () -> new HaloHaloFeast(ItemsRegistry.HALO_HALO.get()), true);
 
     private static FlammableBlockRegistry.Entry flammable(int burnChance, @SuppressWarnings("SameParameterValue") int spreadChance) {
         return new FlammableBlockRegistry.Entry(burnChance, spreadChance);

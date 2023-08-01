@@ -4,7 +4,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "ubesdelight:ube"
+      "tag": "c:crops/ube"
     },
     {
       "item": "ubesdelight:leche_flan"

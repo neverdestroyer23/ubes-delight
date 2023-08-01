@@ -3,28 +3,28 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:ube_crate"
+        "recipe": "minecraft:ube_cake_from_ube_cake_slice"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_ube": {
+    "has_ube_cake": {
       "conditions": {
         "items": [
           {
             "items": [
-              "ubesdelight:ube"
+              "ubesdelight:ube_cake"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_ube_crate": {
+    "has_ube_cake_slice": {
       "conditions": {
         "items": [
           {
             "items": [
-              "ubesdelight:ube_crate"
+              "ubesdelight:ube_cake_slice"
             ]
           }
         ]
@@ -34,14 +34,14 @@
   },
   "requirements": [
     [
-      "has_ube",
-      "has_ube_crate",
+      "has_ube_cake",
+      "has_ube_cake_slice",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:ube_crate"
+      "minecraft:ube_cake_from_ube_cake_slice"
     ]
   }
 }

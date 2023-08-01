@@ -11,10 +11,10 @@
       "tag": "c:crops/onion"
     },
     {
-      "tag": "c:garlic/garlic"
+      "tag": "c:crops/garlic"
     },
     {
-      "item": "farmersdelight:tomato"
+      "tag": "c:crops/tomato"
     },
     {
       "tag": "c:vegetables"

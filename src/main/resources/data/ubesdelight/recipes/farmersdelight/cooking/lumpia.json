@@ -11,13 +11,10 @@
       "tag": "c:salad_ingredients"
     },
     {
-      "tag": "c:vegetables/lemongrass"
+      "tag": "c:crops/lemongrass"
     },
     {
-      "item": "minecraft:wheat"
-    },
-    {
-      "item": "minecraft:egg"
+      "tag": "c:food_wrappers/lumpia_wrapper"
     }
   ],
   "result": {

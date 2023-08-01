@@ -5,7 +5,7 @@
   "recipie_book_tab": "drinks",
   "ingredients": [
     {
-      "item": "ubesdelight:ube"
+      "tag": "c:crops/ube"
     },
     {
       "item": "minecraft:sugar"

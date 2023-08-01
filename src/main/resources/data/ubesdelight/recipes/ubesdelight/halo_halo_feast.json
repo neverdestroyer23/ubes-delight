@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "   ",
+    "ABA",
+    " A "
+  ],
+  "key": {
+    "A": {
+      "item": "ubesdelight:halo_halo"
+    },
+    "B": {
+      "tag": "c:milk"
+    }
+  },
+  "result": {
+    "item": "ubesdelight:halo_halo_feast"
+  }
+}

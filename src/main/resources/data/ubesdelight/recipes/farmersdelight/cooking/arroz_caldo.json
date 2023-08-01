@@ -11,13 +11,13 @@
       "tag": "c:grain"
     },
     {
-      "tag": "c:garlic/garlic"
+      "tag": "c:crops/garlic"
     },
     {
-      "item": "ubesdelight:ginger"
+      "tag": "c:crops/ginger"
     },
     {
-      "item": "ubesdelight:lemongrass"
+      "tag": "c:crops/lemongrass"
     },
     {
       "item": "ubesdelight:fish_sauce_bottle"

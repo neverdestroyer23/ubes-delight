@@ -23,10 +23,10 @@ public class RecipeGenerator extends FabricRecipeProvider {
     protected void generateRecipes(Consumer<RecipeJsonProvider> exporter) {
         offerSmelting(exporter, List.of(Items.SUGAR), ItemsRegistry.SUGAR_BROWN.get(), .5f,100,UbesDelightMod.ITEM_GROUP.toString());
 
-        offerSmelting(exporter, List.of(ItemsRegistry.RAW_POLVORONE.get()), ItemsRegistry.POLVORONE.get(), .3F, 25, UbesDelightMod.ITEM_GROUP.toString());
-        offerSmelting(exporter, List.of(ItemsRegistry.RAW_POLVORONE_PINIPIG.get()), ItemsRegistry.POLVORONE_PINIPIG.get(), .3F, 25, UbesDelightMod.ITEM_GROUP.toString());
-        offerSmelting(exporter, List.of(ItemsRegistry.RAW_POLVORONE_UBE.get()), ItemsRegistry.POLVORONE_UBE.get(), .3F, 25, UbesDelightMod.ITEM_GROUP.toString());
-        offerSmelting(exporter, List.of(ItemsRegistry.RAW_POLVORONE_CC.get()), ItemsRegistry.POLVORONE_CC.get(), .3F, 25, UbesDelightMod.ITEM_GROUP.toString());
+        offerSmelting(exporter, List.of(ItemsRegistry.RAW_POLVORONE.get()), ItemsRegistry.POLVORONE.get(), .3F, 25, UbesDelightMod.ITEM_GROUP.getName());
+        offerSmelting(exporter, List.of(ItemsRegistry.RAW_POLVORONE_PINIPIG.get()), ItemsRegistry.POLVORONE_PINIPIG.get(), .3F, 25, UbesDelightMod.ITEM_GROUP.getName());
+        offerSmelting(exporter, List.of(ItemsRegistry.RAW_POLVORONE_UBE.get()), ItemsRegistry.POLVORONE_UBE.get(), .3F, 25, UbesDelightMod.ITEM_GROUP.getName());
+        offerSmelting(exporter, List.of(ItemsRegistry.RAW_POLVORONE_CC.get()), ItemsRegistry.POLVORONE_CC.get(), .3F, 25, UbesDelightMod.ITEM_GROUP.getName());
 
         offerShapelessRecipe(exporter, ItemsRegistry.LEMONGRASS_SEEDS.get(), ItemsRegistry.LEMONGRASS.get(), null, 1);
 
@@ -37,6 +37,7 @@ public class RecipeGenerator extends FabricRecipeProvider {
         offerShapelessRecipe(exporter, ItemsRegistry.LEMONGRASS.get(), ItemsRegistry.LEMONGRASS_CRATE.get(), null, 9);
 
         //Vegetable to Crate
+        /* Moved to Manual, Must research how to add a custom condition type *//*
         ShapelessRecipeJsonBuilder.create(ItemsRegistry.UBE_CRATE.get(), 1)
                 .input(ItemsRegistry.UBE.get(), 9)
                 .criterion(RecipeProvider.hasItem(ItemsRegistry.UBE.get()),
@@ -65,7 +66,7 @@ public class RecipeGenerator extends FabricRecipeProvider {
                 .criterion(RecipeProvider.hasItem(ItemsRegistry.LEMONGRASS_CRATE.get()),
                         RecipeProvider.conditionsFromItem(ItemsRegistry.LEMONGRASS_CRATE.get()))
                 .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(ItemsRegistry.LEMONGRASS_CRATE.get())));
-
+        */
         //Partial to full Vegetables
         ShapelessRecipeJsonBuilder.create(ItemsRegistry.GARLIC.get(), 1)
                 .input(ItemsRegistry.GARLIC_CLOVES.get(), 2)
@@ -73,25 +74,19 @@ public class RecipeGenerator extends FabricRecipeProvider {
                         RecipeProvider.conditionsFromItem(ItemsRegistry.GARLIC.get()))
                 .criterion(RecipeProvider.hasItem(ItemsRegistry.GARLIC_CLOVES.get()),
                         RecipeProvider.conditionsFromItem(ItemsRegistry.GARLIC_CLOVES.get()))
-                .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(ItemsRegistry.GARLIC.get())));
+                .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(ItemsRegistry.GARLIC.get()))
+                        + "_from_"
+                        + RecipeProvider.getRecipeName(ItemsRegistry.GARLIC_CLOVES.get()));
 
-        //Cookies with full vegetables
-        ShapelessRecipeJsonBuilder.create(ItemsRegistry.COOKIE_UBE.get(), 8)
-                .input(ItemsRegistry.UBE.get())
-                .input(Items.WHEAT, 2)
-                .criterion(RecipeProvider.hasItem(ItemsRegistry.UBE.get()),
-                        RecipeProvider.conditionsFromItem(ItemsRegistry.UBE.get()))
-                .criterion(RecipeProvider.hasItem(Items.WHEAT),
-                        RecipeProvider.conditionsFromItem(Items.WHEAT))
-                .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(ItemsRegistry.COOKIE_UBE.get())));
-
-        ShapelessRecipeJsonBuilder.create(ItemsRegistry.COOKIE_GINGER.get(), 8)
-                .input(ItemsRegistry.GINGER.get())
-                .input(Items.WHEAT, 2)
-                .criterion(RecipeProvider.hasItem(ItemsRegistry.GINGER.get()),
-                        RecipeProvider.conditionsFromItem(ItemsRegistry.GINGER.get()))
-                .criterion(RecipeProvider.hasItem(Items.WHEAT),
-                        RecipeProvider.conditionsFromItem(Items.WHEAT))
-                .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(ItemsRegistry.COOKIE_GINGER.get())));
+        //Cake Slices to Cake
+        ShapelessRecipeJsonBuilder.create(ItemsRegistry.UBE_CAKE.get(), 1)
+                .input(ItemsRegistry.UBE_CAKE_SLICE.get(), 7)
+                .criterion(RecipeProvider.hasItem(ItemsRegistry.UBE_CAKE.get()),
+                        RecipeProvider.conditionsFromItem(ItemsRegistry.UBE_CAKE.get()))
+                .criterion(RecipeProvider.hasItem(ItemsRegistry.UBE_CAKE_SLICE.get()),
+                        RecipeProvider.conditionsFromItem(ItemsRegistry.UBE_CAKE_SLICE.get()))
+                .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(ItemsRegistry.UBE_CAKE.get()))
+                        + "_from_"
+                        + RecipeProvider.getRecipeName(ItemsRegistry.UBE_CAKE_SLICE.get()));
     }
 }

@@ -13,7 +13,5 @@ public class DataGeneration implements DataGeneratorEntrypoint {
         fabricDataGenerator.addProvider(TranslationGenerator::new);
         fabricDataGenerator.addProvider(new LootTableGenerator(fabricDataGenerator, LootContextTypes.BLOCK));
         //fabricDataGenerator.addProvider(LootTableGenerator::new);
-
-
     }
 }

@@ -1,24 +1,24 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_lemongrass": {
+    "has_garlic": {
       "conditions": {
         "items": [
           {
             "items": [
-              "ubesdelight:lemongrass"
+              "ubesdelight:garlic"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_lemongrass_crate": {
+    "has_garlic_cloves": {
       "conditions": {
         "items": [
           {
             "items": [
-              "ubesdelight:lemongrass_crate"
+              "ubesdelight:garlic_cloves"
             ]
           }
         ]
@@ -27,21 +27,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:lemongrass_crate"
+        "recipe": "minecraft:garlic_from_garlic_cloves"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_lemongrass",
-      "has_lemongrass_crate",
+      "has_garlic",
+      "has_garlic_cloves",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:lemongrass_crate"
+      "minecraft:garlic_from_garlic_cloves"
     ]
   }
 }

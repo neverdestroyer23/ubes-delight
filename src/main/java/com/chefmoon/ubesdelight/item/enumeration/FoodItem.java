@@ -47,7 +47,10 @@ public enum FoodItem {
     //Sweets
     LECHE_FLAN(3, .4f),
     COOKIES(2, .1f, null,.0f, false, true, false),
-    POLVORONE(2, .2f, null,.0f, false, true, false);
+    POLVORONE(2, .2f, null,.0f, false, true, false),
+
+    //Slices
+    UBE_CAKE_SLICE(2, .1f, () -> new StatusEffectInstance(StatusEffects.NIGHT_VISION, ConsumableItem.BRIEF_DURATION, 0), 1.f, false, true, false);
 
     private final Supplier<FoodComponent> food;
     FoodItem(int hunger, float saturation) {

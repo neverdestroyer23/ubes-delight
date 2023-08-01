@@ -52,6 +52,7 @@ public class ModelGenerator extends FabricModelProvider {
         itemModelGenerator.register(ItemsRegistry.FISH_SAUCE_BOTTLE.get(), Models.GENERATED);
         itemModelGenerator.register(ItemsRegistry.MILK_POWDER.get(), Models.GENERATED);
         itemModelGenerator.register(ItemsRegistry.SUGAR_BROWN.get(), Models.GENERATED);
+        itemModelGenerator.register(ItemsRegistry.LUMPIA_WRAPPER.get(), Models.GENERATED);
 
         itemModelGenerator.register(ItemsRegistry.MILK_TEA_UBE.get(), Models.GENERATED);
         itemModelGenerator.register(ItemsRegistry.HALO_HALO.get(), Models.GENERATED);
@@ -70,5 +71,10 @@ public class ModelGenerator extends FabricModelProvider {
         itemModelGenerator.register(ItemsRegistry.RAW_POLVORONE_PINIPIG.get(), Models.GENERATED);
         itemModelGenerator.register(ItemsRegistry.RAW_POLVORONE_UBE.get(), Models.GENERATED);
         itemModelGenerator.register(ItemsRegistry.RAW_POLVORONE_CC.get(), Models.GENERATED);
+
+        itemModelGenerator.register(ItemsRegistry.HALO_HALO_FEAST.get(), Models.GENERATED);
+
+        itemModelGenerator.register(ItemsRegistry.UBE_CAKE.get(), Models.GENERATED);
+        itemModelGenerator.register(ItemsRegistry.UBE_CAKE_SLICE.get(), Models.GENERATED);
     }
 }

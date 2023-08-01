@@ -1,8 +1,9 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "misc",
   "ingredients": [
     {
-      "item": "ubesdelight:ube"
+      "tag": "c:crops/ginger"
     },
     {
       "item": "minecraft:wheat"
@@ -13,6 +14,6 @@
   ],
   "result": {
     "count": 8,
-    "item": "ubesdelight:cookie_ube"
+    "item": "ubesdelight:cookie_ginger"
   }
 }

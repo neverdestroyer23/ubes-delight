@@ -6,9 +6,12 @@ import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
+import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
+import net.fabricmc.fabric.api.resource.conditions.v1.ResourceConditions;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTables;
 import net.minecraft.loot.entry.LootTableEntry;
@@ -16,6 +19,8 @@ import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.village.TradeOffer;
+import net.minecraft.village.VillagerProfession;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.gen.GenerationStep;
@@ -54,14 +59,16 @@ public class UbesDelightMod implements ModInitializer {
 
         registerCompostables();
         registerLootTable();
-
         registerBiomeModifications();
-
-        //registerVillagerTradeOffer()
+        registerVillagerTradeOffer();
     }
 
     private void initConfiguration() {
         CONFIG = Configuration.load();
+
+        //TODO: Fix JSONDataLoader?
+        ResourceConditions.register(new Identifier(MOD_ID, "ud_crates_enabled"),
+                jsonObject -> UbesDelightMod.CONFIG.isEnableUDCropCrates());
     }
 
     private void registerCompostables() {
@@ -69,6 +76,7 @@ public class UbesDelightMod implements ModInitializer {
         CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.LEMONGRASS_SEEDS.get(), .3f);
 
         CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.GARLIC_CLOVES.get(), .4f);
+        CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.LUMPIA_WRAPPER.get(), .4f);
 
         CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.WILD_UBE.get(), .65f);
         CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.WILD_GARLIC.get(), .65f);
@@ -126,7 +134,73 @@ public class UbesDelightMod implements ModInitializer {
     }
     private void registerVillagerTradeOffer() {
         if (UbesDelightMod.CONFIG.isFarmersBuyUDCrops()) {
-            //TODO: register trade offers
+            TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER,1,
+                    factories -> {
+                        factories.add(((entity, random) -> new TradeOffer(
+                                new ItemStack(Items.EMERALD, 1),
+                                new ItemStack(ItemsRegistry.UBE.get(), 26),
+                                16, 2, 0.05f
+                        )));
+                    });
+            TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER,1,
+                    factories -> {
+                        factories.add(((entity, random) -> new TradeOffer(
+                                new ItemStack(Items.EMERALD, 1),
+                                new ItemStack(ItemsRegistry.GARLIC.get(), 26),
+                                16, 2, 0.05f
+                        )));
+                    });
+            TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER,1,
+                    factories -> {
+                        factories.add(((entity, random) -> new TradeOffer(
+                                new ItemStack(Items.EMERALD, 1),
+                                new ItemStack(ItemsRegistry.GINGER.get(), 26),
+                                16, 2, 0.05f
+                        )));
+                    });
+            TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER,2,
+                    factories -> {
+                        factories.add(((entity, random) -> new TradeOffer(
+                                new ItemStack(Items.EMERALD, 1),
+                                new ItemStack(ItemsRegistry.LEMONGRASS.get(), 20),
+                                16, 5, 0.05f
+                        )));
+                    });
+        }
+
+        if (UbesDelightMod.CONFIG.isWanderingTraderSellsUDItems()) {
+            TradeOfferHelper.registerWanderingTraderOffers(1,
+                    factories -> {
+                        factories.add(((entity, random) -> new TradeOffer(
+                                new ItemStack(Items.EMERALD, 1),
+                                new ItemStack(ItemsRegistry.UBE.get(), 1),
+                                1, 12, 0.05f
+                        )));
+                    });
+            TradeOfferHelper.registerWanderingTraderOffers(1,
+                    factories -> {
+                        factories.add(((entity, random) -> new TradeOffer(
+                                new ItemStack(Items.EMERALD, 1),
+                                new ItemStack(ItemsRegistry.GARLIC.get(), 1),
+                                1, 12, 0.05f
+                        )));
+                    });
+            TradeOfferHelper.registerWanderingTraderOffers(1,
+                    factories -> {
+                        factories.add(((entity, random) -> new TradeOffer(
+                                new ItemStack(Items.EMERALD, 1),
+                                new ItemStack(ItemsRegistry.GINGER.get(), 1),
+                                1, 12, 0.05f
+                        )));
+                    });
+            TradeOfferHelper.registerWanderingTraderOffers(1,
+                    factories -> {
+                        factories.add(((entity, random) -> new TradeOffer(
+                                new ItemStack(Items.EMERALD, 1),
+                                new ItemStack(ItemsRegistry.LEMONGRASS_SEEDS.get(), 1),
+                                1, 12, 0.05f
+                        )));
+                    });
         }
     }
 }

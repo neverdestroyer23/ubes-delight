@@ -51,6 +51,7 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(ItemsRegistry.FISH_SAUCE_BOTTLE.get(), "Fish Sauce Bottle");
         translationBuilder.add(ItemsRegistry.MILK_POWDER.get(), "Milk Powder");
         translationBuilder.add(ItemsRegistry.SUGAR_BROWN.get(), "Brown Sugar");
+        translationBuilder.add(ItemsRegistry.LUMPIA_WRAPPER.get(), "Lumpia Wrapper");
 
         translationBuilder.add(ItemsRegistry.MILK_TEA_UBE.get(), "Ube Milk Tea");
         translationBuilder.add(ItemsRegistry.HALO_HALO.get(), "Halo Halo");
@@ -69,5 +70,10 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(ItemsRegistry.RAW_POLVORONE_PINIPIG.get(), "Raw Pinipig Polvorone");
         translationBuilder.add(ItemsRegistry.RAW_POLVORONE_UBE.get(), "Raw Ube Polvorone");
         translationBuilder.add(ItemsRegistry.RAW_POLVORONE_CC.get(), "Raw Cookies and Cream Polvorone");
+
+        translationBuilder.add(ItemsRegistry.HALO_HALO_FEAST.get(), "Halo Halo Feast");
+
+        translationBuilder.add(ItemsRegistry.UBE_CAKE.get(), "Ube Cake");
+        translationBuilder.add(ItemsRegistry.UBE_CAKE_SLICE.get(), "Ube Cake Slice");
     }
 }
