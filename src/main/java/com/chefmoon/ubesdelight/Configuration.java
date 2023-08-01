@@ -2,7 +2,6 @@ package com.chefmoon.ubesdelight;
 
 import com.google.gson.GsonBuilder;
 import net.fabricmc.loader.api.FabricLoader;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.Reader;

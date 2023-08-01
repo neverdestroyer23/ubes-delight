@@ -32,7 +32,7 @@ import net.minecraft.world.WorldView;
 public class UbesDelightCakeBlock extends Block {
 
     public static final int MAX_BITES = 7;
-    public static final IntProperty BITES = IntProperty.of("bites", 0, 7);
+    public static final IntProperty BITES = IntProperty.of("bites", 0, 6);
     protected static final VoxelShape SHAPE = Block.createCuboidShape(1.d, .0d, 1.d, 15.d, 8.d, 15.d);
     protected static VoxelShape[] BITES_TO_SHAPE;
     public final Item cakeSlice;

@@ -3,7 +3,7 @@
   "category": "misc",
   "cookingtime": 100,
   "experience": 0.5,
-  "group": "ResourceKey[minecraft:creative_mode_tab / ubesdelight:group]",
+  "group": "minecraft:ubesdelight",
   "ingredient": {
     "item": "minecraft:sugar"
   },

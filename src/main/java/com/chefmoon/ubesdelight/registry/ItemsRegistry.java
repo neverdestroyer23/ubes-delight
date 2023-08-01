@@ -1,7 +1,6 @@
 package com.chefmoon.ubesdelight.registry;
 
 import com.chefmoon.ubesdelight.UbesDelightMod;
-import com.chefmoon.ubesdelight.block.HaloHaloFeast;
 import com.chefmoon.ubesdelight.item.ConsumableItem;
 import com.chefmoon.ubesdelight.item.DrinkableItem;
 import com.chefmoon.ubesdelight.item.ModBlockItem;
@@ -24,6 +23,8 @@ import static com.chefmoon.ubesdelight.item.ModItemSettings.food;
 
 public enum ItemsRegistry {
 
+    //Heat Source
+    KALAN("kalan", () -> new ModBlockItem(BlocksRegistry.KALAN.get(),new ModItemSettings(),true)),
 
     //Vegetable Crates
     UBE_CRATE("ube_crate", () -> new ModBlockItem((BlocksRegistry.UBE_CRATE.get()))),
@@ -88,6 +89,8 @@ public enum ItemsRegistry {
 
     //Feasts
     HALO_HALO_FEAST("halo_halo_feast", () -> new ModBlockItem(BlocksRegistry.HALO_HALO_FEAST.get(), new ModItemSettings().maxCount(1))),
+    MILK_TEA_UBE_FEAST("milk_tea_ube_feast", () -> new ModBlockItem(BlocksRegistry.MILK_TEA_UBE_FEAST.get(), new ModItemSettings().maxCount(1))),
+    LUMPIA_FEAST("lumpia_feast", () -> new ModBlockItem(BlocksRegistry.LUMPIA_FEAST.get(), new ModItemSettings().maxCount(1))),
 
     //Cakes
     UBE_CAKE("ube_cake", () -> new ModBlockItem(BlocksRegistry.UBE_CAKE.get(), new ModItemSettings().maxCount(1))),

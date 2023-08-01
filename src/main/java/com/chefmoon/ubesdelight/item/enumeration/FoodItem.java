@@ -16,8 +16,8 @@ public enum FoodItem {
     LEMONGRASS(2, .4f),
 
     //Finger Foods
-    SINANGAG(4, .35f, null,.0f, false, false, false),
-    KINILAW(6, .6f, null,.0f, true, false, false),
+    SINANGAG(7, .45f, () -> new StatusEffectInstance(EffectsRegistry.COMFORT.get(), ConsumableItem.BRIEF_DURATION, 0), 1.f),
+    KINILAW(6, .6f, () -> new StatusEffectInstance(EffectsRegistry.COMFORT.get(), ConsumableItem.SHORT_DURATION, 0), 1.f, true, false, false),
     LUMPIA(7, .7f, null,0.f, true, false, false),
     TOCINO(8, .7f, null,.0f, true, true, false),
     CHICKEN_INASAL(8, .7f, null,.0f, true, true, false),

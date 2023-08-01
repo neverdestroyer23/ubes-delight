@@ -20,26 +20,22 @@ import net.minecraft.world.WorldView;
 import java.util.Set;
 
 public class WildCropBlock extends PlantBlock implements Fertilizable {
-    public static final Set<Block> PLANT_ON_LIST = Set.of(Blocks.DIRT, Blocks.GRASS_BLOCK, Blocks.SAND, Blocks.RED_SAND);
+    public static final Set<Block> PLANT_ON_LIST = Set.of(Blocks.DIRT, Blocks.GRASS_BLOCK, Blocks.PODZOL);
 
     protected static final VoxelShape SHAPE = Block.createCuboidShape(2.d, .0d, 2.d, 14.d, 13.d, 14.d);
 
     public WildCropBlock() {
-        this(OffsetType.XZ);
-    }
-
-    public WildCropBlock(OffsetType offsetType) {
-        super(FabricBlockSettings.copyOf(Blocks.TALL_GRASS).sounds(BlockSoundGroup.CROP).offset(offsetType));
+        super(FabricBlockSettings.copyOf(Blocks.TALL_GRASS).sounds(BlockSoundGroup.CROP).offset(OffsetType.XZ));
     }
 
     @Override
     public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient) {
-        return false;
+        return true;
     }
 
     @Override
     public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
-        return false;
+        return (double) random.nextFloat() < .8f;
     }
 
     @Override
@@ -66,7 +62,7 @@ public class WildCropBlock extends PlantBlock implements Fertilizable {
         }
 
         if (world.isAir(neighborsBlockPos) && state.canPlaceAt(world, neighborsBlockPos)) {
-            world.setBlockState(neighborsBlockPos, state, 1 << 2);
+            world.setBlockState(neighborsBlockPos, state, 1 << 1);
         }
     }
 

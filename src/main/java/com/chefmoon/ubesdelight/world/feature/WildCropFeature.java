@@ -64,6 +64,16 @@ public class WildCropFeature extends Feature<WildCropConfiguration> {
             }
         }
 
+        for (int m = 0; m < tries; ++m) {
+            mutablePos.set(origin,
+                    random.nextInt(xzSpread) - random.nextInt(xzSpread),
+                    random.nextInt(ySpread) - random.nextInt(ySpread),
+                    random.nextInt(xzSpread) - random.nextInt(xzSpread));
+            if (config.tertiaryFeature().value().generate(world, context.getGenerator(), random, mutablePos)) {
+                ++i;
+            }
+        }
+
         return i > 0;
     }
 

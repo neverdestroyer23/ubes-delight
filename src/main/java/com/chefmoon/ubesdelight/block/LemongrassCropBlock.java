@@ -8,6 +8,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 
 public class LemongrassCropBlock extends CropBlock {
+    //TODO: Make 2 tall
     private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[]{
             Block.createCuboidShape(.0d, .0d, .0d, 16.d, 2.d, 16.d),
             Block.createCuboidShape(.0d, .0d, .0d, 16.d, 3.d, 16.d),

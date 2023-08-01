@@ -11,7 +11,7 @@ public enum SettingsInfo {
             Entry.bool("enableUDCropCrates", () -> UbesDelightMod.CONFIG.isEnableUDCropCrates(),
                     newValue -> UbesDelightMod.CONFIG.setEnableUDCropCrates(newValue), true,
                     "Ube's Delight adds crates (3x3) for vanilla crops, similar to",
-                    "Farmer's Delight. Should they be craftable?"),
+                    "Farmer's Delight. Should they be craftable? Requires Restart."),
             Entry.bool("farmersBuyUDCrops", () -> UbesDelightMod.CONFIG.isFarmersBuyUDCrops(),
                     newValue -> UbesDelightMod.CONFIG.setFarmersBuyUDCrops(newValue), true,
                     "Should Novice and Apprentice Farmers buy this mod's crops? (May",
@@ -19,7 +19,7 @@ public enum SettingsInfo {
             Entry.bool("wanderingTraderSellsFDItems", () -> UbesDelightMod.CONFIG.isWanderingTraderSellsUDItems(),
                     newValue -> UbesDelightMod.CONFIG.setWanderingTraderSellsUDItems(newValue), true,
                     "Should the Wandering Trader sell some of this mod's items? (Currently",
-                    "includes crop seeds and onions)")),
+                    "includes crop seeds)")),
 
     WILD_UBE("Wild Ube Generation", true,
             Entry.bool("generateWildUbe", () -> UbesDelightMod.CONFIG.isGenerateWildUbe(),

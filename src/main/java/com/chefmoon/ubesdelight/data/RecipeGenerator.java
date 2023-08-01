@@ -24,23 +24,23 @@ public class RecipeGenerator extends FabricRecipeProvider {
     @Override
     public void generate(Consumer<RecipeJsonProvider> exporter) {
 
-        offerSmelting(exporter, List.of(Items.SUGAR), RecipeCategory.MISC ,ItemsRegistry.SUGAR_BROWN.get(), .5f,100,UbesDelightMod.ITEM_GROUP.toString());
+        offerSmelting(exporter, List.of(Items.SUGAR), RecipeCategory.MISC ,ItemsRegistry.SUGAR_BROWN.get(), .5f,100,UbesDelightMod.ITEM_GROUP.getValue().toString());
 
-        offerSmelting(exporter, List.of(ItemsRegistry.RAW_POLVORONE.get()), RecipeCategory.FOOD, ItemsRegistry.POLVORONE.get(), .3F, 25, UbesDelightMod.ITEM_GROUP.toString());
-        offerSmelting(exporter, List.of(ItemsRegistry.RAW_POLVORONE_PINIPIG.get()), RecipeCategory.FOOD, ItemsRegistry.POLVORONE_PINIPIG.get(), .3F, 25, UbesDelightMod.ITEM_GROUP.toString());
-        offerSmelting(exporter, List.of(ItemsRegistry.RAW_POLVORONE_UBE.get()), RecipeCategory.FOOD, ItemsRegistry.POLVORONE_UBE.get(), .3F, 25, UbesDelightMod.ITEM_GROUP.toString());
-        offerSmelting(exporter, List.of(ItemsRegistry.RAW_POLVORONE_CC.get()), RecipeCategory.FOOD, ItemsRegistry.POLVORONE_CC.get(), .3F, 25, UbesDelightMod.ITEM_GROUP.toString());
+        offerSmelting(exporter, List.of(ItemsRegistry.RAW_POLVORONE.get()), RecipeCategory.FOOD, ItemsRegistry.POLVORONE.get(), .3F, 25, UbesDelightMod.ITEM_GROUP.getValue().toString());
+        offerSmelting(exporter, List.of(ItemsRegistry.RAW_POLVORONE_PINIPIG.get()), RecipeCategory.FOOD, ItemsRegistry.POLVORONE_PINIPIG.get(), .3F, 25, UbesDelightMod.ITEM_GROUP.getValue().toString());
+        offerSmelting(exporter, List.of(ItemsRegistry.RAW_POLVORONE_UBE.get()), RecipeCategory.FOOD, ItemsRegistry.POLVORONE_UBE.get(), .3F, 25, UbesDelightMod.ITEM_GROUP.getValue().toString());
+        offerSmelting(exporter, List.of(ItemsRegistry.RAW_POLVORONE_CC.get()), RecipeCategory.FOOD, ItemsRegistry.POLVORONE_CC.get(), .3F, 25, UbesDelightMod.ITEM_GROUP.getValue().toString());
 
-        offerShapelessRecipe(exporter, ItemsRegistry.LEMONGRASS_SEEDS.get(), ItemsRegistry.LEMONGRASS.get(), null, 1);
+        offerShapelessRecipe(exporter, ItemsRegistry.LEMONGRASS_SEEDS.get(), ItemsRegistry.LEMONGRASS.get(), UbesDelightMod.ITEM_GROUP.getValue().toString(), 1);
 
         //Crate to Vegetable
-        offerShapelessRecipe(exporter, ItemsRegistry.UBE.get(), ItemsRegistry.UBE_CRATE.get(), null, 9);
-        offerShapelessRecipe(exporter, ItemsRegistry.GARLIC.get(), ItemsRegistry.GARLIC_CRATE.get(), null, 9);
-        offerShapelessRecipe(exporter, ItemsRegistry.GINGER.get(), ItemsRegistry.GINGER_CRATE.get(), null, 9);
-        offerShapelessRecipe(exporter, ItemsRegistry.LEMONGRASS.get(), ItemsRegistry.LEMONGRASS_CRATE.get(), null, 9);
+        offerShapelessRecipe(exporter, ItemsRegistry.UBE.get(), ItemsRegistry.UBE_CRATE.get(), UbesDelightMod.ITEM_GROUP.getValue().toString(), 9);
+        offerShapelessRecipe(exporter, ItemsRegistry.GARLIC.get(), ItemsRegistry.GARLIC_CRATE.get(), UbesDelightMod.ITEM_GROUP.getValue().toString(), 9);
+        offerShapelessRecipe(exporter, ItemsRegistry.GINGER.get(), ItemsRegistry.GINGER_CRATE.get(), UbesDelightMod.ITEM_GROUP.getValue().toString(), 9);
+        offerShapelessRecipe(exporter, ItemsRegistry.LEMONGRASS.get(), ItemsRegistry.LEMONGRASS_CRATE.get(), UbesDelightMod.ITEM_GROUP.getValue().toString(), 9);
 
         //Vegetable to Crate
-        /* Moved to Manual, Must research how to add a custom condition type *//*
+        /* Moved to Manual *//*
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ItemsRegistry.UBE_CRATE.get(), 1)
                 .input(ItemsRegistry.UBE.get(), 9)
                 .criterion(RecipeProvider.hasItem(ItemsRegistry.UBE.get()),
@@ -77,6 +77,7 @@ public class RecipeGenerator extends FabricRecipeProvider {
                         RecipeProvider.conditionsFromItem(ItemsRegistry.GARLIC.get()))
                 .criterion(RecipeProvider.hasItem(ItemsRegistry.GARLIC_CLOVES.get()),
                         RecipeProvider.conditionsFromItem(ItemsRegistry.GARLIC_CLOVES.get()))
+                .group(UbesDelightMod.ITEM_GROUP.getValue().toString())
                 .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(ItemsRegistry.GARLIC.get()))
                         + "_from_"
                         + RecipeProvider.getRecipeName(ItemsRegistry.GARLIC_CLOVES.get()));
@@ -88,6 +89,7 @@ public class RecipeGenerator extends FabricRecipeProvider {
                         RecipeProvider.conditionsFromItem(ItemsRegistry.UBE_CAKE.get()))
                 .criterion(RecipeProvider.hasItem(ItemsRegistry.UBE_CAKE_SLICE.get()),
                         RecipeProvider.conditionsFromItem(ItemsRegistry.UBE_CAKE_SLICE.get()))
+                .group(UbesDelightMod.ITEM_GROUP.getValue().toString())
                 .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(ItemsRegistry.UBE_CAKE.get()))
                         + "_from_"
                         + RecipeProvider.getRecipeName(ItemsRegistry.UBE_CAKE_SLICE.get()));
