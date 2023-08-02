@@ -2,7 +2,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "ubesdelight:garlic"
+      "tag": "c:crops/garlic"
     }
   ],
   "result": [
