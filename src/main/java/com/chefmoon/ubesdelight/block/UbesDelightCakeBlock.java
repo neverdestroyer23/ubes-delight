@@ -32,9 +32,15 @@ import net.minecraft.world.WorldView;
 public class UbesDelightCakeBlock extends Block {
 
     public static final int MAX_BITES = 7;
-    public static final IntProperty BITES = IntProperty.of("bites", 0, 6);
-    protected static final VoxelShape SHAPE = Block.createCuboidShape(1.d, .0d, 1.d, 15.d, 8.d, 15.d);
-    protected static VoxelShape[] BITES_TO_SHAPE;
+    public static final IntProperty BITES = IntProperty.of("bites", 0, MAX_BITES-1);
+    protected static VoxelShape[] BITES_TO_SHAPE = new VoxelShape[] {
+            Block.createCuboidShape(1.0, 0.0, 1.0, 15.0, 8.0, 15.0),
+            Block.createCuboidShape(3.0, 0.0, 1.0, 15.0, 8.0, 15.0),
+            Block.createCuboidShape(5.0, 0.0, 1.0, 15.0, 8.0, 15.0),
+            Block.createCuboidShape(7.0, 0.0, 1.0, 15.0, 8.0, 15.0),
+            Block.createCuboidShape(9.0, 0.0, 1.0, 15.0, 8.0, 15.0),
+            Block.createCuboidShape(11.0, 0.0, 1.0, 15.0, 8.0, 15.0),
+            Block.createCuboidShape(13.0, 0.0, 1.0, 15.0, 8.0, 15.0)};
     public final Item cakeSlice;
 
     public UbesDelightCakeBlock(Item cakeSlice) {
@@ -42,7 +48,6 @@ public class UbesDelightCakeBlock extends Block {
         this.cakeSlice = cakeSlice;
         this.setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(BITES, 0));
     }
-
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(new Property[]{BITES});
     }
@@ -85,7 +90,7 @@ public class UbesDelightCakeBlock extends Block {
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return SHAPE;
+        return BITES_TO_SHAPE[(Integer)state.get(BITES)];
     }
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {

@@ -40,6 +40,31 @@
           }
         }
       ]
+    },
+    {
+      "name": "pool3",
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.02,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "name": "ubesdelight:poisonous_ube"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "ubesdelight:ube_crop",
+          "properties": {
+            "age": "7"
+          }
+        }
+      ]
     }
   ],
   "functions": [

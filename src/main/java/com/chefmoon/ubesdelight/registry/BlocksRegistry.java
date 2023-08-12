@@ -36,6 +36,7 @@ public enum BlocksRegistry {
     LEMONGRASS_CROP("lemongrass_crop", LemongrassCropBlock::new, true),
 
     UBE_CAKE("ube_cake", () -> new UbesDelightCakeBlock(ItemsRegistry.UBE_CAKE_SLICE.get()), true),
+    LECHE_FLAN_FEAST("leche_flan_feast", () -> new LecheFlanFeast(ItemsRegistry.LECHE_FLAN.get()), true),
     HALO_HALO_FEAST("halo_halo_feast", () -> new HaloHaloFeast(ItemsRegistry.HALO_HALO.get()), true),
     MILK_TEA_UBE_FEAST("milk_tea_ube_feast", () -> new DrinkableFeastBlock(ItemsRegistry.MILK_TEA_UBE.get()), true),
     LUMPIA_FEAST("lumpia_feast", () -> new LumpiaFeast(ItemsRegistry.LUMPIA.get()), true);

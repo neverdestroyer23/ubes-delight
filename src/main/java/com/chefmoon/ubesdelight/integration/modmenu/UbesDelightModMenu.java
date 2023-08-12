@@ -25,7 +25,7 @@ public class UbesDelightModMenu implements ModMenuApi {
         ConfigBuilder builder = ConfigBuilder.create()
                 .setParentScreen(parent)
                 .setSavingRunnable(() -> Configuration.save(UbesDelightMod.CONFIG))
-                .setTitle(Text.literal("Ube's Delight Config"));
+                .setTitle(Text.literal("Ube's Delight Config")); //TODO: make translatable
         ConfigEntryBuilder entryBuilder = builder.entryBuilder();
 
         Arrays.stream(SettingsInfo.values()).filter(category -> !category.isChild()).forEach(category -> buildCategory(builder, entryBuilder, category));

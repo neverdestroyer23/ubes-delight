@@ -46,6 +46,7 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(ItemsRegistry.ARROZ_CALDO.get(), "Arroz Caldo");
         translationBuilder.add(ItemsRegistry.MECHADO.get(), "Mechado");
 
+        translationBuilder.add(ItemsRegistry.POISONOUS_UBE.get(), "Poisonous Ube");
         translationBuilder.add(ItemsRegistry.UBE.get(), "Ube");
         translationBuilder.add(ItemsRegistry.GARLIC.get(), "Garlic");
         translationBuilder.add(ItemsRegistry.GINGER.get(), "Ginger");
@@ -61,7 +62,8 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(ItemsRegistry.MILK_TEA_UBE.get(), "Ube Milk Tea");
         translationBuilder.add(ItemsRegistry.HALO_HALO.get(), "Halo Halo");
 
-        translationBuilder.add(ItemsRegistry.GARLIC_CLOVES.get(), "Garlic Cloves");
+        translationBuilder.add(ItemsRegistry.GARLIC_CHOP.get(), "Copped Garlic");
+        translationBuilder.add(ItemsRegistry.GINGER_CHOP.get(), "Chopped Ginger");
 
         translationBuilder.add(ItemsRegistry.LECHE_FLAN.get(), "Leche Flan");
         translationBuilder.add(ItemsRegistry.COOKIE_UBE.get(), "Ube Cookie");
@@ -76,6 +78,7 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(ItemsRegistry.RAW_POLVORONE_UBE.get(), "Raw Ube Polvorone");
         translationBuilder.add(ItemsRegistry.RAW_POLVORONE_CC.get(), "Raw Cookies and Cream Polvorone");
 
+        translationBuilder.add(ItemsRegistry.LECHE_FLAN_FEAST.get(), "Leche Flan Feast");
         translationBuilder.add(ItemsRegistry.HALO_HALO_FEAST.get(), "Halo Halo Feast");
         translationBuilder.add(ItemsRegistry.MILK_TEA_UBE_FEAST.get(), "Ube Milk Tea Feast");
         translationBuilder.add(ItemsRegistry.LUMPIA_FEAST.get(), "Lumpia Feast");

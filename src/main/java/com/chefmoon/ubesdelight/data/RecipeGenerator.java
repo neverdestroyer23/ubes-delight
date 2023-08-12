@@ -4,11 +4,11 @@ import com.chefmoon.ubesdelight.UbesDelightMod;
 import com.chefmoon.ubesdelight.registry.ItemsRegistry;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.data.server.recipe.RecipeProvider;
-import net.minecraft.data.server.recipe.RecipeJsonProvider;
-import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
-import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
+import net.minecraft.data.server.recipe.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.util.Identifier;
 
@@ -24,14 +24,12 @@ public class RecipeGenerator extends FabricRecipeProvider {
     @Override
     public void generate(Consumer<RecipeJsonProvider> exporter) {
 
-        offerSmelting(exporter, List.of(Items.SUGAR), RecipeCategory.MISC ,ItemsRegistry.SUGAR_BROWN.get(), .5f,100,UbesDelightMod.ITEM_GROUP.getValue().toString());
+        offerSmeltCampSmokeRecipe(ItemsRegistry.SUGAR_BROWN.getId(), Items.SUGAR, RecipeCategory.FOOD, ItemsRegistry.SUGAR_BROWN.get(), .5f, 200, exporter);
 
-        offerSmelting(exporter, List.of(ItemsRegistry.RAW_POLVORONE.get()), RecipeCategory.FOOD, ItemsRegistry.POLVORONE.get(), .3F, 25, UbesDelightMod.ITEM_GROUP.getValue().toString());
-        offerSmelting(exporter, List.of(ItemsRegistry.RAW_POLVORONE_PINIPIG.get()), RecipeCategory.FOOD, ItemsRegistry.POLVORONE_PINIPIG.get(), .3F, 25, UbesDelightMod.ITEM_GROUP.getValue().toString());
-        offerSmelting(exporter, List.of(ItemsRegistry.RAW_POLVORONE_UBE.get()), RecipeCategory.FOOD, ItemsRegistry.POLVORONE_UBE.get(), .3F, 25, UbesDelightMod.ITEM_GROUP.getValue().toString());
-        offerSmelting(exporter, List.of(ItemsRegistry.RAW_POLVORONE_CC.get()), RecipeCategory.FOOD, ItemsRegistry.POLVORONE_CC.get(), .3F, 25, UbesDelightMod.ITEM_GROUP.getValue().toString());
-
-        offerShapelessRecipe(exporter, ItemsRegistry.LEMONGRASS_SEEDS.get(), ItemsRegistry.LEMONGRASS.get(), UbesDelightMod.ITEM_GROUP.getValue().toString(), 1);
+        offerSmeltCampSmokeRecipe(ItemsRegistry.POLVORONE.getId(), ItemsRegistry.RAW_POLVORONE.get(), RecipeCategory.FOOD, ItemsRegistry.POLVORONE.get(), .3F, 100, exporter);
+        offerSmeltCampSmokeRecipe(ItemsRegistry.POLVORONE_PINIPIG.getId(), ItemsRegistry.RAW_POLVORONE_PINIPIG.get(), RecipeCategory.FOOD, ItemsRegistry.POLVORONE_PINIPIG.get(), .3F, 100, exporter);
+        offerSmeltCampSmokeRecipe(ItemsRegistry.POLVORONE_UBE.getId(), ItemsRegistry.RAW_POLVORONE_UBE.get(), RecipeCategory.FOOD, ItemsRegistry.POLVORONE_UBE.get(), .3F, 100, exporter);
+        offerSmeltCampSmokeRecipe(ItemsRegistry.POLVORONE_CC.getId(), ItemsRegistry.RAW_POLVORONE_CC.get(), RecipeCategory.FOOD, ItemsRegistry.POLVORONE_CC.get(), .3F, 100, exporter);
 
         //Crate to Vegetable
         offerShapelessRecipe(exporter, ItemsRegistry.UBE.get(), ItemsRegistry.UBE_CRATE.get(), UbesDelightMod.ITEM_GROUP.getValue().toString(), 9);
@@ -70,17 +68,39 @@ public class RecipeGenerator extends FabricRecipeProvider {
                         RecipeProvider.conditionsFromItem(ItemsRegistry.LEMONGRASS_CRATE.get()))
                 .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(ItemsRegistry.LEMONGRASS_CRATE.get())));
         */
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ItemsRegistry.LEMONGRASS_SEEDS.get(), 1)
+                .input(ItemsRegistry.LEMONGRASS.get())
+                .criterion(RecipeProvider.hasItem(ItemsRegistry.LEMONGRASS_SEEDS.get()),
+                        RecipeProvider.conditionsFromItem(ItemsRegistry.LEMONGRASS_SEEDS.get()))
+                .criterion(RecipeProvider.hasItem(ItemsRegistry.LEMONGRASS.get()),
+                        RecipeProvider.conditionsFromItem(ItemsRegistry.LEMONGRASS.get()))
+                .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(ItemsRegistry.LEMONGRASS_SEEDS.get()))
+                        + "_from_"
+                        + RecipeProvider.getRecipeName(ItemsRegistry.LEMONGRASS.get()));
+
         //Partial to full Vegetables
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ItemsRegistry.GARLIC.get(), 1)
-                .input(ItemsRegistry.GARLIC_CLOVES.get(), 2)
+                .input(ItemsRegistry.GARLIC_CHOP.get(), 2)
                 .criterion(RecipeProvider.hasItem(ItemsRegistry.GARLIC.get()),
                         RecipeProvider.conditionsFromItem(ItemsRegistry.GARLIC.get()))
-                .criterion(RecipeProvider.hasItem(ItemsRegistry.GARLIC_CLOVES.get()),
-                        RecipeProvider.conditionsFromItem(ItemsRegistry.GARLIC_CLOVES.get()))
+                .criterion(RecipeProvider.hasItem(ItemsRegistry.GARLIC_CHOP.get()),
+                        RecipeProvider.conditionsFromItem(ItemsRegistry.GARLIC_CHOP.get()))
                 .group(UbesDelightMod.ITEM_GROUP.getValue().toString())
                 .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(ItemsRegistry.GARLIC.get()))
                         + "_from_"
-                        + RecipeProvider.getRecipeName(ItemsRegistry.GARLIC_CLOVES.get()));
+                        + RecipeProvider.getRecipeName(ItemsRegistry.GARLIC_CHOP.get()));
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ItemsRegistry.GINGER.get(), 1)
+                .input(ItemsRegistry.GINGER_CHOP.get(), 2)
+                .criterion(RecipeProvider.hasItem(ItemsRegistry.GINGER.get()),
+                        RecipeProvider.conditionsFromItem(ItemsRegistry.GINGER.get()))
+                .criterion(RecipeProvider.hasItem(ItemsRegistry.GINGER_CHOP.get()),
+                        RecipeProvider.conditionsFromItem(ItemsRegistry.GINGER_CHOP.get()))
+                .group(UbesDelightMod.ITEM_GROUP.getValue().toString())
+                .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(ItemsRegistry.GINGER.get()))
+                        + "_from_"
+                        + RecipeProvider.getRecipeName(ItemsRegistry.GINGER_CHOP.get()));
 
         //Cake Slices to Cake
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ItemsRegistry.UBE_CAKE.get(), 1)
@@ -94,6 +114,46 @@ public class RecipeGenerator extends FabricRecipeProvider {
                         + "_from_"
                         + RecipeProvider.getRecipeName(ItemsRegistry.UBE_CAKE_SLICE.get()));
 
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ItemsRegistry.LECHE_FLAN_FEAST.get(), 1)
+                .input(ItemsRegistry.LECHE_FLAN.get(), 5)
+                .criterion(RecipeProvider.hasItem(ItemsRegistry.LECHE_FLAN_FEAST.get()),
+                        RecipeProvider.conditionsFromItem(ItemsRegistry.LECHE_FLAN_FEAST.get()))
+                .criterion(RecipeProvider.hasItem(ItemsRegistry.LECHE_FLAN.get()),
+                        RecipeProvider.conditionsFromItem(ItemsRegistry.LECHE_FLAN.get()))
+                .group(UbesDelightMod.MOD_ID)
+                .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(ItemsRegistry.LECHE_FLAN_FEAST.get()))
+                        + "_from_"
+                        + RecipeProvider.getRecipeName(ItemsRegistry.LECHE_FLAN.get()));
+    }
 
+    private static void offerSmeltCampSmokeRecipe(String name, Item input, RecipeCategory category, ItemConvertible output, float experience, int cookingTime, Consumer<RecipeJsonProvider> exporter) {
+
+        int smeltingTime = cookingTime;
+        int campfireTime = cookingTime * 3;
+        int smokingTime = cookingTime/2;
+
+        // Smelting
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(input), category, output, experience, smeltingTime)
+                .criterion(RecipeProvider.hasItem(input),
+                        RecipeProvider.conditionsFromItem(input))
+                .criterion(RecipeProvider.hasItem(output),
+                        RecipeProvider.conditionsFromItem(output))
+                .offerTo(exporter, name + "_from_" + input);
+
+        // Campfire
+        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(input), category, output, experience, campfireTime)
+                .criterion(RecipeProvider.hasItem(input),
+                        RecipeProvider.conditionsFromItem(input))
+                .criterion(RecipeProvider.hasItem(output),
+                        RecipeProvider.conditionsFromItem(output))
+                .offerTo(exporter, name + "_from_" + input + "_from_campfire_cooking");
+
+        // Smoking
+        CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems(input), category, output, experience, smokingTime)
+                .criterion(RecipeProvider.hasItem(input),
+                        RecipeProvider.conditionsFromItem(input))
+                .criterion(RecipeProvider.hasItem(output),
+                        RecipeProvider.conditionsFromItem(output))
+                .offerTo(exporter, name + "_from_" + input + "_from_smoking");
     }
 }

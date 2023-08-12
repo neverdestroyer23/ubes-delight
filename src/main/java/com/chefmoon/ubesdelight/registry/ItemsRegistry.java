@@ -39,6 +39,7 @@ public enum ItemsRegistry {
     WILD_LEMONGRASS("wild_lemongrass", () -> new ModBlockItem(BlocksRegistry.WILD_LEMONGRASS.get())),
 
     //Items
+    POISONOUS_UBE("poisonous_ube", () -> new Item(base())),
     UBE("ube", () -> new AliasedBlockItem(BlocksRegistry.UBE_CROP.get(), food(FoodItem.UBE))),
     GARLIC("garlic", () -> new AliasedBlockItem(BlocksRegistry.GARLIC_CROP.get(), food(FoodItem.GARLIC))),
     GINGER("ginger", () -> new AliasedBlockItem(BlocksRegistry.GINGER_CROP.get(), food(FoodItem.GINGER))),
@@ -72,10 +73,10 @@ public enum ItemsRegistry {
     HALO_HALO("halo_halo", () -> new DrinkableItem(food(FoodItem.HALO_HALO, Items.GLASS_BOTTLE, 16), true)),
 
     //Partial Vegetables
-    GARLIC_CLOVES("garlic_cloves", () -> new Item(food(FoodItem.GARLIC_CLOVES))),
+    GARLIC_CHOP("garlic_chop", () -> new Item(food(FoodItem.GARLIC_CHOP))),
+    GINGER_CHOP("ginger_chop", () -> new Item(food(FoodItem.GINGER_CHOP))),
 
     //Sweets
-    LECHE_FLAN("leche_flan", () -> new Item(food(FoodItem.LECHE_FLAN))),
     COOKIE_UBE("cookie_ube", () -> new Item(food(FoodItem.COOKIES))),
     COOKIE_GINGER("cookie_ginger", () -> new Item(food(FoodItem.COOKIES))),
     POLVORONE("polvorone", () -> new Item(food(FoodItem.POLVORONE))),
@@ -92,10 +93,11 @@ public enum ItemsRegistry {
     MILK_TEA_UBE_FEAST("milk_tea_ube_feast", () -> new ModBlockItem(BlocksRegistry.MILK_TEA_UBE_FEAST.get(), new ModItemSettings().maxCount(1))),
     LUMPIA_FEAST("lumpia_feast", () -> new ModBlockItem(BlocksRegistry.LUMPIA_FEAST.get(), new ModItemSettings().maxCount(1))),
 
+    LECHE_FLAN_FEAST("leche_flan_feast", () -> new ModBlockItem(BlocksRegistry.LECHE_FLAN_FEAST.get(), new ModItemSettings().maxCount(1))),
+    LECHE_FLAN("leche_flan", () -> new Item(food(FoodItem.LECHE_FLAN))),
+
     //Cakes
     UBE_CAKE("ube_cake", () -> new ModBlockItem(BlocksRegistry.UBE_CAKE.get(), new ModItemSettings().maxCount(1))),
-
-    //Cake Slices
     UBE_CAKE_SLICE("ube_cake_slice", () -> new Item(food(FoodItem.UBE_CAKE_SLICE)));
 
 

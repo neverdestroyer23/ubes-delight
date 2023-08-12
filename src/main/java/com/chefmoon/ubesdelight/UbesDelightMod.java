@@ -5,7 +5,11 @@ import com.chefmoon.ubesdelight.registry.*;
 import com.chefmoon.ubesdelight.util.GeneralRegistryUtil;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.fabric.api.resource.conditions.v1.ResourceConditions;
+import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.loader.api.ModContainer;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
@@ -50,5 +54,11 @@ public class UbesDelightMod implements ModInitializer {
 
         ResourceConditions.register(new Identifier(MOD_ID, "ud_crates_enabled"),
                 jsonObject -> UbesDelightMod.CONFIG.isEnableUDCropCrates());
+
+        ResourceConditions.register(new Identifier(MOD_ID, "garlic_compat"),
+                jsonObject -> UbesDelightMod.CONFIG.isEnableGarlicCompat());
+
+        ResourceConditions.register(new Identifier(MOD_ID, "ginger_compat"),
+                jsonObject -> UbesDelightMod.CONFIG.isEnableGingerCompat());
     }
 }

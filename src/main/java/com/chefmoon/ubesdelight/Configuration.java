@@ -1,5 +1,6 @@
 package com.chefmoon.ubesdelight;
 
+import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import net.fabricmc.loader.api.FabricLoader;
 import java.io.File;
@@ -29,6 +30,10 @@ public final class Configuration {
     private boolean generateWildLemongrass = true;
     private int chanceWildLemongrass = 80;
 
+    // Integration
+    private boolean enableGarlicCompat = false;
+    private boolean enableGingerCompat = false;
+
     public Configuration() {
     }
 
@@ -45,7 +50,6 @@ public final class Configuration {
             reader.close();
         } catch (IOException e) {
             UbesDelightMod.LOGGER.error("Error while trying to load configuration file. Default configuration used.", e);
-            System.out.println("Error while trying to load configuration file. Default configuration used."+e);
         }
 
         return configuration;
@@ -59,7 +63,6 @@ public final class Configuration {
             writer.close();
         } catch (IOException e) {
             UbesDelightMod.LOGGER.error("Error while trying to save configuration file.", e);
-            System.out.println("Error while trying to save configuration file."+e);
         }
     }
 
@@ -166,4 +169,19 @@ public final class Configuration {
         this.chanceWildLemongrass = chanceWildLemongrass;
     }
 
+    public boolean isEnableGarlicCompat() {
+        return enableGarlicCompat;
+    }
+
+    public void setEnableGarlicCompat(boolean enableGarlicCompat) {
+        this.enableGarlicCompat = enableGarlicCompat;
+    }
+
+    public boolean isEnableGingerCompat() {
+        return enableGingerCompat;
+    }
+
+    public void setEnableGingerCompat(boolean enableGingerCompat) {
+        this.enableGingerCompat = enableGingerCompat;
+    }
 }

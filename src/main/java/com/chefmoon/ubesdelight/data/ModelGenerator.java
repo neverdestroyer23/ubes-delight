@@ -11,9 +11,6 @@ public class ModelGenerator extends FabricModelProvider {
     public ModelGenerator(FabricDataOutput dataGenerator) {
         super(dataGenerator);
     }
-
-    private static java.lang.Integer AGE_PROPERTY = 3;
-
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
 
@@ -27,6 +24,7 @@ public class ModelGenerator extends FabricModelProvider {
         itemModelGenerator.register(ItemsRegistry.WILD_GINGER.get(), Models.GENERATED);
         itemModelGenerator.register(ItemsRegistry.WILD_LEMONGRASS.get(), Models.GENERATED);
 
+        itemModelGenerator.register(ItemsRegistry.POISONOUS_UBE.get(), Models.GENERATED);
         itemModelGenerator.register(ItemsRegistry.UBE.get(), Models.GENERATED);
         itemModelGenerator.register(ItemsRegistry.GARLIC.get(), Models.GENERATED);
         itemModelGenerator.register(ItemsRegistry.GINGER.get(), Models.GENERATED);
@@ -56,9 +54,9 @@ public class ModelGenerator extends FabricModelProvider {
         itemModelGenerator.register(ItemsRegistry.MILK_TEA_UBE.get(), Models.GENERATED);
         itemModelGenerator.register(ItemsRegistry.HALO_HALO.get(), Models.GENERATED);
 
-        itemModelGenerator.register(ItemsRegistry.GARLIC_CLOVES.get(), Models.GENERATED);
+        itemModelGenerator.register(ItemsRegistry.GARLIC_CHOP.get(), Models.GENERATED);
+        itemModelGenerator.register(ItemsRegistry.GINGER_CHOP.get(), Models.GENERATED);
 
-        itemModelGenerator.register(ItemsRegistry.LECHE_FLAN.get(), Models.GENERATED);
         itemModelGenerator.register(ItemsRegistry.COOKIE_UBE.get(), Models.GENERATED);
         itemModelGenerator.register(ItemsRegistry.COOKIE_GINGER.get(), Models.GENERATED);
 
@@ -75,6 +73,8 @@ public class ModelGenerator extends FabricModelProvider {
         itemModelGenerator.register(ItemsRegistry.MILK_TEA_UBE_FEAST.get(), Models.GENERATED);
         itemModelGenerator.register(ItemsRegistry.LUMPIA_FEAST.get(), Models.GENERATED);
 
+        itemModelGenerator.register(ItemsRegistry.LECHE_FLAN_FEAST.get(), Models.GENERATED);
+        itemModelGenerator.register(ItemsRegistry.LECHE_FLAN.get(), Models.GENERATED);
         itemModelGenerator.register(ItemsRegistry.UBE_CAKE.get(), Models.GENERATED);
         itemModelGenerator.register(ItemsRegistry.UBE_CAKE_SLICE.get(), Models.GENERATED);
     }

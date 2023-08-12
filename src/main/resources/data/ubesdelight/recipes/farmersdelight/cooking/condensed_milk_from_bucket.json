@@ -4,16 +4,16 @@
   "recipie_book_tab": "drinks",
   "ingredients": [
     {
-      "item": "minecraft:sugar"
+      "tag": "c:tea_ingredients/sweet/weak"
     },
     {
-      "item": "minecraft:sugar"
+      "tag": "c:tea_ingredients/sweet/weak"
     },
     {
-      "item": "minecraft:sugar"
+      "tag": "c:tea_ingredients/sweet/weak"
     },
     {
-      "item": "minecraft:sugar"
+      "tag": "c:tea_ingredients/sweet/weak"
     },
     {
       "item": "minecraft:milk_bucket"

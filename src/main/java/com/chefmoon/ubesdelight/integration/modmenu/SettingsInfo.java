@@ -55,7 +55,15 @@ public enum SettingsInfo {
     CLIENT("Client Settings", false,
             Entry.bool("foodEffectTooltip", () -> UbesDelightMod.CONFIG.isFoodEffectTooltip(),
                     newValue -> UbesDelightMod.CONFIG.setFoodEffectTooltip(newValue), true,
-                    "Should meal and drink tooltips display which effects they provide?"));
+                    "Should meal and drink tooltips display which effects they provide?")),
+
+    INTEGRATION("Integration", false,
+            Entry.bool("enableGarlicCompat", () -> UbesDelightMod.CONFIG.isEnableGarlicCompat(),
+                    newValue -> UbesDelightMod.CONFIG.setEnableGarlicCompat(newValue), true,
+                    "This allows all c:crops/garlic to be chopped into Chopped Garlic?"),
+            Entry.bool("enableGingerCompat", () -> UbesDelightMod.CONFIG.isEnableGingerCompat(),
+                        newValue -> UbesDelightMod.CONFIG.setEnableGingerCompat(newValue), true,
+                    "This allows all c:crops/ginger to be chopped into Chopped Ginger?"));
 
     private final String text;
     private final Entry<?>[] entries;

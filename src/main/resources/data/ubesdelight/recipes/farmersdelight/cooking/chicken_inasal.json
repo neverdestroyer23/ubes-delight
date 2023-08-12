@@ -11,10 +11,10 @@
       "tag": "c:crops/lemongrass"
     },
     {
-      "item": "ubesdelight:sugar_brown"
+      "tag": "c:tea_ingredients/sweet/weak"
     },
     {
-      "tag": "c:crops/ginger"
+      "tag": "c:vegetables/ginger"
     }
   ],
   "result": {
