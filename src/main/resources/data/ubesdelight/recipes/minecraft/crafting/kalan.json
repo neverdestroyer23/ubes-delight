@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "A": {
-      "tag": "c:terracotta_blocks"
+      "tag": "minecraft:terracotta"
     },
     "B": {
       "item": "minecraft:campfire"
@@ -13,8 +13,8 @@
     }
   },
   "pattern": [
-    "CCC",
-    "A A",
+    "AAA",
+    "ACA",
     "ABA"
   ],
   "result": {

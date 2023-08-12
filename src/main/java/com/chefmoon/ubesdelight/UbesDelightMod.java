@@ -63,5 +63,11 @@ public class UbesDelightMod implements ModInitializer {
 
         ResourceConditions.register(new Identifier(MOD_ID, "ud_crates_enabled"),
                 jsonObject -> UbesDelightMod.CONFIG.isEnableUDCropCrates());
+
+        ResourceConditions.register(new Identifier(MOD_ID, "garlic_compat"),
+                jsonObject -> UbesDelightMod.CONFIG.isEnableGarlicCompat());
+
+        ResourceConditions.register(new Identifier(MOD_ID, "ginger_compat"),
+                jsonObject -> UbesDelightMod.CONFIG.isEnableGingerCompat());
     }
 }

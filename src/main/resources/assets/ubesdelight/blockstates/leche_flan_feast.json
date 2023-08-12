@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "bites=0": {
+      "model": "ubesdelight:block/leche_flan_feast"
+    },
+    "bites=1": {
+      "model": "ubesdelight:block/leche_flan_feast_bite1"
+    },
+    "bites=2": {
+      "model": "ubesdelight:block/leche_flan_feast_bite2"
+    },
+    "bites=3": {
+      "model": "ubesdelight:block/leche_flan_feast_bite3"
+    },
+    "bites=4": {
+      "model": "ubesdelight:block/leche_flan_feast_bite4"
+    }
+  }
+}

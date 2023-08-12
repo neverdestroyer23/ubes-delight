@@ -6,7 +6,7 @@
       "tag": "c:milk"
     },
     "B": {
-      "item": "minecraft:sugar"
+      "tag": "c:tea_ingredients/sweet/weak"
     },
     "C": {
       "item": "minecraft:wheat"

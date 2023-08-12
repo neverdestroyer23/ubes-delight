@@ -8,10 +8,10 @@
       "tag": "c:raw_pork"
     },
     {
-      "item": "minecraft:sugar"
+      "tag": "c:tea_ingredients/sweet/weak"
     },
     {
-      "tag": "c:crops/garlic"
+      "tag": "c:vegetables/garlic"
     },
     {
       "item": "minecraft:beetroot"

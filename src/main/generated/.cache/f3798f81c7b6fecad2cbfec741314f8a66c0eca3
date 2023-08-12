@@ -1,7 +1,8 @@
-// 1.19.2	2023-08-01T16:17:45.4007207	Models
+// 1.19.2	2023-08-11T19:15:05.6587251	Models
 ee7fcbb3b6805eb2f4fb5e65bf420163621b15fb assets\ubesdelight\models\item\lemongrass.json
 728f39c7ff5ec93ddab73f1faaea58e1329c09e5 assets\ubesdelight\models\item\raw_polvorone_cc.json
 12e1351d99b98c201b5aadcac735bc322cc78882 assets\ubesdelight\models\item\cookie_ginger.json
+439ab0858c33c4a49a3fcf69c28b770190c8b8ea assets\ubesdelight\models\item\poisonous_ube.json
 b9c7af58107614cbc0dd4ad6928cc0c4cb55326d assets\ubesdelight\models\item\sugar_brown.json
 83cb43290041e4cbf0ae9d5c5b4fa5d9e199d035 assets\ubesdelight\models\item\wild_garlic.json
 ddb8b609c1ca323572120a2d0e32ef30c3e96025 assets\ubesdelight\models\item\leche_flan.json
@@ -16,6 +17,8 @@ baa3e0638ab21154a2b39389cf75d201bf5b08fa assets\ubesdelight\models\item\ube_cake
 e3a56c86a0aa15d35e599ab3ab5882da41737a6d assets\ubesdelight\models\item\mechado.json
 09f02950e466433edc14581766942c076ac2ce54 assets\ubesdelight\models\item\ube_cake.json
 8de458a3e824a909cbd53f4d36f7bfef742d7c0d assets\ubesdelight\models\item\wild_ube.json
+9cc8333f1c9979065ff6eedc652e38ef5c7408bc assets\ubesdelight\models\item\ginger_chop.json
+2322d5bda1231791d4aa7b4f0993efb815a93dd5 assets\ubesdelight\models\item\leche_flan_feast.json
 726f2a80eefae6d1bbbc97447fbd9b967951e26d assets\ubesdelight\models\item\milk_tea_ube_feast.json
 7f23d74eced6bc2d771d709fb04221c9e38087fa assets\ubesdelight\models\item\cookie_ube.json
 09a6c7ab266b33a59e126bd74889c44b2187eb04 assets\ubesdelight\models\item\ube.json
@@ -28,7 +31,6 @@ c6372bcef2d7a88bc36e80c7a6231c0ddfa2ed8d assets\ubesdelight\models\item\polvoron
 4d87754a99f0db38f7c2295be75e52c5b2fd0a8a assets\ubesdelight\models\item\milk_tea_ube.json
 1592ceb7aed4635f97772ada8ad8f51a114c036a assets\ubesdelight\models\item\ginger.json
 f4c007d8427c0b0b58a8f752714ea8746828495f assets\ubesdelight\models\item\halo_halo_feast.json
-5c521bc1c8fcd5ee2b8dd1159213d544c4b5ec4a assets\ubesdelight\models\item\garlic_cloves.json
 79806f73047a28e28718e169c4dcc315d07d1995 assets\ubesdelight\models\item\wild_lemongrass.json
 0124f6ccd5ce470c4e0cad773b55f90e44902ae9 assets\ubesdelight\models\item\raw_polvorone_pinipig.json
 ba986b4a8aa8e44aa1d1e1e805d467c4b873bfa2 assets\ubesdelight\models\item\lumpia_wrapper.json
@@ -38,6 +40,7 @@ e830c54b1c88a40421ff2d7599db9ac1e2747052 assets\ubesdelight\models\item\chicken_
 a70584b1af7e5e1c269a8844abc92fc4a1ee4577 assets\ubesdelight\models\item\condensed_milk_bottle.json
 b93d064f3b52f3709af0d34a0f3a523fcfe798a2 assets\ubesdelight\models\item\chicken_inasal_rice.json
 106d41e03a567e7387fe67c1ab0823728130896e assets\ubesdelight\models\item\wild_ginger.json
+0899c9526c7cac255237fed43eab2555d18e95f5 assets\ubesdelight\models\item\garlic_chop.json
 f020458179307b8926668131cb4aa448676a3b8a assets\ubesdelight\models\item\garlic.json
 2321e0c9098c3c57465181db03afcfa86c63b2c9 assets\ubesdelight\models\item\lumpia_feast.json
 06bb478cee3c3e44aebcb6bef0384608847f4a62 assets\ubesdelight\models\item\sisig.json

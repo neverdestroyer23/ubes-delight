@@ -29,6 +29,10 @@ public final class Configuration {
     private boolean generateWildLemongrass = true;
     private int chanceWildLemongrass = 80;
 
+    // Integration
+    private boolean enableGarlicCompat = false;
+    private boolean enableGingerCompat = false;
+
     public Configuration() {
     }
 
@@ -164,5 +168,21 @@ public final class Configuration {
 
     public void setChanceWildLemongrass(int chanceWildLemongrass) {
         this.chanceWildLemongrass = chanceWildLemongrass;
+    }
+
+    public boolean isEnableGarlicCompat() {
+        return enableGarlicCompat;
+    }
+
+    public void setEnableGarlicCompat(boolean enableGarlicCompat) {
+        this.enableGarlicCompat = enableGarlicCompat;
+    }
+
+    public boolean isEnableGingerCompat() {
+        return enableGingerCompat;
+    }
+
+    public void setEnableGingerCompat(boolean enableGingerCompat) {
+        this.enableGingerCompat = enableGingerCompat;
     }
 }

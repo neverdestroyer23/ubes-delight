@@ -13,7 +13,8 @@ public class MiscUtil {
 
         CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.LEMONGRASS_SEEDS.get(), .3f);
 
-        CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.GARLIC_CLOVES.get(), .4f);
+        CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.GARLIC_CHOP.get(), .4f);
+        CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.GINGER_CHOP.get(), .4f);
         CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.LUMPIA_WRAPPER.get(), .4f);
 
         CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.WILD_UBE.get(), .65f);

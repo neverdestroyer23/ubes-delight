@@ -42,7 +42,8 @@ public enum FoodItem {
     HALO_HALO(0, 0, () -> new StatusEffectInstance(EffectsRegistry.NOURISHMENT.get(), ConsumableItem.MEDIUM_DURATION, 0), 1.f, false, false, true),
 
     //Non-whole vegetables
-    GARLIC_CLOVES(1, .4f),
+    GARLIC_CHOP(1, .4f),
+    GINGER_CHOP(1, .4f),
 
     //Sweets
     LECHE_FLAN(3, .4f),
