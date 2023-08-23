@@ -121,7 +121,7 @@ public class LumpiaFeast extends Block {
 
     @Override
     public int getComparatorOutput(BlockState state, World world, BlockPos pos) {
-        return state.get(getServingsProperty());
+        return MAX_SERVINGS - state.get(SERVINGS);
     }
 
     public IntProperty getServingsProperty() {

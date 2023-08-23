@@ -75,7 +75,7 @@
   "ubesdelight.modmenu.title.worldgeneration": "World generation",
   "ubesdelight.modmenu.tooltip.enableGarlicCompat": "This allows all c:crops/garlic to be chopped into Chopped Garlic?",
   "ubesdelight.modmenu.tooltip.enableGingerCompat": "This allows all c:crops/ginger to be chopped into Chopped Ginger?",
-  "ubesdelight.modmenu.tooltip.enableudcropcrates": "Ube's Delight adds crates (3x3) for vanilla crops, similar to Farmer's Delight. Should they be craftable? Requires Restart.",
+  "ubesdelight.modmenu.tooltip.enableudcropcrates": "Ube's Delight adds crates (3x3) for vanilla crops, similar to Farmer's Delight. Should they be craftable? Requires Reload.",
   "ubesdelight.modmenu.tooltip.farmersbuyudcrops": "Should Novice and Apprentice Farmers buy this mod's crops? (May reduce chances of other trades appearing)",
   "ubesdelight.modmenu.tooltip.foodEffectTooltip": "Should meal and drink tooltips display which effects they provide?",
   "ubesdelight.modmenu.tooltip.generateUDChestLoot": "Should this mod add its seeds as extra chest loot across Minecraft?",

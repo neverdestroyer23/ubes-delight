@@ -58,7 +58,7 @@ public enum ItemsRegistry {
     UBE("ube", () -> new AliasedBlockItem(BlocksRegistry.UBE_CROP.get(), food(FoodItem.UBE))),
     GARLIC("garlic", () -> new AliasedBlockItem(BlocksRegistry.GARLIC_CROP.get(), food(FoodItem.GARLIC))),
     GINGER("ginger", () -> new AliasedBlockItem(BlocksRegistry.GINGER_CROP.get(), food(FoodItem.GINGER))),
-    LEMONGRASS("lemongrass", () -> new Item(food(FoodItem.LEMONGRASS))),
+    LEMONGRASS("lemongrass", () -> new ConsumableItem(food(FoodItem.LEMONGRASS))),
     LEMONGRASS_SEEDS("lemongrass_seeds", () -> new AliasedBlockItem(BlocksRegistry.LEMONGRASS_STALK_CROP.get(), base())),
 
     //Ingredients
@@ -67,20 +67,21 @@ public enum ItemsRegistry {
     MILK_POWDER("milk_powder", () -> new Item(base())),
     SUGAR_BROWN("sugar_brown", () -> new Item(base())),
     LUMPIA_WRAPPER("lumpia_wrapper", () -> new Item(base())),
+
     //Drinks
     MILK_TEA_UBE("milk_tea_ube", () -> new DrinkableItem(food(FoodItem.MILK_TEA_UBE, Items.GLASS_BOTTLE, 16), true)),
     HALO_HALO("halo_halo", () -> new DrinkableItem(food(FoodItem.HALO_HALO, Items.GLASS_BOTTLE, 16), true)),
 
     //Partial Vegetables
-    GARLIC_CHOP("garlic_chop", () -> new Item(food(FoodItem.GARLIC_CHOP))),
-    GINGER_CHOP("ginger_chop", () -> new Item(food(FoodItem.GINGER_CHOP))),
+    GARLIC_CHOP("garlic_chop", () -> new ConsumableItem(food(FoodItem.GARLIC_CHOP))),
+    GINGER_CHOP("ginger_chop", () -> new ConsumableItem(food(FoodItem.GINGER_CHOP))),
 
     //Finger Foods
-    SINANGAG("sinangag", () -> new ConsumableItem(food(FoodItem.SINANGAG, Items.BOWL, 16))),
-    KINILAW("kinilaw", () -> new ConsumableItem(food(FoodItem.KINILAW, Items.BOWL, 16))),
-    LUMPIA("lumpia", () -> new Item(food(FoodItem.LUMPIA))),
-    TOCINO("tocino", () -> new Item(food(FoodItem.TOCINO))),
-    CHICKEN_INASAL("chicken_inasal", () -> new Item(food(FoodItem.CHICKEN_INASAL))),
+    SINANGAG("sinangag", () -> new ConsumableItem(food(FoodItem.SINANGAG, Items.BOWL, 16), true)),
+    KINILAW("kinilaw", () -> new ConsumableItem(food(FoodItem.KINILAW, Items.BOWL, 16), true)),
+    LUMPIA("lumpia", () -> new ConsumableItem(food(FoodItem.LUMPIA))),
+    TOCINO("tocino", () -> new ConsumableItem(food(FoodItem.TOCINO))),
+    CHICKEN_INASAL("chicken_inasal", () -> new ConsumableItem(food(FoodItem.CHICKEN_INASAL))),
 
     //Meals
     CHICKEN_INASAL_RICE("chicken_inasal_rice", () -> new ConsumableItem(food(FoodItem.CHICKEN_INASAL_RICE, Items.BOWL, 16), true)),
@@ -92,19 +93,19 @@ public enum ItemsRegistry {
     MECHADO("mechado", () -> new ConsumableItem(food(FoodItem.MECHADO, Items.BOWL, 16), true)),
 
     //Sweets
-    COOKIE_UBE("cookie_ube", () -> new Item(food(FoodItem.COOKIES))),
-    COOKIE_GINGER("cookie_ginger", () -> new Item(food(FoodItem.COOKIES))),
-    POLVORONE("polvorone", () -> new Item(food(FoodItem.POLVORONE))),
-    POLVORONE_PINIPIG("polvorone_pinipig", () -> new Item(food(FoodItem.POLVORONE))),
-    POLVORONE_UBE("polvorone_ube", () -> new Item(food(FoodItem.POLVORONE))),
-    POLVORONE_CC("polvorone_cc", () -> new Item(food(FoodItem.POLVORONE))),
+    COOKIE_UBE("cookie_ube", () -> new ConsumableItem(food(FoodItem.COOKIES))),
+    COOKIE_GINGER("cookie_ginger", () -> new ConsumableItem(food(FoodItem.COOKIES))),
+    POLVORONE("polvorone", () -> new ConsumableItem(food(FoodItem.POLVORONE))),
+    POLVORONE_PINIPIG("polvorone_pinipig", () -> new ConsumableItem(food(FoodItem.POLVORONE))),
+    POLVORONE_UBE("polvorone_ube", () -> new ConsumableItem(food(FoodItem.POLVORONE))),
+    POLVORONE_CC("polvorone_cc", () -> new ConsumableItem(food(FoodItem.POLVORONE))),
     RAW_POLVORONE("raw_polvorone", () -> new Item(base())),
     RAW_POLVORONE_PINIPIG("raw_polvorone_pinipig", () -> new Item(base())),
     RAW_POLVORONE_UBE("raw_polvorone_ube", () -> new Item(base())),
     RAW_POLVORONE_CC("raw_polvorone_cc", () -> new Item(base())),
 
-    LECHE_FLAN("leche_flan", () -> new Item(food(FoodItem.LECHE_FLAN))),
-    UBE_CAKE_SLICE("ube_cake_slice", () -> new Item(food(FoodItem.UBE_CAKE_SLICE)));
+    LECHE_FLAN("leche_flan", () -> new ConsumableItem(food(FoodItem.LECHE_FLAN))),
+    UBE_CAKE_SLICE("ube_cake_slice", () -> new ConsumableItem(food(FoodItem.UBE_CAKE_SLICE), true));
 
 
     private final String pathName;

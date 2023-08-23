@@ -5,7 +5,7 @@
   "recipie_book_tab": "misc",
   "ingredients": [
     {
-      "item": "farmersdelight:milk_bottle"
+      "tag": "c:milk/milk_bottle"
     }
   ],
   "result": {
