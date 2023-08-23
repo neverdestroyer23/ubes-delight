@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ginger": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ubesdelight:ginger"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_ginger_chop": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ubesdelight:ginger_chop"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:minecraft/crafting/ginger_from_ginger_chop"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_ginger",
+      "has_ginger_chop",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:minecraft/crafting/ginger_from_ginger_chop"
+    ]
+  },
+  "sends_telemetry_event": false
+}

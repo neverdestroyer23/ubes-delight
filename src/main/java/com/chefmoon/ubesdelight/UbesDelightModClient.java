@@ -20,6 +20,11 @@ public class UbesDelightModClient  implements ClientModInitializer {
             FabricLoader.getInstance().getModContainer(UbesDelightMod.MOD_ID).ifPresent(udsupporteatinganimation ->
                     ResourceManagerHelper.registerBuiltinResourcePack(new Identifier("udsupporteatinganimation"), udsupporteatinganimation, ResourcePackActivationType.DEFAULT_ENABLED));
         }
+
+        //ModMessages.registerC2SPackets();
+        //ModMessages.registerS2CPackets();
+
+        //BlockEntityRendererRegistryImpl.register(BlockEntityTypesRegistry.BAKING_MAT.get(), BakingMatBlockEntityRender::new);
     }
     public static boolean isModLoaded(String modId) {
         for (ModContainer modContainer : FabricLoader.getInstance().getAllMods()) {

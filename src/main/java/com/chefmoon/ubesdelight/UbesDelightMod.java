@@ -5,11 +5,7 @@ import com.chefmoon.ubesdelight.registry.*;
 import com.chefmoon.ubesdelight.util.GeneralRegistryUtil;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
-import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.fabric.api.resource.conditions.v1.ResourceConditions;
-import net.fabricmc.loader.api.FabricLoader;
-import net.fabricmc.loader.api.ModContainer;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
@@ -43,10 +39,13 @@ public class UbesDelightMod implements ModInitializer {
 
         ItemsRegistry.registerAll();
         BlocksRegistry.registerAll();
+        //BlockEntityTypesRegistry.registerAll();
         ConfiguredFeaturesRegistry.registerAll();
         PlacementModifiersRegistry.registerAll();
         BiomeFeaturesRegistry.registerAll();
         GeneralRegistryUtil.register();
+        //ModMessages.registerC2SPackets();
+        //ModMessages.registerS2CPackets();
     }
 
     private void initConfiguration() {

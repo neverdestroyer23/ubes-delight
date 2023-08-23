@@ -36,7 +36,7 @@ public class ModBlockItem extends BlockItem {
     @Override
     @Environment(value= EnvType.CLIENT)
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        if (UbesDelightMod.CONFIG.isFoodEffectTooltip()) {//TODO: add config Block tooltips? V0.1.4
+        if (UbesDelightMod.CONFIG.isFoodEffectTooltip()) {//TODO: add config Block tooltips? V0.1.5
             if (hasCustomTooltip) {
                 tooltip.add(UbesDelightMod.tooltip("tooltip." + this).formatted(Formatting.GRAY));
             }

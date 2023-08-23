@@ -17,7 +17,7 @@ Ube’s Delight is an addon mod for [Farmer's Delight Fabric](https://modrinth.c
 <br>
 <b>Food:</b> 12 new dishes to discover!
 <br>
-<b>Mod Integrations:</b> Mod Menu, Botany Pots, Create(minor), Dehydration, Supplementaries
+<b>Mod Integrations:</b> Mod Menu, Fabric Seasons, Botany Pots, Create, Dehydration, Supplementaries
 
 ### Planned Features
 <ul>
@@ -29,9 +29,9 @@ Ube’s Delight is an addon mod for [Farmer's Delight Fabric](https://modrinth.c
 ### Alpha Version
 This mod is currently in Alpha development and testing, please stay up to date with the latest version and report bugs [here](https://github.com/ChefMooon/ubes-delight/issues).
 <br>
-Minecraft 1.20.1 - 0.1.3
+Minecraft 1.20.1 - 0.1.4
 <br>
-Minecraft 1.19.2 - 0.1.3
+Minecraft 1.19.2 - 0.1.4
 <br>
 This mod is currently only available for Fabric, a Forge version may be released for V1.0.0.
 

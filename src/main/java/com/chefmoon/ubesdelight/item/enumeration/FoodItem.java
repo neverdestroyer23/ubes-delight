@@ -5,6 +5,7 @@ import com.nhoryzon.mc.farmersdelight.registry.EffectsRegistry;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.FoodComponent;
+
 import java.util.function.Supplier;
 
 public enum FoodItem {

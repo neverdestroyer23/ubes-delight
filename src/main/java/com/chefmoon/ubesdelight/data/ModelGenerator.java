@@ -1,11 +1,11 @@
 package com.chefmoon.ubesdelight.data;
 
+import com.chefmoon.ubesdelight.registry.BlocksRegistry;
 import com.chefmoon.ubesdelight.registry.ItemsRegistry;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.data.client.BlockStateModelGenerator;
-import net.minecraft.data.client.ItemModelGenerator;
-import net.minecraft.data.client.Models;
+import net.minecraft.data.client.*;
+import net.minecraft.util.Identifier;
 
 public class ModelGenerator extends FabricModelProvider {
     public ModelGenerator(FabricDataOutput dataGenerator) {
@@ -14,6 +14,15 @@ public class ModelGenerator extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
 
+        //TODO: can I get a clean blockname from the BlocksRegistry? Replace the String.
+        registerCrateBlock(BlocksRegistry.UBE_CRATE, "ube", blockStateModelGenerator);
+        registerCrateBlock(BlocksRegistry.GARLIC_CRATE, "garlic", blockStateModelGenerator);
+        registerCrateBlock(BlocksRegistry.GINGER_CRATE, "ginger", blockStateModelGenerator);
+        registerCrateBlock(BlocksRegistry.LEMONGRASS_CRATE, "lemongrass", blockStateModelGenerator);
+
+        registerVariantCrateBlock(BlocksRegistry.UBE_JUNGLE_LOG_CRATE, "ube", "jungle_log", blockStateModelGenerator);
+
+        registerVariantCrateBlock(BlocksRegistry.UBE_JUNGLE_CRATE, "ube", "jungle", blockStateModelGenerator);
     }
 
     @Override
@@ -77,5 +86,26 @@ public class ModelGenerator extends FabricModelProvider {
         itemModelGenerator.register(ItemsRegistry.LECHE_FLAN.get(), Models.GENERATED);
         itemModelGenerator.register(ItemsRegistry.UBE_CAKE.get(), Models.GENERATED);
         itemModelGenerator.register(ItemsRegistry.UBE_CAKE_SLICE.get(), Models.GENERATED);
+
+        //itemModelGenerator.register(ItemsRegistry.BAKING_MAT.get(), Models.GENERATED);
+
+    }
+
+    private static void registerCrateBlock(BlocksRegistry block, String name, BlockStateModelGenerator blockStateModelGenerator) {
+        blockStateModelGenerator.registerSingleton(block.get(),
+                (new TextureMap())
+                        .put(TextureKey.SIDE, new Identifier("ubesdelight", "block/" + name + "_crate_side"))
+                        .put(TextureKey.TOP, new Identifier("ubesdelight", "block/" + name + "_crate_top"))
+                        .put(TextureKey.BOTTOM, new Identifier("ubesdelight", "block/crate_bottom")),
+                Models.CUBE_BOTTOM_TOP);
+    }
+
+    private static void registerVariantCrateBlock(BlocksRegistry block, String name, String variant, BlockStateModelGenerator blockStateModelGenerator) {
+        blockStateModelGenerator.registerSingleton(block.get(),
+                (new TextureMap())
+                        .put(TextureKey.SIDE, new Identifier("ubesdelight", "block/" + name + "_" + variant + "_crate_side"))
+                        .put(TextureKey.TOP, new Identifier("ubesdelight", "block/" + name + "_" + variant + "_crate_top"))
+                        .put(TextureKey.BOTTOM, new Identifier("ubesdelight", "block/" + variant + "_crate_bottom")),
+                Models.CUBE_BOTTOM_TOP);
     }
 }

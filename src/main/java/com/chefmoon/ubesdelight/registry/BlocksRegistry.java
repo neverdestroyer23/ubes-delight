@@ -8,22 +8,27 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.minecraft.block.Block;
-import java.util.function.Supplier;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-import net.minecraft.registry.Registry;
+
+import java.util.function.Supplier;
 
 public enum BlocksRegistry {
 
     KALAN("kalan", KalanBlock::new),
+    BAKING_MAT("baking_mat", BakingMatBlock::new),
 
     UBE_CRATE("ube_crate", () -> new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).hardness(2.f).resistance(3.f).sounds(BlockSoundGroup.WOOD))),
     GARLIC_CRATE("garlic_crate", () -> new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).hardness(2.f).resistance(3.f).sounds(BlockSoundGroup.WOOD))),
     GINGER_CRATE("ginger_crate", () -> new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).hardness(2.f).resistance(3.f).sounds(BlockSoundGroup.WOOD))),
     LEMONGRASS_CRATE("lemongrass_crate", () -> new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).hardness(2.f).resistance(3.f).sounds(BlockSoundGroup.WOOD))),
+
+    UBE_JUNGLE_LOG_CRATE("ube_jungle_log_crate", () -> new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).hardness(2.f).resistance(3.f).sounds(BlockSoundGroup.WOOD))),
+    UBE_JUNGLE_CRATE("ube_jungle_crate", () -> new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).hardness(2.f).resistance(3.f).sounds(BlockSoundGroup.WOOD))),
 
     WILD_UBE("wild_ube", WildCropBlock::new, true, flammable(100,60)),
     WILD_GARLIC("wild_garlic", WildCropBlock::new, true, flammable(100,60)),
@@ -33,7 +38,9 @@ public enum BlocksRegistry {
     UBE_CROP("ube_crop", UbeCropBlock::new, true),
     GARLIC_CROP("garlic_crop", GarlicCropBlock::new, true),
     GINGER_CROP("ginger_crop", GingerCropBlock::new, true),
-    LEMONGRASS_CROP("lemongrass_crop", LemongrassCropBlock::new, true),
+    LEMONGRASS_CROP("lemongrass_crop", LemongrassCropBlock::new, true), //TODO: remove in V0.1.5
+    LEMONGRASS_STALK_CROP("lemongrass_stalk_crop", LemongrassStalkCropBlock::new, true),
+    LEMONGRASS_LEAF_CROP("lemongrass_leaf_crop", LemongrassLeafCropBlock::new, true),
 
     UBE_CAKE("ube_cake", () -> new UbesDelightCakeBlock(ItemsRegistry.UBE_CAKE_SLICE.get()), true),
     LECHE_FLAN_FEAST("leche_flan_feast", () -> new LecheFlanFeast(ItemsRegistry.LECHE_FLAN.get()), true),

@@ -2,8 +2,8 @@ package com.chefmoon.ubesdelight.integration.modmenu;
 
 import com.chefmoon.ubesdelight.Configuration;
 import com.chefmoon.ubesdelight.UbesDelightMod;
-import com.terraformersmc.modmenu.api.ModMenuApi;
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
+import com.terraformersmc.modmenu.api.ModMenuApi;
 import me.shedaniel.clothconfig2.api.ConfigBuilder;
 import me.shedaniel.clothconfig2.api.ConfigCategory;
 import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
@@ -25,7 +25,7 @@ public class UbesDelightModMenu implements ModMenuApi {
         ConfigBuilder builder = ConfigBuilder.create()
                 .setParentScreen(parent)
                 .setSavingRunnable(() -> Configuration.save(UbesDelightMod.CONFIG))
-                .setTitle(Text.literal("Ube's Delight Config")); //TODO: make translatable
+                .setTitle(Text.translatable("ubesdelight.modmenu.title"));
         ConfigEntryBuilder entryBuilder = builder.entryBuilder();
 
         Arrays.stream(SettingsInfo.values()).filter(category -> !category.isChild()).forEach(category -> buildCategory(builder, entryBuilder, category));
