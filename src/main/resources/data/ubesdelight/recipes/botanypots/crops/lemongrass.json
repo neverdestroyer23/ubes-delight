@@ -15,7 +15,7 @@
   "growthTicks":1200,
   "display": {
     "type":"botanypots:aging",
-    "block":"ubesdelight:lemongrass_crop"
+    "block":"ubesdelight:lemongrass_stalk_crop"
   },
   "drops": [
     {
