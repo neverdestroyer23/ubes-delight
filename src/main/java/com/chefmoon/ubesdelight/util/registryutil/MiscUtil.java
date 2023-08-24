@@ -31,7 +31,7 @@ public class MiscUtil {
         CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.UBE_CAKE_SLICE.get(), .85f);
         CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.LECHE_FLAN.get(), .85f);
 
-        CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.UBE_CAKE.get(), 1.2f);
-        CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.LECHE_FLAN_FEAST.get(), 1.2f);
+        CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.UBE_CAKE.get(), 1.f);
+        CompostingChanceRegistry.INSTANCE.add(ItemsRegistry.LECHE_FLAN_FEAST.get(), 1.f);
     }
 }
