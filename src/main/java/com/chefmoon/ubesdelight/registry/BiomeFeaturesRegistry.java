@@ -3,10 +3,11 @@ package com.chefmoon.ubesdelight.registry;
 import com.chefmoon.ubesdelight.UbesDelightMod;
 import com.chefmoon.ubesdelight.world.configuration.WildCropConfiguration;
 import com.chefmoon.ubesdelight.world.feature.WildCropFeature;
-import net.minecraft.util.registry.Registry;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.FeatureConfig;
+
 import java.util.function.Supplier;
 
 public enum BiomeFeaturesRegistry {

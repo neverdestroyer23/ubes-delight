@@ -1,7 +1,7 @@
 package com.chefmoon.ubesdelight.item.enumeration;
 
-import com.nhoryzon.mc.farmersdelight.registry.EffectsRegistry;
 import com.chefmoon.ubesdelight.item.ConsumableItem;
+import com.nhoryzon.mc.farmersdelight.registry.EffectsRegistry;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.FoodComponent;

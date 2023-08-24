@@ -24,17 +24,24 @@ public enum ItemsRegistry {
     //Heat Source
     KALAN("kalan", () -> new ModBlockItem(BlocksRegistry.KALAN.get(),new ModItemSettings(),true)),
 
+    //Wild Vegetables
+    WILD_UBE("wild_ube", () -> new ModBlockItem(BlocksRegistry.WILD_UBE.get())),
+    WILD_GARLIC("wild_garlic", () -> new ModBlockItem(BlocksRegistry.WILD_GARLIC.get())),
+    WILD_GINGER("wild_ginger", () -> new ModBlockItem(BlocksRegistry.WILD_GINGER.get())),
+    WILD_LEMONGRASS("wild_lemongrass", () -> new ModBlockItem(BlocksRegistry.WILD_LEMONGRASS.get())),
+
     //Vegetable Crates
     UBE_CRATE("ube_crate", () -> new ModBlockItem((BlocksRegistry.UBE_CRATE.get()))),
     GARLIC_CRATE("garlic_crate", () -> new ModBlockItem((BlocksRegistry.GARLIC_CRATE.get()))),
     GINGER_CRATE("ginger_crate", () -> new ModBlockItem((BlocksRegistry.GINGER_CRATE.get()))),
     LEMONGRASS_CRATE("lemongrass_crate", () -> new ModBlockItem((BlocksRegistry.LEMONGRASS_CRATE.get()))),
 
-    //Wild Vegetables
-    WILD_UBE("wild_ube", () -> new ModBlockItem(BlocksRegistry.WILD_UBE.get())),
-    WILD_GARLIC("wild_garlic", () -> new ModBlockItem(BlocksRegistry.WILD_GARLIC.get())),
-    WILD_GINGER("wild_ginger", () -> new ModBlockItem(BlocksRegistry.WILD_GINGER.get())),
-    WILD_LEMONGRASS("wild_lemongrass", () -> new ModBlockItem(BlocksRegistry.WILD_LEMONGRASS.get())),
+    //Feasts
+    UBE_CAKE("ube_cake", () -> new ModBlockItem(BlocksRegistry.UBE_CAKE.get(), new ModItemSettings().maxCount(1))),
+    LECHE_FLAN_FEAST("leche_flan_feast", () -> new ModBlockItem(BlocksRegistry.LECHE_FLAN_FEAST.get(), new ModItemSettings().maxCount(1))),
+    LUMPIA_FEAST("lumpia_feast", () -> new ModBlockItem(BlocksRegistry.LUMPIA_FEAST.get(), new ModItemSettings().maxCount(1))),
+    HALO_HALO_FEAST("halo_halo_feast", () -> new ModBlockItem(BlocksRegistry.HALO_HALO_FEAST.get(), new ModItemSettings().maxCount(1))),
+    MILK_TEA_UBE_FEAST("milk_tea_ube_feast", () -> new ModBlockItem(BlocksRegistry.MILK_TEA_UBE_FEAST.get(), new ModItemSettings().maxCount(1))),
 
     //Items
     POISONOUS_UBE("poisonous_ube", () -> new Item(base())),
@@ -42,11 +49,26 @@ public enum ItemsRegistry {
     GARLIC("garlic", () -> new AliasedBlockItem(BlocksRegistry.GARLIC_CROP.get(), food(FoodItem.GARLIC))),
     GINGER("ginger", () -> new AliasedBlockItem(BlocksRegistry.GINGER_CROP.get(), food(FoodItem.GINGER))),
     LEMONGRASS("lemongrass", () -> new Item(food(FoodItem.LEMONGRASS))),
-    LEMONGRASS_SEEDS("lemongrass_seeds", () -> new AliasedBlockItem(BlocksRegistry.LEMONGRASS_CROP.get(), base())),
+    LEMONGRASS_SEEDS("lemongrass_seeds", () -> new AliasedBlockItem(BlocksRegistry.LEMONGRASS_STALK_CROP.get(), base())),
+
+    //Ingredients
+    CONDENSED_MILK_BOTTLE("condensed_milk_bottle", () -> new DrinkableItem(food(FoodItem.CONDENSED_MILK_BOTTLE, Items.GLASS_BOTTLE, 16), true)),
+    FISH_SAUCE_BOTTLE("fish_sauce_bottle", () -> new DrinkableItem(food(FoodItem.FISH_SAUCE_BOTTLE, Items.GLASS_BOTTLE, 16), true)),
+    MILK_POWDER("milk_powder", () -> new Item(base())),
+    SUGAR_BROWN("sugar_brown", () -> new Item(base())),
+    LUMPIA_WRAPPER("lumpia_wrapper", () -> new Item(base())),
+
+    //Drinks
+    MILK_TEA_UBE("milk_tea_ube", () -> new DrinkableItem(food(FoodItem.MILK_TEA_UBE, Items.GLASS_BOTTLE, 16), true)),
+    HALO_HALO("halo_halo", () -> new DrinkableItem(food(FoodItem.HALO_HALO, Items.GLASS_BOTTLE, 16), true)),
+
+    //Partial Vegetables
+    GARLIC_CHOP("garlic_chop", () -> new Item(food(FoodItem.GARLIC_CHOP))),
+    GINGER_CHOP("ginger_chop", () -> new Item(food(FoodItem.GINGER_CHOP))),
 
     //Finger Foods
-    SINANGAG("sinangag", () -> new ConsumableItem(food(FoodItem.SINANGAG, Items.BOWL, 16))),
-    KINILAW("kinilaw", () -> new ConsumableItem(food(FoodItem.KINILAW, Items.BOWL, 16))),
+    SINANGAG("sinangag", () -> new ConsumableItem(food(FoodItem.SINANGAG, Items.BOWL, 16), true)),
+    KINILAW("kinilaw", () -> new ConsumableItem(food(FoodItem.KINILAW, Items.BOWL, 16), true)),
     LUMPIA("lumpia", () -> new Item(food(FoodItem.LUMPIA))),
     TOCINO("tocino", () -> new Item(food(FoodItem.TOCINO))),
     CHICKEN_INASAL("chicken_inasal", () -> new Item(food(FoodItem.CHICKEN_INASAL))),
@@ -60,20 +82,6 @@ public enum ItemsRegistry {
     ARROZ_CALDO("arroz_caldo", () -> new ConsumableItem(food(FoodItem.ARROZ_CALDO, Items.BOWL, 16), true)),
     MECHADO("mechado", () -> new ConsumableItem(food(FoodItem.MECHADO, Items.BOWL, 16), true)),
 
-    //Ingredients
-    CONDENSED_MILK_BOTTLE("condensed_milk_bottle", () -> new DrinkableItem(food(FoodItem.CONDENSED_MILK_BOTTLE, Items.GLASS_BOTTLE, 16), true)),
-    FISH_SAUCE_BOTTLE("fish_sauce_bottle", () -> new DrinkableItem(food(FoodItem.FISH_SAUCE_BOTTLE, Items.GLASS_BOTTLE, 16), true)),
-    MILK_POWDER("milk_powder", () -> new Item(base())),
-    SUGAR_BROWN("sugar_brown", () -> new Item(base())),
-    LUMPIA_WRAPPER("lumpia_wrapper", () -> new Item(base())),
-    //Drinks
-    MILK_TEA_UBE("milk_tea_ube", () -> new DrinkableItem(food(FoodItem.MILK_TEA_UBE, Items.GLASS_BOTTLE, 16), true)),
-    HALO_HALO("halo_halo", () -> new DrinkableItem(food(FoodItem.HALO_HALO, Items.GLASS_BOTTLE, 16), true)),
-
-    //Partial Vegetables
-    GARLIC_CHOP("garlic_chop", () -> new Item(food(FoodItem.GARLIC_CHOP))),
-    GINGER_CHOP("ginger_chop", () -> new Item(food(FoodItem.GINGER_CHOP))),
-
     //Sweets
     COOKIE_UBE("cookie_ube", () -> new Item(food(FoodItem.COOKIES))),
     COOKIE_GINGER("cookie_ginger", () -> new Item(food(FoodItem.COOKIES))),
@@ -86,19 +94,8 @@ public enum ItemsRegistry {
     RAW_POLVORONE_UBE("raw_polvorone_ube", () -> new Item(base())),
     RAW_POLVORONE_CC("raw_polvorone_cc", () -> new Item(base())),
 
-    //Feasts
-    HALO_HALO_FEAST("halo_halo_feast", () -> new ModBlockItem(BlocksRegistry.HALO_HALO_FEAST.get(), new ModItemSettings().maxCount(1))),
-    MILK_TEA_UBE_FEAST("milk_tea_ube_feast", () -> new ModBlockItem(BlocksRegistry.MILK_TEA_UBE_FEAST.get(), new ModItemSettings().maxCount(1))),
-    LUMPIA_FEAST("lumpia_feast", () -> new ModBlockItem(BlocksRegistry.LUMPIA_FEAST.get(), new ModItemSettings().maxCount(1))),
-
-    LECHE_FLAN_FEAST("leche_flan_feast", () -> new ModBlockItem(BlocksRegistry.LECHE_FLAN_FEAST.get(), new ModItemSettings().maxCount(1))),
     LECHE_FLAN("leche_flan", () -> new Item(food(FoodItem.LECHE_FLAN))),
-    //Cakes
-    UBE_CAKE("ube_cake", () -> new ModBlockItem(BlocksRegistry.UBE_CAKE.get(), new ModItemSettings().maxCount(1))),
-    //Cake Slices
     UBE_CAKE_SLICE("ube_cake_slice", () -> new Item(food(FoodItem.UBE_CAKE_SLICE)));
-
-
 
     private final String pathName;
     private final Supplier<Item> itemSupplier;

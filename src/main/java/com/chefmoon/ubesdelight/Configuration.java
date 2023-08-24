@@ -2,6 +2,7 @@ package com.chefmoon.ubesdelight;
 
 import com.google.gson.GsonBuilder;
 import net.fabricmc.loader.api.FabricLoader;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
@@ -49,7 +50,6 @@ public final class Configuration {
             reader.close();
         } catch (IOException e) {
             UbesDelightMod.LOGGER.error("Error while trying to load configuration file. Default configuration used.", e);
-            System.out.println("Error while trying to load configuration file. Default configuration used."+e);
         }
 
         return configuration;
@@ -63,7 +63,6 @@ public final class Configuration {
             writer.close();
         } catch (IOException e) {
             UbesDelightMod.LOGGER.error("Error while trying to save configuration file.", e);
-            System.out.println("Error while trying to save configuration file."+e);
         }
     }
 

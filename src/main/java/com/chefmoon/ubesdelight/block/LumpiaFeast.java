@@ -1,7 +1,7 @@
 package com.chefmoon.ubesdelight.block;
 
 import com.chefmoon.ubesdelight.UbesDelightMod;
-import com.chefmoon.ubesdelight.registry.TagsRegistry;
+import com.chefmoon.ubesdelight.tag.CommonTags;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -74,7 +74,7 @@ public class LumpiaFeast extends Block {
     public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
         super.onBreak(world, pos, state, player);
 
-        if (player.getMainHandStack().isIn(TagsRegistry.KNIVES)) {
+        if (player.getMainHandStack().isIn(CommonTags.C_TOOLS_KNIVES)) {
             LumpiaFeast lumpiaFeast = (LumpiaFeast) state.getBlock();
             ItemStack servingItem = lumpiaFeast.getServingStack(state);
             if (state.get(LumpiaFeast.SERVINGS) > 0) {
@@ -140,7 +140,7 @@ public class LumpiaFeast extends Block {
         serving.setCount(2);
 
         if (servings > 0) {
-            if (player.getMainHandStack().isIn(TagsRegistry.KNIVES)) {
+            if (player.getMainHandStack().isIn(CommonTags.C_TOOLS_KNIVES)) {
                 world.setBlockState(pos, state.with(getServingsProperty(), servings - 1), 3);
                 world.playSound(null, pos, SoundEvents.BLOCK_CHAIN_STEP, SoundCategory.BLOCKS, 1.f, 1.f);
                 if (!player.getInventory().insertStack(serving)) {

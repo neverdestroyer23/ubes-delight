@@ -5,6 +5,7 @@ import me.shedaniel.clothconfig2.gui.entries.TooltipListEntry;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.text.Text;
+
 import java.util.Arrays;
 import java.util.function.Consumer;
 import java.util.function.Supplier;

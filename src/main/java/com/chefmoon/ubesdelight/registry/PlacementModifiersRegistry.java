@@ -1,11 +1,11 @@
 package com.chefmoon.ubesdelight.registry;
 
-import com.mojang.serialization.Codec;
 import com.chefmoon.ubesdelight.UbesDelightMod;
 import com.chefmoon.ubesdelight.world.placement.BiomeIsOverworldPlacementModifier;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.DefaultedRegistry;
+import com.mojang.serialization.Codec;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.DefaultedRegistry;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.gen.placementmodifier.PlacementModifier;
 import net.minecraft.world.gen.placementmodifier.PlacementModifierType;
 

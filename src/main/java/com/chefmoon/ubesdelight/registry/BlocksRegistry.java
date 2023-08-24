@@ -8,12 +8,13 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.minecraft.block.Block;
-import java.util.function.Supplier;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+
+import java.util.function.Supplier;
 
 public enum BlocksRegistry {
 
@@ -31,13 +32,16 @@ public enum BlocksRegistry {
     UBE_CROP("ube_crop", UbeCropBlock::new, true),
     GARLIC_CROP("garlic_crop", GarlicCropBlock::new, true),
     GINGER_CROP("ginger_crop", GingerCropBlock::new, true),
-    LEMONGRASS_CROP("lemongrass_crop", LemongrassCropBlock::new, true),
+    LEMONGRASS_CROP("lemongrass_crop", LemongrassCropBlock::new, true), //TODO: remove in V0.1.5
+    LEMONGRASS_STALK_CROP("lemongrass_stalk_crop", LemongrassStalkCropBlock::new, true),
+    LEMONGRASS_LEAF_CROP("lemongrass_leaf_crop", LemongrassLeafCropBlock::new, true),
 
     UBE_CAKE("ube_cake", () -> new UbesDelightCakeBlock(ItemsRegistry.UBE_CAKE_SLICE.get()), true),
     LECHE_FLAN_FEAST("leche_flan_feast", () -> new LecheFlanFeast(ItemsRegistry.LECHE_FLAN.get()), true),
     HALO_HALO_FEAST("halo_halo_feast", () -> new HaloHaloFeast(ItemsRegistry.HALO_HALO.get()), true),
     MILK_TEA_UBE_FEAST("milk_tea_ube_feast", () -> new DrinkableFeastBlock(ItemsRegistry.MILK_TEA_UBE.get()), true),
     LUMPIA_FEAST("lumpia_feast", () -> new LumpiaFeast(ItemsRegistry.LUMPIA.get()), true);
+
     private static FlammableBlockRegistry.Entry flammable(int burnChance, @SuppressWarnings("SameParameterValue") int spreadChance) {
         return new FlammableBlockRegistry.Entry(burnChance, spreadChance);
     }

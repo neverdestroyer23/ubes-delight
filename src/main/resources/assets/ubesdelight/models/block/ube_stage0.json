@@ -1,6 +1,6 @@
 {
-  "parent": "ubesdelight:block/crop_cross",
+  "parent": "ubesdelight:block/odd_crop",
   "textures": {
-    "cross": "ubesdelight:block/ube_stage0"
+    "odd_crop": "ubesdelight:block/ube_stage0"
   }
 }

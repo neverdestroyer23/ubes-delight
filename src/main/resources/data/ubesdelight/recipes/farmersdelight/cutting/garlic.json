@@ -13,7 +13,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "tag": "ubesdelight:garlic"
+      "item": "ubesdelight:garlic"
     }
   ],
   "result": [

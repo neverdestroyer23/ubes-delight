@@ -1,7 +1,7 @@
 package com.chefmoon.ubesdelight.block;
 
 import com.chefmoon.ubesdelight.UbesDelightMod;
-import com.chefmoon.ubesdelight.registry.TagsRegistry;
+import com.chefmoon.ubesdelight.tag.CommonTags;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -32,8 +32,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.Set;
 
 public class DrinkableFeastBlock extends Block {
 
@@ -72,7 +70,7 @@ public class DrinkableFeastBlock extends Block {
     public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
         super.onBreak(world, pos, state, player);
 
-        if (player.getMainHandStack().isIn(TagsRegistry.KNIVES)) {
+        if (player.getMainHandStack().isIn(CommonTags.C_TOOLS_KNIVES)) {
             DrinkableFeastBlock drinkableFeast = (DrinkableFeastBlock) state.getBlock();
             ItemStack servingItem = drinkableFeast.getServingStack(state);
             if (state.get(DrinkableFeastBlock.SERVINGS) > 0) {
@@ -113,7 +111,7 @@ public class DrinkableFeastBlock extends Block {
 
     @Override
     public int getComparatorOutput(BlockState state, World world, BlockPos pos) {
-        return state.get(getServingsProperty());
+        return MAX_SERVINGS - state.get(SERVINGS);
     }
 
     @Override
@@ -123,10 +121,6 @@ public class DrinkableFeastBlock extends Block {
 
     public IntProperty getServingsProperty() {
         return SERVINGS;
-    }
-
-    public int getMaxServings() {
-        return MAX_SERVINGS;
     }
 
     public ItemStack getServingStack(BlockState state) {

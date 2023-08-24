@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "cookingtime": 600,
+  "experience": 0.2,
+  "ingredient": {
+    "tag": "c:milk/milk_bottle"
+  },
+  "result": "ubesdelight:milk_powder"
+}

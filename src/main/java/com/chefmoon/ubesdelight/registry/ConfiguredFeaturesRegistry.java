@@ -1,9 +1,9 @@
 package com.chefmoon.ubesdelight.registry;
 
 import com.chefmoon.ubesdelight.UbesDelightMod;
-import net.minecraft.util.registry.RegistryKey;
-import net.minecraft.util.registry.Registry;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.FeatureConfig;
 import net.minecraft.world.gen.feature.PlacedFeature;

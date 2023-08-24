@@ -2,8 +2,8 @@ package com.chefmoon.ubesdelight.world.configuration;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.util.dynamic.Codecs;
+import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.gen.feature.FeatureConfig;
 import net.minecraft.world.gen.feature.PlacedFeature;
 

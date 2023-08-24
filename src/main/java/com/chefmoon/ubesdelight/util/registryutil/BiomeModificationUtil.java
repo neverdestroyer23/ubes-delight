@@ -12,6 +12,7 @@ import net.minecraft.world.gen.GenerationStep;
 import java.util.Collection;
 import java.util.List;
 
+@SuppressWarnings("unchecked")
 public class BiomeModificationUtil {
 
     public static Collection<RegistryKey<Biome>> JUNGLE_BIOMES = List.of(new RegistryKey[]{BiomeKeys.JUNGLE, BiomeKeys.BAMBOO_JUNGLE, BiomeKeys.SPARSE_JUNGLE});

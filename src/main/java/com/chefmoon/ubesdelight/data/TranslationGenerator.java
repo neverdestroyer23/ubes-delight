@@ -1,6 +1,7 @@
 package com.chefmoon.ubesdelight.data;
 
 import com.chefmoon.ubesdelight.UbesDelightMod;
+import com.chefmoon.ubesdelight.registry.BlocksRegistry;
 import com.chefmoon.ubesdelight.registry.ItemsRegistry;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
@@ -62,10 +63,10 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(ItemsRegistry.MILK_TEA_UBE.get(), "Ube Milk Tea");
         translationBuilder.add(ItemsRegistry.HALO_HALO.get(), "Halo Halo");
 
-        translationBuilder.add(ItemsRegistry.GARLIC_CHOP.get(), "Garlic Cloves");
+        translationBuilder.add(ItemsRegistry.GARLIC_CHOP.get(), "Chopped Garlic");
         translationBuilder.add(ItemsRegistry.GINGER_CHOP.get(), "Chopped Ginger");
 
-        translationBuilder.add(ItemsRegistry.LECHE_FLAN.get(), "Leche Flan");
+        translationBuilder.add(ItemsRegistry.LECHE_FLAN.get(), "Leche Flan Slice");
         translationBuilder.add(ItemsRegistry.COOKIE_UBE.get(), "Ube Cookie");
         translationBuilder.add(ItemsRegistry.COOKIE_GINGER.get(), "Ginger Cookie");
 
@@ -78,12 +79,56 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(ItemsRegistry.RAW_POLVORONE_UBE.get(), "Raw Ube Polvorone");
         translationBuilder.add(ItemsRegistry.RAW_POLVORONE_CC.get(), "Raw Cookies and Cream Polvorone");
 
-        translationBuilder.add(ItemsRegistry.LECHE_FLAN_FEAST.get(), "Leche Flan Feast");
-        translationBuilder.add(ItemsRegistry.HALO_HALO_FEAST.get(), "Halo Halo Feast");
-        translationBuilder.add(ItemsRegistry.MILK_TEA_UBE_FEAST.get(), "Ube Milk Tea Feast");
-        translationBuilder.add(ItemsRegistry.LUMPIA_FEAST.get(), "Lumpia Feast");
+        translationBuilder.add(ItemsRegistry.LECHE_FLAN_FEAST.get(), "Leche Flan");
+        translationBuilder.add(ItemsRegistry.HALO_HALO_FEAST.get(), "Bowl of Halo Halo");
+        translationBuilder.add(ItemsRegistry.MILK_TEA_UBE_FEAST.get(), "Bowl of Ube Milk Tea");
+        translationBuilder.add(ItemsRegistry.LUMPIA_FEAST.get(), "Lumpia Platter");
 
         translationBuilder.add(ItemsRegistry.UBE_CAKE.get(), "Ube Cake");
         translationBuilder.add(ItemsRegistry.UBE_CAKE_SLICE.get(), "Ube Cake Slice");
+
+        translationBuilder.add(BlocksRegistry.LEMONGRASS_STALK_CROP.get(), "Lemongrass Stalk");
+        translationBuilder.add(BlocksRegistry.LEMONGRASS_LEAF_CROP.get(), "Lemongrass Leaves");
+
+        translationBuilder.add("ubesdelight.modmenu.title", "Ube's Delight Config");
+        translationBuilder.add("ubesdelight.modmenu.title.gamesettings", "Game settings");
+
+
+        translationBuilder.add("ubesdelight.modmenu.option.enableudcropcrates", "Enable UD Crop Crates");
+        translationBuilder.add("ubesdelight.modmenu.option.farmersbuyudcrops", "Farmers Buy UD Crops");
+        translationBuilder.add("ubesdelight.modmenu.option.wanderingtradersellsuditems", "Wandering Trader Sells UD Items");
+
+        translationBuilder.add("ubesdelight.modmenu.tooltip.enableudcropcrates", "Ube's Delight adds crates (3x3) for vanilla crops, similar to Farmer's Delight. Should they be craftable? Requires Reload.");
+        translationBuilder.add("ubesdelight.modmenu.tooltip.farmersbuyudcrops", "Should Novice and Apprentice Farmers buy this mod's crops? (May reduce chances of other trades appearing)");
+        translationBuilder.add("ubesdelight.modmenu.tooltip.wanderingtradersellsuditems", "Should the Wandering Trader sell some of this mod's items? (Crop Seeds Only)");
+
+        translationBuilder.add("ubesdelight.modmenu.title.worldgeneration", "World generation");
+
+        translationBuilder.add("ubesdelight.modmenu.category.wildubegen", "Wild Ube Generation");
+        translationBuilder.add("ubesdelight.modmenu.category.wildgarlicgen", "Wild Garlic Generation");
+        translationBuilder.add("ubesdelight.modmenu.category.wildgingergen", "Wild Ginger Generation");
+        translationBuilder.add("ubesdelight.modmenu.category.wildlemongrassgen", "Wild Lemongrass Generation");
+
+        translationBuilder.add("ubesdelight.modmenu.option.wildgen", "Generation");
+        translationBuilder.add("ubesdelight.modmenu.option.generateUDChestLoot", "Generate UD Chest Loot");
+
+        translationBuilder.add("ubesdelight.modmenu.tooltip.wildubegen", "Generate wild ube in jungles?");
+        translationBuilder.add("ubesdelight.modmenu.tooltip.wildgarlicgen", "Generate wild garlic in jungles?");
+        translationBuilder.add("ubesdelight.modmenu.tooltip.wildgingergen", "Generate wild ginger in jungles?");
+        translationBuilder.add("ubesdelight.modmenu.tooltip.wildlemongrassgen", "Generate wild lemongrass in jungles?");
+        translationBuilder.add("ubesdelight.modmenu.tooltip.generateUDChestLoot", "Should this mod add its seeds as extra chest loot across Minecraft?");
+
+        translationBuilder.add("ubesdelight.modmenu.title.clientsettings", "Client Settings");
+
+        translationBuilder.add("ubesdelight.modmenu.option.foodEffectTooltip", "Food Effect Tooltip");
+        translationBuilder.add("ubesdelight.modmenu.tooltip.foodEffectTooltip", "Should meal and drink tooltips display which effects they provide?");
+
+        translationBuilder.add("ubesdelight.modmenu.title.integration", "Integration");
+
+        translationBuilder.add("ubesdelight.modmenu.option.enableGarlicCompat", "Garlic Extra Compatibility");
+        translationBuilder.add("ubesdelight.modmenu.option.enableGingerCompat", "Ginger Extra Compatibility");
+
+        translationBuilder.add("ubesdelight.modmenu.tooltip.enableGarlicCompat", "This allows all c:crops/garlic to be chopped into Chopped Garlic?");
+        translationBuilder.add("ubesdelight.modmenu.tooltip.enableGingerCompat", "This allows all c:crops/ginger to be chopped into Chopped Ginger?");
     }
 }

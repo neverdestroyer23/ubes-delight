@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "ubesdelight:lumpia"
+    },
+    "B": {
+      "tag": "minecraft:leaves"
+    }
+  },
+  "pattern": [
+    "   ",
+    "AAA",
+    "BBB"
+  ],
+  "result": {
+    "item": "ubesdelight:lumpia_feast"
+  }
+}

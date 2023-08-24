@@ -1,6 +1,6 @@
 package com.chefmoon.ubesdelight.block;
 
-import com.chefmoon.ubesdelight.registry.TagsRegistry;
+import com.chefmoon.ubesdelight.tag.CommonTags;
 import com.mojang.datafixers.util.Pair;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
@@ -15,6 +15,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.stat.Stats;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Property;
@@ -55,7 +56,7 @@ public class LecheFlanFeast extends Block {
     public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
         super.onBreak(world, pos, state, player);
 
-        if (player.getMainHandStack().isIn(TagsRegistry.KNIVES)) {
+        if (player.getMainHandStack().isIn(CommonTags.C_TOOLS_KNIVES)) {
             LecheFlanFeast lecheFlanFeast = (LecheFlanFeast) state.getBlock();
             ItemStack servings = lecheFlanFeast.getServing();
             servings.setCount(MAX_BITES - state.get(LecheFlanFeast.BITES));
@@ -67,7 +68,7 @@ public class LecheFlanFeast extends Block {
         ItemStack itemstack = player.getStackInHand(hand);
 
         if (world.isClient()) {
-            if (itemstack.isIn(TagsRegistry.KNIVES)) {
+            if (itemstack.isIn(CommonTags.C_TOOLS_KNIVES)) {
                 return cutSlice(world, pos, state);
             }
 
@@ -80,7 +81,7 @@ public class LecheFlanFeast extends Block {
             }
         }
 
-        if (itemstack.isIn(TagsRegistry.KNIVES)) {
+        if (itemstack.isIn(CommonTags.C_TOOLS_KNIVES)) {
             return cutSlice(world, pos, state);
         }
 
@@ -126,6 +127,7 @@ public class LecheFlanFeast extends Block {
         FoodComponent sliceFood = slice.getItem().getFoodComponent();
 
         player.getHungerManager().eat(slice.getItem(), slice);
+        player.increaseStat(Stats.EAT_CAKE_SLICE, 1);
         if (getServing().getItem().isFood() && sliceFood != null) {
             for (Pair<StatusEffectInstance, Float> pair : sliceFood.getStatusEffects()) {
                 if (!world.isClient() && pair.getFirst() != null && world.getRandom().nextFloat() < pair.getSecond()) {

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "c_milk_milk_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:milk/milk_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:minecraft/smelting/smoking/milk_powder_from_c_milk_milk_bottle_from_smoking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "c_milk_milk_bottle",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:minecraft/smelting/smoking/milk_powder_from_c_milk_milk_bottle_from_smoking"
+    ]
+  }
+}

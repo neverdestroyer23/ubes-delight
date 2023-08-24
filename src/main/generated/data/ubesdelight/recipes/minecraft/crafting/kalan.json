@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "tag": "minecraft:terracotta"
+    },
+    "B": {
+      "item": "minecraft:campfire"
+    },
+    "C": {
+      "tag": "c:iron_ingots"
+    }
+  },
+  "pattern": [
+    "AAA",
+    "ACA",
+    "ABA"
+  ],
+  "result": {
+    "item": "ubesdelight:kalan"
+  }
+}
