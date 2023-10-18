@@ -101,6 +101,7 @@ public class CookingPotRecipeJsonBuilder extends RecipeJsonBuilder implements Cr
         exporter.accept(new CookingPotRecipeJsonBuilder.CookingPotRecipeJsonProvider(recipeId, this.group == null ? "" : this.group, this.cookingCategory, this.inputs, this.output, this.experience, this.cookingTime, this.advancementBuilder, recipeId.withPrefixedPath("recipes/" + this.category.getName() + "/")));
     }
 
+    //TODO: Finish Validation
     private void validate(Identifier recipeId) {
         if (this.advancementBuilder.getCriteria().isEmpty()) {
             throw new IllegalStateException("No way of obtaining recipe " + recipeId);

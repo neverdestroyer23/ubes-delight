@@ -13,6 +13,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_milk": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:milk"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "minecraft:minecraft/crafting/halo_halo_feast"
@@ -23,6 +33,7 @@
   "requirements": [
     [
       "has_halo_halo",
+      "has_milk",
       "has_the_recipe"
     ]
   ],

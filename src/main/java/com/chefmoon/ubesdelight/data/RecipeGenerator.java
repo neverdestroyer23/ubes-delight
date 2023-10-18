@@ -1,5 +1,6 @@
 package com.chefmoon.ubesdelight.data;
 
+import com.chefmoon.ubesdelight.data.recipe.BakingMatRecipes;
 import com.chefmoon.ubesdelight.data.recipe.CraftingRecipes;
 import com.chefmoon.ubesdelight.data.recipe.SmeltingRecipes;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -17,8 +18,13 @@ public class RecipeGenerator extends FabricRecipeProvider {
     public void generate(Consumer<RecipeJsonProvider> exporter) {
         //CookingRecipes.register(exporter);
         //CuttingRecipes.register(exporter);
+        BakingMatRecipes.register(exporter);
         CraftingRecipes.register(exporter);
         SmeltingRecipes.register(exporter);
+
+
+
+
     }
 
 

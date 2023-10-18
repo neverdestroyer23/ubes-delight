@@ -1,6 +1,7 @@
 package com.chefmoon.ubesdelight;
 
 
+import com.chefmoon.ubesdelight.networking.ModMessages;
 import com.chefmoon.ubesdelight.registry.*;
 import com.chefmoon.ubesdelight.util.GeneralRegistryUtil;
 import net.fabricmc.api.ModInitializer;
@@ -39,13 +40,15 @@ public class UbesDelightMod implements ModInitializer {
 
         ItemsRegistry.registerAll();
         BlocksRegistry.registerAll();
-        //BlockEntityTypesRegistry.registerAll();
+        BlockEntityTypesRegistry.registerAll();
         ConfiguredFeaturesRegistry.registerAll();
         PlacementModifiersRegistry.registerAll();
         BiomeFeaturesRegistry.registerAll();
+        RecipeTypesRegistry.registerAll();
+        AdvancementsRegistry.registerAll();
+        SoundsRegistry.registerAll();
         GeneralRegistryUtil.register();
-        //ModMessages.registerC2SPackets();
-        //ModMessages.registerS2CPackets();
+        ModMessages.registerC2SPackets();
     }
 
     private void initConfiguration() {

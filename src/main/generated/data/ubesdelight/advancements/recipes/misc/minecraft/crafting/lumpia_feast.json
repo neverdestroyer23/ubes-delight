@@ -1,6 +1,16 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
+    "has_leaves": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "minecraft:leaves"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_lumpia": {
       "conditions": {
         "items": [
@@ -23,6 +33,7 @@
   "requirements": [
     [
       "has_lumpia",
+      "has_leaves",
       "has_the_recipe"
     ]
   ],

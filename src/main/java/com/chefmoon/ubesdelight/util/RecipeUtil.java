@@ -23,16 +23,17 @@ public class RecipeUtil {
 
     private static final Identifier MINECRAFT = new Identifier("minecraft");
 
-    //TODO: utilize RecipeProvider.convertBetween for _from_
     public static void simpleRecipeBuilder(Consumer<RecipeJsonProvider> exporter, RecipeCategory category, ItemsRegistry input, Integer inputCount, ItemsRegistry output, Integer outputCount) {
         ShapelessRecipeJsonBuilder.create(category, output.get(), outputCount)
                 .input(input.get(), inputCount)
                 .criterion(RecipeProvider.hasItem(output.get()), RecipeProvider.conditionsFromItem(output.get()))
                 .criterion(RecipeProvider.hasItem(input.get()), RecipeProvider.conditionsFromItem(input.get()))
                 .group(UbesDelightMod.ITEM_GROUP.getValue().getPath())
-                .offerTo(exporter, new Identifier(MINECRAFT.getNamespace() + "/crafting/" + RecipeProvider.getRecipeName(output.get()))
-                        + "_from_"
-                        + RecipeProvider.getRecipeName(input.get()));
+                .offerTo(exporter, new Identifier(MINECRAFT.getNamespace() + "/crafting/"
+                        + RecipeProvider.convertBetween(output.get(), input.get())));
+    }
+    public static void test(Consumer<RecipeJsonProvider> exporter, RecipeCategory category, ItemsRegistry input, Integer inputCount, ItemsRegistry output, Integer outputCount) {
+
     }
     public static void offerSmeltCampSmokeRecipe(Item input, RecipeCategory category, ItemConvertible output, float experience, int cookingTime, Consumer<RecipeJsonProvider> exporter) {
         int smeltingTime = cookingTime;
@@ -43,22 +44,22 @@ public class RecipeUtil {
         CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(input), category, output, experience, smeltingTime)
                 .criterion(RecipeProvider.hasItem(input), RecipeProvider.conditionsFromItem(input))
                 .criterion(RecipeProvider.hasItem(output), RecipeProvider.conditionsFromItem(output))
-                .offerTo(exporter, new Identifier(MINECRAFT.getNamespace() + "/smelting/" + RecipeProvider.getRecipeName(output)
-                        + "_from_" + RecipeProvider.getRecipeName(input) + "_from_smelting"));
+                .offerTo(exporter, new Identifier(MINECRAFT.getNamespace() + "/smelting/"
+                        + RecipeProvider.convertBetween(output, input) + "_from_smelting"));
 
         // Campfire
         CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(input), category, output, experience, campfireTime)
                 .criterion(RecipeProvider.hasItem(input), RecipeProvider.conditionsFromItem(input))
                 .criterion(RecipeProvider.hasItem(output), RecipeProvider.conditionsFromItem(output))
-                .offerTo(exporter, new Identifier(MINECRAFT.getNamespace() + "/smelting/campfire_cooking/" + RecipeProvider.getRecipeName(output)
-                        + "_from_" + RecipeProvider.getRecipeName(input) + "_from_campfire_cooking"));
+                .offerTo(exporter, new Identifier(MINECRAFT.getNamespace() + "/smelting/campfire_cooking/"
+                        + RecipeProvider.convertBetween(output, input) + "_from_campfire_cooking"));
 
         // Smoking
         CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems(input), category, output, experience, smokingTime)
                 .criterion(RecipeProvider.hasItem(input), RecipeProvider.conditionsFromItem(input))
                 .criterion(RecipeProvider.hasItem(output), RecipeProvider.conditionsFromItem(output))
-                .offerTo(exporter, new Identifier(MINECRAFT.getNamespace() + "/smelting/smoking/" + RecipeProvider.getRecipeName(output)
-                        + "_from_" + RecipeProvider.getRecipeName(input) + "_from_smoking"));
+                .offerTo(exporter, new Identifier(MINECRAFT.getNamespace() + "/smelting/smoking/"
+                        + RecipeProvider.convertBetween(output, input) + "_from_smoking"));
     }
 
     //TODO: Solve category: "misc"
@@ -86,12 +87,16 @@ public class RecipeUtil {
     public static void offerCuttingRecipe(ItemsRegistry input, ItemsRegistry output, Integer quantity, @Nullable Integer chance, Consumer<RecipeJsonProvider> exporter) {
         if (chance == null) {
             CuttingBoardRecipeJsonBuilder.create(input.get(), Ingredient.fromTag(CommonTags.C_TOOLS_KNIVES), output.get(), quantity)
-                    .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(output.get())
-                            + "_from_" + RecipeProvider.getRecipeName(input.get())));
+                    .offerTo(exporter, new Identifier(RecipeProvider.convertBetween(output.get(), input.get())));
         } else {
             CuttingBoardRecipeJsonBuilder.create(input.get(), Ingredient.fromTag(CommonTags.C_TOOLS_KNIVES), output.get(), quantity, chance)
-                    .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(output.get())
-                            + "_from_" + RecipeProvider.getRecipeName(input.get())));
+                    .offerTo(exporter, new Identifier(RecipeProvider.convertBetween(output.get(), input.get())));
         }
     }
+
+    public static String hasItemTag(TagKey<Item> tag) {
+        return "has_" + tag.id().getPath().replace("/","_");
+    }
+
+
 }

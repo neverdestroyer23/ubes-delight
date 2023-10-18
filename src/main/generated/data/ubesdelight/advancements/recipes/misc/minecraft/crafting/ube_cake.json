@@ -1,6 +1,46 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
+    "has_crops_ube": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:crops/ube"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_eggs": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:eggs"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_milk": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:milk"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_tea_ingredients_sweet_weak": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:tea_ingredients/sweet/weak"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "minecraft:minecraft/crafting/ube_cake"
@@ -22,7 +62,11 @@
   },
   "requirements": [
     [
+      "has_milk",
+      "has_tea_ingredients_sweet_weak",
       "has_wheat",
+      "has_eggs",
+      "has_crops_ube",
       "has_the_recipe"
     ]
   ],

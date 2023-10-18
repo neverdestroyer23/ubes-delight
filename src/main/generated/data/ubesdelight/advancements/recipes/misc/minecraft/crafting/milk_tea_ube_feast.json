@@ -1,6 +1,16 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
+    "has_milk": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:milk"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_milk_tea_ube": {
       "conditions": {
         "items": [
@@ -23,6 +33,7 @@
   "requirements": [
     [
       "has_milk_tea_ube",
+      "has_milk",
       "has_the_recipe"
     ]
   ],

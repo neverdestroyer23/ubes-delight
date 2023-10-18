@@ -1,6 +1,7 @@
 package com.chefmoon.ubesdelight.block;
 
 import com.chefmoon.ubesdelight.UbesDelightMod;
+import com.chefmoon.ubesdelight.registry.SoundsRegistry;
 import com.chefmoon.ubesdelight.tag.CommonTags;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
@@ -140,7 +141,8 @@ public class DrinkableFeastBlock extends Block {
         if (servings > 0 ) {
             if (heldItem.isOf(Items.GLASS_BOTTLE)) {
                 world.setBlockState(pos, state.with(getServingsProperty(), servings - 1), 3);
-                world.playSound(null, pos, SoundEvents.ENTITY_ITEM_FRAME_REMOVE_ITEM, SoundCategory.PLAYERS, 0.8F, 0.8F);
+                //world.playSound(null, pos, SoundEvents.ENTITY_ITEM_FRAME_REMOVE_ITEM, SoundCategory.PLAYERS, 0.8F, 0.8F);
+                world.playSound(null, pos, SoundsRegistry.BLOCK_DRINKABLE_FEAST_REMOVE.get(), SoundCategory.PLAYERS, 0.8F, 0.8F);
                 if (!player.getAbilities().creativeMode) {
                     heldItem.decrement(1);
                 }

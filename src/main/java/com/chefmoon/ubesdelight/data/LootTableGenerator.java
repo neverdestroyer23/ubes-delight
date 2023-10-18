@@ -27,6 +27,8 @@ public class LootTableGenerator extends FabricBlockLootTableProvider {
     public void generate() {
         addDrop(BlocksRegistry.KALAN.get());
 
+        addDrop(BlocksRegistry.BAKING_MAT_BAMBOO.get());
+
         addDrop(BlocksRegistry.UBE_CRATE.get());
         addDrop(BlocksRegistry.GARLIC_CRATE.get());
         addDrop(BlocksRegistry.GINGER_CRATE.get());

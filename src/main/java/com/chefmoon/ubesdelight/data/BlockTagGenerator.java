@@ -34,6 +34,8 @@ public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
 
     private void registerMinecraftBlockTags() {
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
+                .add(BlocksRegistry.BAKING_MAT_BAMBOO.get())
+
                 .add(BlocksRegistry.UBE_CRATE.get())
                 .add(BlocksRegistry.GARLIC_CRATE.get())
                 .add(BlocksRegistry.GINGER_CRATE.get())

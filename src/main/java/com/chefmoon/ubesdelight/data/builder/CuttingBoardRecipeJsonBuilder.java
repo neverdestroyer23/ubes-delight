@@ -92,7 +92,7 @@ public class CuttingBoardRecipeJsonBuilder extends RecipeJsonBuilder implements 
         private List<ChanceResult> results;
         private final Ingredient ingredient;
         private final Ingredient tool;
-        private String soundEventID;
+        private final String soundEventID;
         private final Advancement.Builder advancementBuilder;
         private final Identifier advancementId;
 
