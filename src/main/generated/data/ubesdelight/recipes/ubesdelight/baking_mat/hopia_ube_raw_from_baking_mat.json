@@ -2,7 +2,7 @@
   "type": "ubesdelight:baking_mat",
   "ingredients": [
     {
-      "item": "farmersdelight:wheat_dough"
+      "tag": "c:dough"
     },
     {
       "tag": "c:tea_ingredients/sweet/weak"

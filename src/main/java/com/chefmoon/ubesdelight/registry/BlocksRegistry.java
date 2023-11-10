@@ -28,9 +28,6 @@ public enum BlocksRegistry {
     GINGER_CRATE("ginger_crate", () -> new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).hardness(2.f).resistance(3.f).sounds(BlockSoundGroup.WOOD))),
     LEMONGRASS_CRATE("lemongrass_crate", () -> new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).hardness(2.f).resistance(3.f).sounds(BlockSoundGroup.WOOD))),
 
-    UBE_JUNGLE_LOG_CRATE("ube_jungle_log_crate", () -> new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).hardness(2.f).resistance(3.f).sounds(BlockSoundGroup.WOOD))),
-    UBE_JUNGLE_CRATE("ube_jungle_crate", () -> new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).hardness(2.f).resistance(3.f).sounds(BlockSoundGroup.WOOD))),
-
     WILD_UBE("wild_ube", WildCropBlock::new, true, flammable(100,60)),
     WILD_GARLIC("wild_garlic", WildCropBlock::new, true, flammable(100,60)),
     WILD_GINGER("wild_ginger", WildCropBlock::new, true, flammable(100,60)),
@@ -45,6 +42,8 @@ public enum BlocksRegistry {
     LEMONGRASS_CROP("lemongrass_crop", LemongrassCropBlock::new, true), //TODO: remove in V0.1.5
     LEMONGRASS_STALK_CROP("lemongrass_stalk_crop", LemongrassStalkCropBlock::new, true),
     LEMONGRASS_LEAF_CROP("lemongrass_leaf_crop", LemongrassLeafCropBlock::new, true),
+
+    GLASS_CUP_HALO_HALO("glass_cup_halo_halo", GlassCupBlock::new, true),
 
     UBE_CAKE("ube_cake", () -> new UbesDelightCakeBlock(ItemsRegistry.UBE_CAKE_SLICE.get()), true),
     LECHE_FLAN_FEAST("leche_flan_feast", () -> new LecheFlanFeast(ItemsRegistry.LECHE_FLAN.get()), true),

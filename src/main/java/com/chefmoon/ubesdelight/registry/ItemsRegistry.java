@@ -1,10 +1,7 @@
 package com.chefmoon.ubesdelight.registry;
 
 import com.chefmoon.ubesdelight.UbesDelightMod;
-import com.chefmoon.ubesdelight.item.RollingPinItem;
-import com.chefmoon.ubesdelight.item.UDBlockItem;
-import com.chefmoon.ubesdelight.item.UDConsumableItem;
-import com.chefmoon.ubesdelight.item.UDDrinkableItem;
+import com.chefmoon.ubesdelight.item.*;
 import com.chefmoon.ubesdelight.item.enumeration.FoodItem;
 import com.chefmoon.ubesdelight.item.enumeration.UDToolMaterials;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -41,12 +38,6 @@ public enum ItemsRegistry {
     GINGER_CRATE("ginger_crate", () -> new UDBlockItem((BlocksRegistry.GINGER_CRATE.get()))),
     LEMONGRASS_CRATE("lemongrass_crate", () -> new UDBlockItem((BlocksRegistry.LEMONGRASS_CRATE.get()))),
 
-    // Release: TBD
-    // Jungle Log Variants
-    //UBE_JUNGLE_LOG_CRATE("ube_jungle_log_crate", () -> new UDBlockItem((BlocksRegistry.UBE_JUNGLE_LOG_CRATE.get()))),
-    // Jungle Plank Variants
-    // UBE_JUNGLE_CRATE("ube_jungle_crate", () -> new UDBlockItem((BlocksRegistry.UBE_JUNGLE_CRATE.get()))),
-
     //Feasts
     UBE_CAKE("ube_cake", () -> new UDBlockItem(BlocksRegistry.UBE_CAKE.get(), noStack()), null, 1.f),
     LECHE_FLAN_FEAST("leche_flan_feast", () -> new UDBlockItem(BlocksRegistry.LECHE_FLAN_FEAST.get(), noStack()), null, 1.f),
@@ -71,7 +62,7 @@ public enum ItemsRegistry {
 
     //Drinks
     MILK_TEA_UBE("milk_tea_ube", () -> new UDDrinkableItem(food(FoodItem.MILK_TEA_UBE.get(), Items.GLASS_BOTTLE, 16), true)),
-    HALO_HALO("halo_halo", () -> new UDDrinkableItem(food(FoodItem.HALO_HALO.get(), Items.GLASS_BOTTLE, 16), true)),
+    HALO_HALO("halo_halo", () -> new UDDrinkableBlockItem(BlocksRegistry.GLASS_CUP_HALO_HALO.get(), food(FoodItem.HALO_HALO.get(), Items.GLASS_BOTTLE, 16), true, false)),
 
     //Partial Vegetables
     GARLIC_CHOP("garlic_chop", () -> new UDConsumableItem(food(FoodItem.GARLIC_CHOP.get())), null, .4f),
@@ -220,7 +211,7 @@ public enum ItemsRegistry {
         return new FabricItemSettings().maxCount(1);
     }
     private static FabricItemSettings food(FoodComponent food) {
-        return new FabricItemSettings().food(food);
+        return new FabricItemSettings().food(food).recipeRemainder(Items.AIR);
     }
     private static FabricItemSettings food(FoodComponent food, Item remainder, int maxCount) {
         return new FabricItemSettings().food(food).recipeRemainder(remainder).maxCount(maxCount);

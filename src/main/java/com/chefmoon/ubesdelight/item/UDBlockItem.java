@@ -1,11 +1,12 @@
 package com.chefmoon.ubesdelight.item;
 
 import com.chefmoon.ubesdelight.UbesDelightMod;
-import com.nhoryzon.mc.farmersdelight.item.ModBlockItem;
+import com.nhoryzon.mc.farmersdelight.item.ModItemSettings;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.Block;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
@@ -14,11 +15,11 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class UDBlockItem extends ModBlockItem {
+public class UDBlockItem extends BlockItem {
 
     private final boolean hasCustomTooltip;
     public UDBlockItem(Block block) {
-        super(block);
+        super(block, new ModItemSettings());
         this.hasCustomTooltip = false;
     }
 

@@ -49,4 +49,6 @@ public class CommonTags {
     public static final TagKey<Item> C_EGGS = TagUtil.registerCommonItem("eggs");
 
     public static final TagKey<Item> C_IRON_INGOTS = TagUtil.registerCommonItem("iron_ingots");
+
+    public static final TagKey<Item> C_DOUGH = TagUtil.registerCommonItem("dough");
 }

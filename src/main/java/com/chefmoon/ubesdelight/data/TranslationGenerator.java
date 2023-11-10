@@ -35,10 +35,6 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(ItemsRegistry.GINGER_CRATE.get(), "Ginger Crate");
         translationBuilder.add(ItemsRegistry.LEMONGRASS_CRATE.get(), "Lemongrass Crate");
 
-        //translationBuilder.add(ItemsRegistry.UBE_JUNGLE_LOG_CRATE.get(), "Ube Jungle Log Crate");
-
-        //translationBuilder.add(ItemsRegistry.UBE_JUNGLE_CRATE.get(), "Ube Jungle Plank Crate");
-
         translationBuilder.add(ItemsRegistry.WILD_UBE.get(), "Wild Ube");
         translationBuilder.add(ItemsRegistry.WILD_GARLIC.get(), "Wild Garlic");
         translationBuilder.add(ItemsRegistry.WILD_GINGER.get(), "Wild Ginger");
@@ -72,7 +68,6 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(ItemsRegistry.LUMPIA_WRAPPER.get(), "Lumpia Wrapper");
 
         translationBuilder.add(ItemsRegistry.MILK_TEA_UBE.get(), "Ube Milk Tea");
-        translationBuilder.add(ItemsRegistry.HALO_HALO.get(), "Halo Halo");
 
         translationBuilder.add(ItemsRegistry.GARLIC_CHOP.get(), "Chopped Garlic");
         translationBuilder.add(ItemsRegistry.GINGER_CHOP.get(), "Chopped Ginger");
@@ -156,6 +151,8 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(BlocksRegistry.LEMONGRASS_STALK_CROP.get(), "Lemongrass Stalk");
         translationBuilder.add(BlocksRegistry.LEMONGRASS_LEAF_CROP.get(), "Lemongrass Leaves");
 
+        translationBuilder.add(BlocksRegistry.GLASS_CUP_HALO_HALO.get(), "Halo Halo");
+
         translationBuilder.add(MOD_ID + ".advancement.root", "Ube's Delight");
         translationBuilder.add(MOD_ID + ".advancement.root.desc", "Cuisine from the Phillipines");
 
@@ -193,7 +190,10 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(MOD_ID + ".subtitles.block_baking_mat.remove", "Item Removed");
         translationBuilder.add(MOD_ID + ".subtitles.block_baking_mat.rolling_pin", "Rolling Pin rolls");
 
+        translationBuilder.add(MOD_ID + ".subtitles.block_drinkable_feast.add", "Drink Added");
         translationBuilder.add(MOD_ID + ".subtitles.block_drinkable_feast.remove", "Drink Removed");
+
+        translationBuilder.add(MOD_ID + ".subtitles.block_lumpia_feast.remove", "Lumpia Removed");
 
         translationBuilder.add(MOD_ID + ".modmenu.title", "Ube's Delight Config");
         translationBuilder.add(MOD_ID + ".modmenu.title.gamesettings", "Game settings");

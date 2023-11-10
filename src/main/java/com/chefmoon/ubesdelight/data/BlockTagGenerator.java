@@ -25,6 +25,7 @@ public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
 
     private void registerCommonBlockTags() {
         getOrCreateTagBuilder(CommonTags.C_MINEABLE_KNIFE)
+                .add(BlocksRegistry.GLASS_CUP_HALO_HALO.get())
                 .add(BlocksRegistry.UBE_CAKE.get())
                 .add(BlocksRegistry.LECHE_FLAN_FEAST.get())
                 .add(BlocksRegistry.HALO_HALO_FEAST.get())
@@ -39,10 +40,7 @@ public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
                 .add(BlocksRegistry.UBE_CRATE.get())
                 .add(BlocksRegistry.GARLIC_CRATE.get())
                 .add(BlocksRegistry.GINGER_CRATE.get())
-                .add(BlocksRegistry.LEMONGRASS_CRATE.get())
-
-                .add(BlocksRegistry.UBE_JUNGLE_LOG_CRATE.get())
-                .add(BlocksRegistry.UBE_JUNGLE_CRATE.get());
+                .add(BlocksRegistry.LEMONGRASS_CRATE.get());
 
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(BlocksRegistry.KALAN.get());

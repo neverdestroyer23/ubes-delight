@@ -11,7 +11,9 @@ public enum SoundsRegistry {
     BLOCK_BAKING_MAT_ADD("block_baking_mat_add"),
     BLOCK_BAKING_MAT_REMOVE("block_baking_mat_remove"),
     BLOCK_BAKING_MAT_ROLLING_PIN("block_baking_mat_rolling_pin"),
-    BLOCK_DRINKABLE_FEAST_REMOVE("block_drinkable_feast_remove");
+    BLOCK_DRINKABLE_FEAST_ADD("block_drinkable_feast_add"),
+    BLOCK_DRINKABLE_FEAST_REMOVE("block_drinkable_feast_remove"),
+    BLOCK_LUMPIA_FEAST_REMOVE("block_lumpia_feast_remove");
     private final String pathName;
     private final SoundEvent soundEvent;
 

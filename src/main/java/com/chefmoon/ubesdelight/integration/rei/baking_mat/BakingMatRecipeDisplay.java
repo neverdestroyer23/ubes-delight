@@ -59,8 +59,17 @@ public class BakingMatRecipeDisplay extends BasicDisplay {
     public List<EntryIngredient> getInputEntries() {
         List<EntryIngredient> inputEntryList = new ArrayList<>(super.getInputEntries());
         inputEntryList.add(getToolInput());
+        inputEntryList.addAll(getProcessStages());
 
         return ImmutableList.copyOf(inputEntryList);
+    }
+
+    @Override
+    public List<EntryIngredient> getOutputEntries() {
+        List<EntryIngredient> outputEntryList = new ArrayList<>(super.getOutputEntries());
+        outputEntryList.addAll(getProcessStages());
+
+        return ImmutableList.copyOf(outputEntryList);
     }
 
     public List<EntryIngredient> getIngredientEntries() {
