@@ -1,7 +1,6 @@
 package com.chefmoon.ubesdelight.block;
 
 import com.chefmoon.ubesdelight.block.entity.BakingMatBlockEntity;
-import com.chefmoon.ubesdelight.registry.BlockEntityTypesRegistry;
 import com.chefmoon.ubesdelight.registry.SoundsRegistry;
 import com.chefmoon.ubesdelight.tag.CommonTags;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -44,7 +43,8 @@ public class BakingMatBlock extends BlockWithEntity implements BlockEntityProvid
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return BlockEntityTypesRegistry.BAKING_MAT_BAMBOO.get().instantiate(pos, state);
+        return new BakingMatBlockEntity(pos, state);
+        //return BlockEntityTypesRegistry.BAKING_MAT_BAMBOO.get().instantiate(pos, state); Minecraft 1.19.2
     }
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
@@ -94,9 +94,9 @@ public class BakingMatBlock extends BlockWithEntity implements BlockEntityProvid
     private ActionResult onUseByPlayerHand(World world, BakingMatBlockEntity bakingMatBlockEntity, PlayerEntity player, Hand hand) {
         ActionResult result = ActionResult.PASS;
         ItemStack itemHeld = player.getStackInHand(hand);
-        if (!itemHeld.isEmpty() && !itemHeld.isIn(CommonTags.C_ROLLING_PIN)) {
+        if (!itemHeld.isEmpty() && !itemHeld.isIn(CommonTags.C_ROLLING_PINS)) {
             result = tryAddItemFromPlayerHand(world, bakingMatBlockEntity, player, hand);
-        } else if (itemHeld.isEmpty() && !itemHeld.isIn(CommonTags.C_ROLLING_PIN)) {
+        } else if (itemHeld.isEmpty() && !itemHeld.isIn(CommonTags.C_ROLLING_PINS)) {
             result = tryRemoveItemWithPlayerHand(world, bakingMatBlockEntity, player);
         }
         return result;

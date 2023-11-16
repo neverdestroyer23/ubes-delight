@@ -4,16 +4,12 @@ import com.chefmoon.ubesdelight.UbesDelightMod;
 import com.chefmoon.ubesdelight.advancement.BakingMatTrigger;
 import com.chefmoon.ubesdelight.block.BakingMatBlock;
 import com.chefmoon.ubesdelight.mixin.accessors.RecipeManagerAccessorMixin;
-import com.chefmoon.ubesdelight.networking.ModMessages;
 import com.chefmoon.ubesdelight.recipe.BakingMatRecipe;
 import com.chefmoon.ubesdelight.registry.AdvancementsRegistry;
 import com.chefmoon.ubesdelight.registry.BlockEntityTypesRegistry;
 import com.chefmoon.ubesdelight.registry.RecipeTypesRegistry;
 import com.chefmoon.ubesdelight.registry.SoundsRegistry;
 import com.chefmoon.ubesdelight.tag.CommonTags;
-import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
-import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
-import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -26,7 +22,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.network.PacketByteBuf;
+import net.minecraft.network.listener.ClientPlayPacketListener;
+import net.minecraft.network.packet.Packet;
+import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.particle.ItemStackParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.recipe.Ingredient;
@@ -74,6 +72,9 @@ public class BakingMatBlockEntity extends BlockEntity implements ImplementedInve
 
     @Override
     public void markDirty() {
+        world.updateListeners(pos, getCachedState(), getCachedState(), 3);
+        super.markDirty();
+        /* Minecraft 1.19.2
         if(!world.isClient()) {
             PacketByteBuf data = PacketByteBufs.create();
             data.writeInt(inventory.size());
@@ -87,28 +88,47 @@ public class BakingMatBlockEntity extends BlockEntity implements ImplementedInve
             }
         }
         super.markDirty();
+
+         */
     }
+
+    @Nullable
+    @Override
+    public Packet<ClientPlayPacketListener> toUpdatePacket() {
+        return BlockEntityUpdateS2CPacket.create(this);
+    }
+
+    @Override
+    public NbtCompound toInitialChunkDataNbt() {
+        return createNbt();
+    }
+
     @Override
     public void clear() {
         inventory.clear();
     }
 
     @Override
-    public void readNbt(NbtCompound nbt) {
-        Inventories.readNbt(nbt, inventory);
-        super.readNbt(nbt);
-    }
-    @Override
     protected void writeNbt(NbtCompound nbt) {
         super.writeNbt(nbt);
         Inventories.writeNbt(nbt, inventory);
     }
+
+    @Override
+    public void readNbt(NbtCompound nbt) {
+        super.readNbt(nbt);
+        Inventories.readNbt(nbt, inventory);
+    }
+
+    /* Minecraft 1.19.2
     @Override
     public NbtCompound toInitialChunkDataNbt() {
         NbtCompound nbtCompound = new NbtCompound();
         Inventories.writeNbt(nbtCompound, this.inventory, true);
         return nbtCompound;
     }
+
+     */
 
     @Override
     public int getMaxCountPerStack() {
@@ -137,10 +157,7 @@ public class BakingMatBlockEntity extends BlockEntity implements ImplementedInve
     }
 
     public boolean isEmpty() {
-        if (inventory.get(0).isEmpty()) {
-            return true;
-        }
-        return false;
+        return inventory.get(0).isEmpty();
     }
 
     public boolean isFull() {
@@ -241,7 +258,6 @@ public class BakingMatBlockEntity extends BlockEntity implements ImplementedInve
                             inventory.set(0, nextStageItem);
                             inventoryChanged();
                         }
-                        playProcessingSound(recipe.getSoundEvent(), tool.getItem(), results);
                     } else if (currentStage == recipe.getProcessStages().size() - 1) {
                         spawnParticles(results.get(0).copy(), 5);
                         spawnResults(recipe, tool, results);
@@ -255,13 +271,14 @@ public class BakingMatBlockEntity extends BlockEntity implements ImplementedInve
                             results.add(itemStack.getRecipeRemainder());
                         }
                     }
-
                 }
                 spawnParticles(results.get(0).copy(), 5);
                 spawnResults(recipe, tool, results);
             }
+
             triggerAdvancement(player);
             damageTool(tool, player);
+            playProcessingSound(recipe.getSoundEvent(), tool.getItem(), results);
         });
 
         return matchingRecipe.isPresent();
@@ -277,7 +294,6 @@ public class BakingMatBlockEntity extends BlockEntity implements ImplementedInve
             entity.setVelocity(direction.getOffsetX() * .2f, .0f, direction.getOffsetZ() * .2f);
             world.spawnEntity(entity);
             clear();
-            playProcessingSound(recipe.getSoundEvent(), tool.getItem(), results);
         }
     }
 
@@ -288,7 +304,7 @@ public class BakingMatBlockEntity extends BlockEntity implements ImplementedInve
 
         if (sound != null) {
             playSound(sound, 1.f, 1.f);
-        } else if (tool.getDefaultStack().isIn(CommonTags.C_ROLLING_PIN)){
+        } else if (tool.getDefaultStack().isIn(CommonTags.C_ROLLING_PINS)){
             playSound(SoundsRegistry.BLOCK_BAKING_MAT_ROLLING_PIN.get(), 1.f, .8f);
         }
     }

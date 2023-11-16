@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:wheat_dough_from_water_bucket_from_baking_mat"
+        "recipe": "ubesdelight:ubesdelight/baking_mat/wheat_dough_from_water_bucket_from_baking_mat"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -44,7 +44,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:wheat_dough_from_water_bucket_from_baking_mat"
+      "ubesdelight:ubesdelight/baking_mat/wheat_dough_from_water_bucket_from_baking_mat"
     ]
   },
   "sends_telemetry_event": false

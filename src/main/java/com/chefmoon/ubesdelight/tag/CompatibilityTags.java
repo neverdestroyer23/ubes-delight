@@ -10,6 +10,7 @@ public class CompatibilityTags {
     public static final String MINECRAFT = "minecraft";
     public static final TagKey<Item> MINECRAFT_LEAVES = TagUtil.getItemTagKey(MINECRAFT, "leaves");
     public static final TagKey<Item> MINECRAFT_TERRACOTTA = TagUtil.getItemTagKey(MINECRAFT, "terracotta");
+    public static final TagKey<Item> MINECRAFT_FISHES = TagUtil.getItemTagKey(MINECRAFT, "fishes");
 
     public static final String CREATE = "create";
     public static final TagKey<Block> CREATE_FAN_HEATERS = TagUtil.getBlockTagKey(CREATE, "fan_heaters");

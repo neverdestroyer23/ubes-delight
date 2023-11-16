@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:pie_crust_from_baking_mat"
+        "recipe": "ubesdelight:ubesdelight/baking_mat/pie_crust_from_baking_mat"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -42,7 +42,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:pie_crust_from_baking_mat"
+      "ubesdelight:ubesdelight/baking_mat/pie_crust_from_baking_mat"
     ]
   },
   "sends_telemetry_event": false

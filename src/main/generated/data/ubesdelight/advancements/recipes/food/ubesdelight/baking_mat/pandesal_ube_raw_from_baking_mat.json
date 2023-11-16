@@ -35,7 +35,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "ubesdelight:pandesal_ube_raw_from_baking_mat"
+        "recipe": "ubesdelight:ubesdelight/baking_mat/pandesal_ube_raw_from_baking_mat"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -61,7 +61,7 @@
   ],
   "rewards": {
     "recipes": [
-      "ubesdelight:pandesal_ube_raw_from_baking_mat"
+      "ubesdelight:ubesdelight/baking_mat/pandesal_ube_raw_from_baking_mat"
     ]
   },
   "sends_telemetry_event": false

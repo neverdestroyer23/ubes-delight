@@ -14,16 +14,21 @@ public class TranslationGenerator extends FabricLanguageProvider {
     @Override
     public void generateTranslations(TranslationBuilder translationBuilder) {
 
-        String MOD_ID = UbesDelightMod.MOD_ID;
+        String MOD_ID = UbesDelightMod.MOD_ID + ".";
+        String TOOLTIP = MOD_ID + "tooltip.";
+        String ADVANCEMENT = MOD_ID + "advancement.";
+        String SUBTITLES = MOD_ID + "subtitles.";
+        String MODMENU = MOD_ID + "modmenu.";
+        String REI = MOD_ID + "rei.";
 
         translationBuilder.add(UbesDelightMod.ITEM_GROUP, "Ube's Delight");
-        translationBuilder.add(MOD_ID + ".container."+ItemsRegistry.HALO_HALO_FEAST.get(), "Glass Bottle Required.");
+        translationBuilder.add(MOD_ID + "container."+ItemsRegistry.HALO_HALO_FEAST.get(), "Glass Bottle Required.");
 
-        translationBuilder.add(MOD_ID + ".tooltip."+ItemsRegistry.KALAN.get(), "Traditional Filipino Clay Oven.");
-        translationBuilder.add(MOD_ID + ".tooltip.knife", "Knife Required.");
+        translationBuilder.add(TOOLTIP + ""+ItemsRegistry.KALAN.get(), "Traditional Filipino Clay Oven.");
+        translationBuilder.add(TOOLTIP + "knife", "Knife Required.");
 
-        translationBuilder.add(MOD_ID + ".tooltip.baking_mat.invalid_item", "Invalid Items");
-        translationBuilder.add(MOD_ID + ".tooltip.baking_mat.invalid_tool", "Invalid Tool");
+        translationBuilder.add(TOOLTIP + "baking_mat.invalid_item", "Invalid Items");
+        translationBuilder.add(TOOLTIP + "baking_mat.invalid_tool", "Invalid Tool");
 
         translationBuilder.add(ItemsRegistry.KALAN.get(), "Kalan");
         translationBuilder.add(ItemsRegistry.BAKING_MAT_BAMBOO.get(), "Bamboo Baking Mat");
@@ -153,91 +158,91 @@ public class TranslationGenerator extends FabricLanguageProvider {
 
         translationBuilder.add(BlocksRegistry.GLASS_CUP_HALO_HALO.get(), "Halo Halo");
 
-        translationBuilder.add(MOD_ID + ".advancement.root", "Ube's Delight");
-        translationBuilder.add(MOD_ID + ".advancement.root.desc", "Cuisine from the Phillipines");
+        translationBuilder.add(ADVANCEMENT + "root", "Ube's Delight");
+        translationBuilder.add(ADVANCEMENT + "root.desc", "Cuisine from the Phillipines!");
 
-        translationBuilder.add(MOD_ID + ".advancement.craft_rolling_pin", "Rolling Pin");
-        translationBuilder.add(MOD_ID + ".advancement.craft_rolling_pin.desc", "Use sticks and a fence to make a new tool for the kitchen");
+        translationBuilder.add(ADVANCEMENT + "craft_rolling_pin", "Rolling Pin");
+        translationBuilder.add(ADVANCEMENT + "craft_rolling_pin.desc", "Use sticks and a fence to make a new tool for the kitchen");
 
-        translationBuilder.add(MOD_ID + ".advancement.craft_baking_mat", "Baking Mat");
-        translationBuilder.add(MOD_ID + ".advancement.craft_baking_mat.desc", "Surround honeycomb with bamboo to craft a Baking Mat");
+        translationBuilder.add(ADVANCEMENT + "craft_baking_mat", "Baking Mat");
+        translationBuilder.add(ADVANCEMENT + "craft_baking_mat.desc", "Surround honeycomb with bamboo to craft a Baking Mat");
 
-        translationBuilder.add(MOD_ID + ".advancement.use_baking_mat", "Ube's Baking");
-        translationBuilder.add(MOD_ID + ".advancement.use_baking_mat.desc", "Add baking ingredients to the Baking Mat then use the Rolling Pin to craft baked goods in a new way!");
+        translationBuilder.add(ADVANCEMENT + "use_baking_mat", "Ube's Baking");
+        translationBuilder.add(ADVANCEMENT + "use_baking_mat.desc", "Add baking ingredients to the Baking Mat then use the Rolling Pin to craft baked goods in a new way!");
 
-        translationBuilder.add(MOD_ID + ".advancement.place_drinkable_feast", "Punch Bowl");
-        translationBuilder.add(MOD_ID + ".advancement.place_drinkable_feast.desc", "Drinks can be combined and placed. Grab a bottle and have a sip!");
+        translationBuilder.add(ADVANCEMENT + "place_drinkable_feast", "Punch Bowl");
+        translationBuilder.add(ADVANCEMENT + "place_drinkable_feast.desc", "Drinks can be combined and placed. Grab a bottle and have a sip!");
 
-        translationBuilder.add(MOD_ID + ".advancement.place_kalan", "Take the Kitchen Outside!");
-        translationBuilder.add(MOD_ID + ".advancement.place_kalan.desc", "The Kalan is a traditional Filipino terracotta stove. Perfect for an outdoor kitchen!");
+        translationBuilder.add(ADVANCEMENT + "place_kalan", "Take the Kitchen Outside!");
+        translationBuilder.add(ADVANCEMENT + "place_kalan.desc", "The Kalan is a traditional Filipino terracotta stove. Perfect for an outdoor kitchen!");
 
-        translationBuilder.add(MOD_ID + ".advancement.ube_master", "Ube Enthusiast");
-        translationBuilder.add(MOD_ID + ".advancement.ube_master.desc", "Eat every Ube specific dish");
+        translationBuilder.add(ADVANCEMENT + "ube_master", "Ube Enthusiast");
+        translationBuilder.add(ADVANCEMENT + "ube_master.desc", "Eat every Ube specific dish");
 
-        translationBuilder.add(MOD_ID + ".advancement.ud_master", "Ube's Delight Master");
-        translationBuilder.add(MOD_ID + ".advancement.ud_master.desc", "Try all the new food and drink items from Ube's Delight");
+        translationBuilder.add(ADVANCEMENT + "ud_master", "Ube's Delight Master");
+        translationBuilder.add(ADVANCEMENT + "ud_master.desc", "Try all the new food and drink items from Ube's Delight");
 
-        translationBuilder.add(MOD_ID + ".advancement.master_baker", "Master Baker");
-        translationBuilder.add(MOD_ID + ".advancement.master_baker.desc", "Craft all varieties of Filipino bread!");
+        translationBuilder.add(ADVANCEMENT + "master_baker", "Master Baker");
+        translationBuilder.add(ADVANCEMENT + "master_baker.desc", "Craft all varieties of Filipino bread!");
 
-        translationBuilder.add(MOD_ID + ".advancement.plant_all_crops", "Master Farmer of the Tropics");
-        translationBuilder.add(MOD_ID + ".advancement.plant_all_crops.desc", "Cultivate every new crop found in the Jungle!");
+        translationBuilder.add(ADVANCEMENT + "plant_all_crops", "Master Farmer of the Tropics");
+        translationBuilder.add(ADVANCEMENT + "plant_all_crops.desc", "Cultivate every new crop found in the Jungle!");
 
-        translationBuilder.add(MOD_ID + ".advancement.get_ud_seed", "Crops of the Tropics");
-        translationBuilder.add(MOD_ID + ".advancement.get_ud_seed.desc", "Adventure to find four new crops, only found in jungles and some village chests.");
+        translationBuilder.add(ADVANCEMENT + "get_ud_seed", "Crops of the Tropics");
+        translationBuilder.add(ADVANCEMENT + "get_ud_seed.desc", "Adventure to find four new crops, only found in jungles and some village chests.");
 
-        translationBuilder.add(MOD_ID + ".subtitles.block_baking_mat.add", "Item added");
-        translationBuilder.add(MOD_ID + ".subtitles.block_baking_mat.remove", "Item Removed");
-        translationBuilder.add(MOD_ID + ".subtitles.block_baking_mat.rolling_pin", "Rolling Pin rolls");
+        translationBuilder.add(SUBTITLES + "block_baking_mat.add", "Item added");
+        translationBuilder.add(SUBTITLES + "block_baking_mat.remove", "Item Removed");
+        translationBuilder.add(SUBTITLES + "block_baking_mat.rolling_pin", "Rolling Pin rolls");
 
-        translationBuilder.add(MOD_ID + ".subtitles.block_drinkable_feast.add", "Drink Added");
-        translationBuilder.add(MOD_ID + ".subtitles.block_drinkable_feast.remove", "Drink Removed");
+        translationBuilder.add(SUBTITLES + "block_drinkable_feast.add", "Drink Added");
+        translationBuilder.add(SUBTITLES + "block_drinkable_feast.remove", "Drink Removed");
 
-        translationBuilder.add(MOD_ID + ".subtitles.block_lumpia_feast.remove", "Lumpia Removed");
+        translationBuilder.add(SUBTITLES + "block_lumpia_feast.remove", "Lumpia Removed");
 
-        translationBuilder.add(MOD_ID + ".modmenu.title", "Ube's Delight Config");
-        translationBuilder.add(MOD_ID + ".modmenu.title.gamesettings", "Game settings");
+        translationBuilder.add(MODMENU + "title", "Ube's Delight Config");
+        translationBuilder.add(MODMENU + "title.gamesettings", "Game settings");
 
-        translationBuilder.add(MOD_ID + ".modmenu.option.enableudcropcrates", "Enable UD Crop Crates");
-        translationBuilder.add(MOD_ID + ".modmenu.option.farmersbuyudcrops", "Farmers Buy UD Crops");
-        translationBuilder.add(MOD_ID + ".modmenu.option.wanderingtradersellsuditems", "Wandering Trader Sells UD Items");
+        translationBuilder.add(MODMENU + "option.enableudcropcrates", "Enable UD Crop Crates");
+        translationBuilder.add(MODMENU + "option.farmersbuyudcrops", "Farmers Buy UD Crops");
+        translationBuilder.add(MODMENU + "option.wanderingtradersellsuditems", "Wandering Trader Sells UD Items");
 
-        translationBuilder.add(MOD_ID + ".modmenu.tooltip.enableudcropcrates", "Ube's Delight adds crates (3x3) for vanilla crops, similar to Farmer's Delight. Should they be craftable? Requires Reload.");
-        translationBuilder.add(MOD_ID + ".modmenu.tooltip.farmersbuyudcrops", "Should Novice and Apprentice Farmers buy this mod's crops? (May reduce chances of other trades appearing)");
-        translationBuilder.add(MOD_ID + ".modmenu.tooltip.wanderingtradersellsuditems", "Should the Wandering Trader sell some of this mod's items? (Crop Seeds Only)");
+        translationBuilder.add(MODMENU + "tooltip.enableudcropcrates", "Ube's Delight adds crates (3x3) for vanilla crops, similar to Farmer's Delight. Should they be craftable? Requires Reload.");
+        translationBuilder.add(MODMENU + "tooltip.farmersbuyudcrops", "Should Novice and Apprentice Farmers buy this mod's crops? (May reduce chances of other trades appearing)");
+        translationBuilder.add(MODMENU + "tooltip.wanderingtradersellsuditems", "Should the Wandering Trader sell some of this mod's items? (Crop Seeds Only)");
 
-        translationBuilder.add(MOD_ID + ".modmenu.title.worldgeneration", "World generation");
+        translationBuilder.add(MODMENU + "title.worldgeneration", "World generation");
 
-        translationBuilder.add(MOD_ID + ".modmenu.category.wildubegen", "Wild Ube Generation");
-        translationBuilder.add(MOD_ID + ".modmenu.category.wildgarlicgen", "Wild Garlic Generation");
-        translationBuilder.add(MOD_ID + ".modmenu.category.wildgingergen", "Wild Ginger Generation");
-        translationBuilder.add(MOD_ID + ".modmenu.category.wildlemongrassgen", "Wild Lemongrass Generation");
+        translationBuilder.add(MODMENU + "category.wildubegen", "Wild Ube Generation");
+        translationBuilder.add(MODMENU + "category.wildgarlicgen", "Wild Garlic Generation");
+        translationBuilder.add(MODMENU + "category.wildgingergen", "Wild Ginger Generation");
+        translationBuilder.add(MODMENU + "category.wildlemongrassgen", "Wild Lemongrass Generation");
 
-        translationBuilder.add(MOD_ID + ".modmenu.option.wildgen", "Generation");
-        translationBuilder.add(MOD_ID + ".modmenu.option.generateUDChestLoot", "Generate UD Chest Loot");
+        translationBuilder.add(MODMENU + "option.wildgen", "Generation");
+        translationBuilder.add(MODMENU + "option.generateUDChestLoot", "Generate UD Chest Loot");
 
-        translationBuilder.add(MOD_ID + ".modmenu.tooltip.wildubegen", "Generate wild ube in jungles?");
-        translationBuilder.add(MOD_ID + ".modmenu.tooltip.wildgarlicgen", "Generate wild garlic in jungles?");
-        translationBuilder.add(MOD_ID + ".modmenu.tooltip.wildgingergen", "Generate wild ginger in jungles?");
-        translationBuilder.add(MOD_ID + ".modmenu.tooltip.wildlemongrassgen", "Generate wild lemongrass in jungles?");
-        translationBuilder.add(MOD_ID + ".modmenu.tooltip.generateUDChestLoot", "Should this mod add its seeds as extra chest loot across Minecraft?");
+        translationBuilder.add(MODMENU + "tooltip.wildubegen", "Generate wild ube in jungles?");
+        translationBuilder.add(MODMENU + "tooltip.wildgarlicgen", "Generate wild garlic in jungles?");
+        translationBuilder.add(MODMENU + "tooltip.wildgingergen", "Generate wild ginger in jungles?");
+        translationBuilder.add(MODMENU + "tooltip.wildlemongrassgen", "Generate wild lemongrass in jungles?");
+        translationBuilder.add(MODMENU + "tooltip.generateUDChestLoot", "Should this mod add its seeds as extra chest loot across Minecraft?");
 
-        translationBuilder.add(MOD_ID + ".modmenu.title.clientsettings", "Client Settings");
+        translationBuilder.add(MODMENU + "title.clientsettings", "Client Settings");
 
-        translationBuilder.add(MOD_ID + ".modmenu.option.foodEffectTooltip", "Food Effect Tooltip");
-        translationBuilder.add(MOD_ID + ".modmenu.tooltip.foodEffectTooltip", "Should meal and drink tooltips display which effects they provide?");
+        translationBuilder.add(MODMENU + "option.foodEffectTooltip", "Food Effect Tooltip");
+        translationBuilder.add(MODMENU + "tooltip.foodEffectTooltip", "Should meal and drink tooltips display which effects they provide?");
 
-        translationBuilder.add(MOD_ID + ".modmenu.title.integration", "Integration");
+        translationBuilder.add(MODMENU + "title.integration", "Integration");
 
-        translationBuilder.add(MOD_ID + ".modmenu.option.enableGarlicCompat", "Garlic Extra Compatibility");
-        translationBuilder.add(MOD_ID + ".modmenu.option.enableGingerCompat", "Ginger Extra Compatibility");
+        translationBuilder.add(MODMENU + "option.enableGarlicCompat", "Garlic Extra Compatibility");
+        translationBuilder.add(MODMENU + "option.enableGingerCompat", "Ginger Extra Compatibility");
 
-        translationBuilder.add(MOD_ID + ".modmenu.tooltip.enableGarlicCompat", "This allows all c:crops/garlic to be chopped into Chopped Garlic?");
-        translationBuilder.add(MOD_ID + ".modmenu.tooltip.enableGingerCompat", "This allows all c:crops/ginger to be chopped into Chopped Ginger?");
+        translationBuilder.add(MODMENU + "tooltip.enableGarlicCompat", "This allows all c:crops/garlic to be chopped into Chopped Garlic?");
+        translationBuilder.add(MODMENU + "tooltip.enableGingerCompat", "This allows all c:crops/ginger to be chopped into Chopped Ginger?");
 
-        translationBuilder.add(MOD_ID + ".rei.baking_mat", "Baking Mat");
-        translationBuilder.add(MOD_ID + ".rei.chance", "%1$s%% chance");
+        translationBuilder.add(REI + "baking_mat", "Baking Mat");
+        translationBuilder.add(REI + "chance", "%1$s%% chance");
 
-        translationBuilder.add(MOD_ID + ".rei.info.rolling_pin", "Explain Rolling Pin");
+        translationBuilder.add(REI + "info.rolling_pin", "Explain Rolling Pin");
     }
 }

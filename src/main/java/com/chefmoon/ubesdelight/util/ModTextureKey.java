@@ -1,7 +1,6 @@
 package com.chefmoon.ubesdelight.util;
 
 import net.minecraft.data.client.TextureKey;
-import org.jetbrains.annotations.Nullable;
 
 public final class ModTextureKey {
 

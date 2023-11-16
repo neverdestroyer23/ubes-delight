@@ -8,7 +8,6 @@ import com.chefmoon.ubesdelight.util.ModModels;
 import com.chefmoon.ubesdelight.util.ModTextureKey;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;

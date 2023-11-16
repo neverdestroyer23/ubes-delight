@@ -1,0 +1,66 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cabbage_roll_ingredients": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "farmersdelight:cabbage_roll_ingredients"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_crops_lemongrass": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:crops/lemongrass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_tea_ingredients_sweet_weak": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:tea_ingredients/sweet/weak"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "ubesdelight:farmersdelight/cooking/chicken_inasal_from_cooking_pot"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_vegetables_ginger": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:vegetables/ginger"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_cabbage_roll_ingredients",
+      "has_crops_lemongrass",
+      "has_tea_ingredients_sweet_weak",
+      "has_vegetables_ginger",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "ubesdelight:farmersdelight/cooking/chicken_inasal_from_cooking_pot"
+    ]
+  },
+  "sends_telemetry_event": false
+}

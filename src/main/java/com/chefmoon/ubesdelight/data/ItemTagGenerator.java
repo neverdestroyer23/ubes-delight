@@ -156,7 +156,7 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(CommonTags.C_VEGETABLES_UBE)
                 .add(ItemsRegistry.UBE.get());
 
-        getOrCreateTagBuilder(CommonTags.C_ROLLING_PIN)
+        getOrCreateTagBuilder(CommonTags.C_ROLLING_PINS)
                 .add(ItemsRegistry.ROLLING_PIN_WOOD.get());
     }
 }

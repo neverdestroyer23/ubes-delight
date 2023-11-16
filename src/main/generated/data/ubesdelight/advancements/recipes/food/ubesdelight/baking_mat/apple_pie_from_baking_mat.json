@@ -40,7 +40,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:apple_pie_from_baking_mat"
+        "recipe": "ubesdelight:ubesdelight/baking_mat/apple_pie_from_baking_mat"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -71,7 +71,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:apple_pie_from_baking_mat"
+      "ubesdelight:ubesdelight/baking_mat/apple_pie_from_baking_mat"
     ]
   },
   "sends_telemetry_event": false

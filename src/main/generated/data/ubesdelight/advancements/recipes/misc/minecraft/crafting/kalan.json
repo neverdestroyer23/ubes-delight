@@ -13,44 +13,22 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_iron_ingots": {
-      "conditions": {
-        "items": [
-          {
-            "tag": "c:iron_ingots"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_terracotta": {
-      "conditions": {
-        "items": [
-          {
-            "tag": "minecraft:terracotta"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:minecraft/crafting/kalan"
+        "recipe": "ubesdelight:minecraft/crafting/kalan"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_terracotta",
       "has_campfire",
-      "has_iron_ingots",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:minecraft/crafting/kalan"
+      "ubesdelight:minecraft/crafting/kalan"
     ]
   },
   "sends_telemetry_event": false

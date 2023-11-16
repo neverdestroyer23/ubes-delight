@@ -56,6 +56,12 @@ public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
                 .add(BlocksRegistry.GARLIC_CROP.get())
                 .add(BlocksRegistry.GINGER_CROP.get())
                 .add(BlocksRegistry.LEMONGRASS_LEAF_CROP.get());
+
+        getOrCreateTagBuilder(BlockTags.MAINTAINS_FARMLAND)
+                .add(BlocksRegistry.UBE_CROP.get())
+                .add(BlocksRegistry.GINGER_CROP.get())
+                .add(BlocksRegistry.GARLIC_CROP.get())
+                .add(BlocksRegistry.LEMONGRASS_STALK_CROP.get());
     }
 
     private void registerCompatibilityBlockTags() {

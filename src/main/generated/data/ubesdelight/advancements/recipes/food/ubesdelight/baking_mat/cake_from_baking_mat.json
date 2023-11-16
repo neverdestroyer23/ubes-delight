@@ -35,7 +35,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cake_from_baking_mat"
+        "recipe": "ubesdelight:ubesdelight/baking_mat/cake_from_baking_mat"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -66,7 +66,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cake_from_baking_mat"
+      "ubesdelight:ubesdelight/baking_mat/cake_from_baking_mat"
     ]
   },
   "sends_telemetry_event": false

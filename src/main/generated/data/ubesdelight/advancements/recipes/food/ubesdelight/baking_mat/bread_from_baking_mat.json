@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:bread_from_baking_mat"
+        "recipe": "ubesdelight:ubesdelight/baking_mat/bread_from_baking_mat"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -31,7 +31,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:bread_from_baking_mat"
+      "ubesdelight:ubesdelight/baking_mat/bread_from_baking_mat"
     ]
   },
   "sends_telemetry_event": false

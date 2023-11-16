@@ -1,5 +1,6 @@
 package com.chefmoon.ubesdelight.data.builder;
 
+import com.chefmoon.ubesdelight.UbesDelightMod;
 import com.chefmoon.ubesdelight.registry.RecipeTypesRegistry;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -24,6 +25,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 import java.util.function.Consumer;
 
 public class BakingMatRecipeJsonBuilder extends RecipeJsonBuilder implements CraftingRecipeJsonBuilder  {
@@ -104,9 +106,12 @@ public class BakingMatRecipeJsonBuilder extends RecipeJsonBuilder implements Cra
 
     @Override
     public void offerTo(Consumer<RecipeJsonProvider> exporter, Identifier recipeId) {
+        if (Objects.equals(recipeId.getNamespace(), "minecraft")) {
+            recipeId = new Identifier(UbesDelightMod.MOD_ID, recipeId.getPath());
+        }
         this.validate(recipeId);
-        this.advancementBuilder.parent(ROOT).criterion("has_the_recipe", RecipeUnlockedCriterion.create(recipeId)).rewards(net.minecraft.advancement.AdvancementRewards.Builder.recipe(recipeId)).criteriaMerger(CriterionMerger.OR);
         String prefix = "ubesdelight/baking_mat/";
+        this.advancementBuilder.parent(ROOT).criterion("has_the_recipe", RecipeUnlockedCriterion.create(recipeId.withPrefixedPath(prefix))).rewards(net.minecraft.advancement.AdvancementRewards.Builder.recipe(recipeId.withPrefixedPath(prefix))).criteriaMerger(CriterionMerger.OR);
         exporter.accept(new BakingMatRecipeJsonProvider(recipeId.withPrefixedPath(prefix), this.ingredientList, this.processStages, this.resultList, this.tool, this.soundEventID, this.advancementBuilder, recipeId.withPrefixedPath("recipes/food/" + prefix)));
     }
 

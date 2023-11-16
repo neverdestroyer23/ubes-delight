@@ -1,16 +1,6 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_planks": {
-      "conditions": {
-        "items": [
-          {
-            "tag": "minecraft:planks"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "has_stick": {
       "conditions": {
         "items": [
@@ -25,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:minecraft/crafting/rolling_pin_wood"
+        "recipe": "ubesdelight:minecraft/crafting/rolling_pin_wood"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -33,13 +23,12 @@
   "requirements": [
     [
       "has_stick",
-      "has_planks",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:minecraft/crafting/rolling_pin_wood"
+      "ubesdelight:minecraft/crafting/rolling_pin_wood"
     ]
   },
   "sends_telemetry_event": false

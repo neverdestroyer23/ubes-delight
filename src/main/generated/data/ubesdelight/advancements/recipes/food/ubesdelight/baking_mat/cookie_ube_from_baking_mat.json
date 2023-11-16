@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "ubesdelight:cookie_ube_from_baking_mat"
+        "recipe": "ubesdelight:ubesdelight/baking_mat/cookie_ube_from_baking_mat"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -42,7 +42,7 @@
   ],
   "rewards": {
     "recipes": [
-      "ubesdelight:cookie_ube_from_baking_mat"
+      "ubesdelight:ubesdelight/baking_mat/cookie_ube_from_baking_mat"
     ]
   },
   "sends_telemetry_event": false

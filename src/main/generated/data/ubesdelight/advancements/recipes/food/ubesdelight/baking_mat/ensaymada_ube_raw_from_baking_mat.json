@@ -33,7 +33,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "ubesdelight:ensaymada_ube_raw_from_baking_mat"
+        "recipe": "ubesdelight:ubesdelight/baking_mat/ensaymada_ube_raw_from_baking_mat"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -59,7 +59,7 @@
   ],
   "rewards": {
     "recipes": [
-      "ubesdelight:ensaymada_ube_raw_from_baking_mat"
+      "ubesdelight:ubesdelight/baking_mat/ensaymada_ube_raw_from_baking_mat"
     ]
   },
   "sends_telemetry_event": false

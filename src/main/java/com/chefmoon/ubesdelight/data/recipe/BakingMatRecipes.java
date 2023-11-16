@@ -1,5 +1,6 @@
 package com.chefmoon.ubesdelight.data.recipe;
 
+import com.chefmoon.ubesdelight.UbesDelightMod;
 import com.chefmoon.ubesdelight.data.builder.BakingMatRecipeJsonBuilder;
 import com.chefmoon.ubesdelight.registry.ItemsRegistry;
 import com.chefmoon.ubesdelight.tag.CommonTags;
@@ -36,19 +37,20 @@ public class BakingMatRecipes {
         BakingMatRecipeJsonBuilder.create(
                 List.of(Ingredient.fromTag(CommonTags.C_VEGETABLES_GINGER), Ingredient.ofItems(Items.WHEAT), Ingredient.ofItems(Items.WHEAT)),
                         null,
-                        Ingredient.fromTag(CommonTags.C_ROLLING_PIN),
+                        Ingredient.fromTag(CommonTags.C_ROLLING_PINS),
                         ItemsRegistry.COOKIE_GINGER.get(), 8
                 )
                 .addOutput(ItemsRegistry.COOKIE_GINGER.get(), 4, 0.25f)
                 .criterion(RecipeProvider.hasItem(Items.WHEAT), RecipeProvider.conditionsFromItem(NumberRange.IntRange.atLeast(2), Items.WHEAT))
                 .criterion(RecipeUtil.hasItemTag(CommonTags.C_VEGETABLES_GINGER), RecipeProvider.conditionsFromTag(CommonTags.C_VEGETABLES_GINGER))
+                .criterion(RecipeUtil.hasItemTag(CommonTags.C_ROLLING_PINS), RecipeProvider.conditionsFromTag(CommonTags.C_ROLLING_PINS))
                 .offerTo(exporter, ItemsRegistry.COOKIE_GINGER.getId() + suffix());
 
         // Ube Cookie
         BakingMatRecipeJsonBuilder.create(
                         List.of(Ingredient.fromTag(CommonTags.C_VEGETABLES_UBE), Ingredient.ofItems(Items.WHEAT), Ingredient.ofItems(Items.WHEAT)),
                         null,
-                        Ingredient.fromTag(CommonTags.C_ROLLING_PIN),
+                        Ingredient.fromTag(CommonTags.C_ROLLING_PINS),
                         ItemsRegistry.COOKIE_UBE.get(), 8
                 )
                 .addOutput(ItemsRegistry.COOKIE_UBE.get(), 4, 0.25f)
@@ -62,7 +64,7 @@ public class BakingMatRecipes {
                                 Ingredient.fromTag(CommonTags.C_MILK), Ingredient.fromTag(CommonTags.C_VEGETABLES_UBE), Ingredient.fromTag(CommonTags.C_MILK),
                                 Ingredient.fromTag(CommonTags.C_MILK), Ingredient.ofItems(Items.WHEAT), Ingredient.ofItems(Items.WHEAT)),
                         null,
-                        Ingredient.fromTag(CommonTags.C_ROLLING_PIN),
+                        Ingredient.fromTag(CommonTags.C_ROLLING_PINS),
                         ItemsRegistry.UBE_CAKE.get()
                 )
                 .addOutput(ItemsRegistry.UBE_CAKE.get(), 1, 0.5f)
@@ -80,7 +82,7 @@ public class BakingMatRecipes {
                         List.of(Ingredient.ofItems(ItemsRegistry.POLVORONE_STAGE0.get()),
                                 Ingredient.ofItems(ItemsRegistry.POLVORONE_STAGE1.get()),
                                 Ingredient.ofItems(ItemsRegistry.POLVORONE_STAGE2.get())),
-                        Ingredient.fromTag(CommonTags.C_ROLLING_PIN),
+                        Ingredient.fromTag(CommonTags.C_ROLLING_PINS),
                         ItemsRegistry.POLVORONE.get(), 4
                 )
                 .addOutput(ItemsRegistry.POLVORONE.get(), 2, 0.25f)
@@ -94,7 +96,7 @@ public class BakingMatRecipes {
                         List.of(Ingredient.ofItems(ItemsRegistry.POLVORONE_PINIPIG_STAGE0.get()),
                                 Ingredient.ofItems(ItemsRegistry.POLVORONE_PINIPIG_STAGE1.get()),
                                 Ingredient.ofItems(ItemsRegistry.POLVORONE_PINIPIG_STAGE2.get())),
-                        Ingredient.fromTag(CommonTags.C_ROLLING_PIN),
+                        Ingredient.fromTag(CommonTags.C_ROLLING_PINS),
                         ItemsRegistry.POLVORONE_PINIPIG.get(), 4
                 )
                 .addOutput(ItemsRegistry.POLVORONE_PINIPIG.get(), 2, 0.25f)
@@ -108,7 +110,7 @@ public class BakingMatRecipes {
                         List.of(Ingredient.ofItems(ItemsRegistry.POLVORONE_UBE_STAGE0.get()),
                                 Ingredient.ofItems(ItemsRegistry.POLVORONE_UBE_STAGE1.get()),
                                 Ingredient.ofItems(ItemsRegistry.POLVORONE_UBE_STAGE2.get())),
-                        Ingredient.fromTag(CommonTags.C_ROLLING_PIN),
+                        Ingredient.fromTag(CommonTags.C_ROLLING_PINS),
                         ItemsRegistry.POLVORONE_UBE.get(), 4
                 )
                 .addOutput(ItemsRegistry.POLVORONE_UBE.get(), 2, 0.25f)
@@ -122,7 +124,7 @@ public class BakingMatRecipes {
                         List.of(Ingredient.ofItems(ItemsRegistry.POLVORONE_CC_STAGE0.get()),
                                 Ingredient.ofItems(ItemsRegistry.POLVORONE_CC_STAGE1.get()),
                                 Ingredient.ofItems(ItemsRegistry.POLVORONE_CC_STAGE2.get())),
-                        Ingredient.fromTag(CommonTags.C_ROLLING_PIN),
+                        Ingredient.fromTag(CommonTags.C_ROLLING_PINS),
                         ItemsRegistry.POLVORONE_CC.get(), 4
                 )
                 .addOutput(ItemsRegistry.POLVORONE_CC.get(), 2, 0.25f)
@@ -135,7 +137,7 @@ public class BakingMatRecipes {
                         List.of(Ingredient.ofItems(ItemsRegistry.PANDESAL_STAGE0.get()),
                                 Ingredient.ofItems(ItemsRegistry.PANDESAL_STAGE1.get()),
                                 Ingredient.ofItems(ItemsRegistry.PANDESAL_STAGE2.get())),
-                        Ingredient.fromTag(CommonTags.C_ROLLING_PIN),
+                        Ingredient.fromTag(CommonTags.C_ROLLING_PINS),
                         ItemsRegistry.PANDESAL_RAW.get(), 4
                 )
                 .addOutput(ItemsRegistry.PANDESAL_RAW.get(), 2, 0.25f)
@@ -150,7 +152,7 @@ public class BakingMatRecipes {
                         List.of(Ingredient.ofItems(ItemsRegistry.PANDESAL_UBE_STAGE0.get()),
                                 Ingredient.ofItems(ItemsRegistry.PANDESAL_UBE_STAGE1.get()),
                                 Ingredient.ofItems(ItemsRegistry.PANDESAL_UBE_STAGE2.get())),
-                        Ingredient.fromTag(CommonTags.C_ROLLING_PIN),
+                        Ingredient.fromTag(CommonTags.C_ROLLING_PINS),
                         ItemsRegistry.PANDESAL_UBE_RAW.get(), 4
                 )
                 .addOutput(ItemsRegistry.PANDESAL_UBE_RAW.get(), 2, 0.25f)
@@ -167,7 +169,7 @@ public class BakingMatRecipes {
                                 Ingredient.ofItems(ItemsRegistry.ENSAYMADA_STAGE1.get()),
                                 Ingredient.ofItems(ItemsRegistry.ENSAYMADA_STAGE2.get()),
                                 Ingredient.ofItems(ItemsRegistry.ENSAYMADA_STAGE3.get())),
-                        Ingredient.fromTag(CommonTags.C_ROLLING_PIN),
+                        Ingredient.fromTag(CommonTags.C_ROLLING_PINS),
                         ItemsRegistry.ENSAYMADA_RAW.get(), 2
                 )
                 .addOutput(ItemsRegistry.ENSAYMADA_RAW.get(), 1, 0.25f)
@@ -183,7 +185,7 @@ public class BakingMatRecipes {
                                 Ingredient.ofItems(ItemsRegistry.ENSAYMADA_UBE_STAGE1.get()),
                                 Ingredient.ofItems(ItemsRegistry.ENSAYMADA_UBE_STAGE2.get()),
                                 Ingredient.ofItems(ItemsRegistry.ENSAYMADA_UBE_STAGE3.get())),
-                        Ingredient.fromTag(CommonTags.C_ROLLING_PIN),
+                        Ingredient.fromTag(CommonTags.C_ROLLING_PINS),
                         ItemsRegistry.ENSAYMADA_UBE_RAW.get(), 2
                 )
                 .addOutput(ItemsRegistry.ENSAYMADA_UBE_RAW.get(), 1, 0.25f)
@@ -199,7 +201,7 @@ public class BakingMatRecipes {
                         List.of(Ingredient.ofItems(ItemsRegistry.HOPIA_MUNGGO_STAGE0.get()),
                                 Ingredient.ofItems(ItemsRegistry.HOPIA_MUNGGO_STAGE1.get()),
                                 Ingredient.ofItems(ItemsRegistry.HOPIA_MUNGGO_STAGE2.get())),
-                        Ingredient.fromTag(CommonTags.C_ROLLING_PIN),
+                        Ingredient.fromTag(CommonTags.C_ROLLING_PINS),
                         ItemsRegistry.HOPIA_MUNGGO_RAW.get(), 2
                 )
                 .addOutput(ItemsRegistry.HOPIA_MUNGGO_RAW.get(), 1, 0.25f)
@@ -214,7 +216,7 @@ public class BakingMatRecipes {
                         List.of(Ingredient.ofItems(ItemsRegistry.HOPIA_UBE_STAGE0.get()),
                                 Ingredient.ofItems(ItemsRegistry.HOPIA_UBE_STAGE1.get()),
                                 Ingredient.ofItems(ItemsRegistry.HOPIA_UBE_STAGE2.get())),
-                        Ingredient.fromTag(CommonTags.C_ROLLING_PIN),
+                        Ingredient.fromTag(CommonTags.C_ROLLING_PINS),
                         ItemsRegistry.HOPIA_UBE_RAW.get(), 2
                 )
                 .addOutput(ItemsRegistry.HOPIA_UBE_RAW.get(), 1, 0.25f)
@@ -228,7 +230,7 @@ public class BakingMatRecipes {
         BakingMatRecipeJsonBuilder.create(
                         List.of(Ingredient.ofItems(Items.WHEAT), Ingredient.ofItems(Items.WHEAT), Ingredient.ofItems(Items.WHEAT)),
                         null,
-                        Ingredient.fromTag(CommonTags.C_ROLLING_PIN),
+                        Ingredient.fromTag(CommonTags.C_ROLLING_PINS),
                         Items.BREAD
                 )
                 .addOutput(Items.BREAD, 1, 0.2f)
@@ -239,19 +241,19 @@ public class BakingMatRecipes {
         BakingMatRecipeJsonBuilder.create(
                         List.of(Ingredient.ofItems(Items.COCOA_BEANS), Ingredient.ofItems(Items.WHEAT), Ingredient.ofItems(Items.WHEAT)),
                         null,
-                        Ingredient.fromTag(CommonTags.C_ROLLING_PIN),
+                        Ingredient.fromTag(CommonTags.C_ROLLING_PINS),
                         Items.COOKIE, 8
                 )
                 .addOutput(Items.COOKIE, 4, 0.25f)
                 .criterion(RecipeProvider.hasItem(Items.COCOA_BEANS), RecipeProvider.conditionsFromItem(Items.COCOA_BEANS))
-                .criterion(RecipeProvider.hasItem(Items.WHEAT), RecipeProvider.conditionsFromItem(NumberRange.IntRange.atLeast(2), Items.WHEAT))
-                .offerTo(exporter, Items.COOKIE.toString() + suffix());
+                //.criterion(RecipeProvider.hasItem(Items.WHEAT), RecipeProvider.conditionsFromItem(NumberRange.IntRange.atLeast(2), Items.WHEAT))
+                .offerTo(exporter, RecipeProvider.getRecipeName(Items.COOKIE) + suffix());
 
         // Pumpkin Pie
         BakingMatRecipeJsonBuilder.create(
                         List.of(Ingredient.ofItems(Items.PUMPKIN), Ingredient.fromTag(CommonTags.C_TEA_INGREDIENTS_SWEET_WEAK), Ingredient.ofItems(Items.EGG)),
                         null,
-                        Ingredient.fromTag(CommonTags.C_ROLLING_PIN),
+                        Ingredient.fromTag(CommonTags.C_ROLLING_PINS),
                         Items.PUMPKIN_PIE
                 )
                 .addOutput(Items.PUMPKIN_PIE, 1, 0.25f)
@@ -266,7 +268,7 @@ public class BakingMatRecipes {
                                 Ingredient.fromTag(CommonTags.C_MILK), Ingredient.ofItems(Items.WHEAT), Ingredient.fromTag(CommonTags.C_MILK),
                                 Ingredient.fromTag(CommonTags.C_MILK), Ingredient.ofItems(Items.WHEAT), Ingredient.ofItems(Items.WHEAT)),
                         null,
-                        Ingredient.fromTag(CommonTags.C_ROLLING_PIN),
+                        Ingredient.fromTag(CommonTags.C_ROLLING_PINS),
                         Items.CAKE
                 )
                 .addOutput(Items.CAKE, 1, 0.5f)
@@ -282,7 +284,7 @@ public class BakingMatRecipes {
         BakingMatRecipeJsonBuilder.create(
                         List.of(Ingredient.ofItems(Items.EGG), Ingredient.ofItems(Items.WHEAT), Ingredient.ofItems(Items.WHEAT), Ingredient.ofItems(Items.WHEAT)),
                         null,
-                        Ingredient.fromTag(CommonTags.C_ROLLING_PIN),
+                        Ingredient.fromTag(CommonTags.C_ROLLING_PINS),
                         WHEAT_DOUGH, 3
                 )
                 .addOutput(WHEAT_DOUGH, 1, 0.25f)
@@ -294,7 +296,7 @@ public class BakingMatRecipes {
         BakingMatRecipeJsonBuilder.create(
                         List.of(Ingredient.ofItems(Items.WATER_BUCKET), Ingredient.ofItems(Items.WHEAT), Ingredient.ofItems(Items.WHEAT), Ingredient.ofItems(Items.WHEAT)),
                         null,
-                        Ingredient.fromTag(CommonTags.C_ROLLING_PIN),
+                        Ingredient.fromTag(CommonTags.C_ROLLING_PINS),
                         WHEAT_DOUGH, 3
                 )
                 .addOutput(WHEAT_DOUGH, 1, 0.25f)
@@ -306,7 +308,7 @@ public class BakingMatRecipes {
         BakingMatRecipeJsonBuilder.create(
                         List.of(Ingredient.ofItems(Items.EGG), Ingredient.ofItems(Items.WHEAT), Ingredient.ofItems(Items.WHEAT)),
                         null,
-                        Ingredient.fromTag(CommonTags.C_ROLLING_PIN),
+                        Ingredient.fromTag(CommonTags.C_ROLLING_PINS),
                         RAW_PASTA
                 )
                 .addOutput(RAW_PASTA, 1, 0.2f)
@@ -319,7 +321,7 @@ public class BakingMatRecipes {
                         List.of(Ingredient.ofItems(Items.WATER_BUCKET), Ingredient.ofItems(Items.WHEAT), Ingredient.ofItems(Items.WHEAT),
                                 Ingredient.ofItems(Items.WHEAT), Ingredient.ofItems(Items.WHEAT)),
                         null,
-                        Ingredient.fromTag(CommonTags.C_ROLLING_PIN),
+                        Ingredient.fromTag(CommonTags.C_ROLLING_PINS),
                         RAW_PASTA, 2
                 )
                 .addOutput(RAW_PASTA, 1, 0.2f)
@@ -331,7 +333,7 @@ public class BakingMatRecipes {
         BakingMatRecipeJsonBuilder.create(
                         List.of(Ingredient.ofItems(Items.SWEET_BERRIES), Ingredient.ofItems(Items.WHEAT), Ingredient.ofItems(Items.WHEAT)),
                         null,
-                        Ingredient.fromTag(CommonTags.C_ROLLING_PIN),
+                        Ingredient.fromTag(CommonTags.C_ROLLING_PINS),
                         SWEET_BERRY_COOKIE, 8
                 )
                 .addOutput(SWEET_BERRY_COOKIE, 4, 0.25f)
@@ -343,7 +345,7 @@ public class BakingMatRecipes {
         BakingMatRecipeJsonBuilder.create(
                         List.of(Ingredient.ofItems(Items.HONEY_BOTTLE), Ingredient.ofItems(Items.WHEAT), Ingredient.ofItems(Items.WHEAT)),
                         null,
-                        Ingredient.fromTag(CommonTags.C_ROLLING_PIN),
+                        Ingredient.fromTag(CommonTags.C_ROLLING_PINS),
                         HONEY_COOKIE, 8
                 )
                 .addOutput(HONEY_COOKIE, 4, 0.25f)
@@ -355,7 +357,7 @@ public class BakingMatRecipes {
         BakingMatRecipeJsonBuilder.create(
                         List.of(Ingredient.ofItems(Items.WHEAT), Ingredient.ofItems(Items.WHEAT), Ingredient.ofItems(Items.WHEAT), Ingredient.fromTag(CommonTags.C_MILK)),
                         null,
-                        Ingredient.fromTag(CommonTags.C_ROLLING_PIN),
+                        Ingredient.fromTag(CommonTags.C_ROLLING_PINS),
                         PIE_CRUST
                 )
                 .addOutput(PIE_CRUST, 1, 0.25f)
@@ -369,7 +371,7 @@ public class BakingMatRecipes {
                                 Ingredient.ofItems(Items.WHEAT), Ingredient.ofItems(PIE_CRUST), Ingredient.ofItems(Items.WHEAT),
                                 Ingredient.ofItems(Items.WHEAT), Ingredient.fromTag(CommonTags.C_TEA_INGREDIENTS_SWEET_WEAK), Ingredient.fromTag(CommonTags.C_TEA_INGREDIENTS_SWEET_WEAK)),
                         null,
-                        Ingredient.fromTag(CommonTags.C_ROLLING_PIN),
+                        Ingredient.fromTag(CommonTags.C_ROLLING_PINS),
                         APPLE_PIE
                 )
                 .addOutput(APPLE_PIE, 1, 0.5f)
@@ -385,7 +387,7 @@ public class BakingMatRecipes {
                                 Ingredient.ofItems(Items.SWEET_BERRIES), Ingredient.ofItems(PIE_CRUST), Ingredient.ofItems(Items.SWEET_BERRIES),
                                 Ingredient.ofItems(Items.SWEET_BERRIES), Ingredient.fromTag(CommonTags.C_MILK), Ingredient.fromTag(CommonTags.C_MILK)),
                         null,
-                        Ingredient.fromTag(CommonTags.C_ROLLING_PIN),
+                        Ingredient.fromTag(CommonTags.C_ROLLING_PINS),
                         SWEET_BERRY_CHEESECAKE
                 )
                 .addOutput(SWEET_BERRY_CHEESECAKE, 1, 0.5f)
@@ -400,7 +402,7 @@ public class BakingMatRecipes {
                                 Ingredient.ofItems(Items.COCOA_BEANS), Ingredient.ofItems(PIE_CRUST), Ingredient.ofItems(Items.COCOA_BEANS),
                                 Ingredient.ofItems(Items.COCOA_BEANS), Ingredient.fromTag(CommonTags.C_TEA_INGREDIENTS_SWEET_WEAK), Ingredient.fromTag(CommonTags.C_TEA_INGREDIENTS_SWEET_WEAK)),
                         null,
-                        Ingredient.fromTag(CommonTags.C_ROLLING_PIN),
+                        Ingredient.fromTag(CommonTags.C_ROLLING_PINS),
                         CHOCOLATE_PIE
                 )
                 .addOutput(CHOCOLATE_PIE, 1, 0.5f)
@@ -409,6 +411,10 @@ public class BakingMatRecipes {
                 .criterion(RecipeProvider.hasItem(PIE_CRUST), RecipeProvider.conditionsFromItem(PIE_CRUST))
                 .criterion(RecipeUtil.hasItemTag(CommonTags.C_TEA_INGREDIENTS_SWEET_WEAK), RecipeProvider.conditionsFromTag(CommonTags.C_TEA_INGREDIENTS_SWEET_WEAK))
                 .offerTo(exporter, CHOCOLATE_PIE.toString() + suffix());
+    }
+
+    private static String suffix(String string) {
+        return UbesDelightMod.MOD_ID + "/baking_mat/" + string + "_from_baking_mat";
     }
 
     private static String suffix() {

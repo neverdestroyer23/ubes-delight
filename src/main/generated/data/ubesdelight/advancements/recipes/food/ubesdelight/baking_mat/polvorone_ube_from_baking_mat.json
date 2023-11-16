@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "ubesdelight:polvorone_ube_from_baking_mat"
+        "recipe": "ubesdelight:ubesdelight/baking_mat/polvorone_ube_from_baking_mat"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "ubesdelight:polvorone_ube_from_baking_mat"
+      "ubesdelight:ubesdelight/baking_mat/polvorone_ube_from_baking_mat"
     ]
   },
   "sends_telemetry_event": false
