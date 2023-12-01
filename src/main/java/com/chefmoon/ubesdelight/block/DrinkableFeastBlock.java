@@ -127,7 +127,7 @@ public class DrinkableFeastBlock extends Block {
 
     @Override
     public int getComparatorOutput(BlockState state, World world, BlockPos pos) {
-        return MAX_SERVINGS - state.get(SERVINGS);
+        return state.get(getServingsProperty());
     }
 
     @Override

@@ -171,10 +171,10 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(ADVANCEMENT + "use_baking_mat.desc", "Add baking ingredients to the Baking Mat then use the Rolling Pin to craft baked goods in a new way!");
 
         translationBuilder.add(ADVANCEMENT + "place_drinkable_feast", "Punch Bowl");
-        translationBuilder.add(ADVANCEMENT + "place_drinkable_feast.desc", "Drinks can be combined and placed. Grab a bottle and have a sip!");
+        translationBuilder.add(ADVANCEMENT + "place_drinkable_feast.desc", "Drinks can be combined and placed. Place one, grab a bottle, and have a sip!");
 
         translationBuilder.add(ADVANCEMENT + "place_kalan", "Take the Kitchen Outside!");
-        translationBuilder.add(ADVANCEMENT + "place_kalan.desc", "The Kalan is a traditional Filipino terracotta stove. Perfect for an outdoor kitchen!");
+        translationBuilder.add(ADVANCEMENT + "place_kalan.desc", "The Kalan is a traditional Filipino terracotta stove. Perfect for an outdoor kitchen, place one!");
 
         translationBuilder.add(ADVANCEMENT + "ube_master", "Ube Enthusiast");
         translationBuilder.add(ADVANCEMENT + "ube_master.desc", "Eat every Ube specific dish");
