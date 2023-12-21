@@ -23,7 +23,7 @@ public enum ItemsRegistry {
 
     //Heat Source
     KALAN("kalan", () -> new UDBlockItem(BlocksRegistry.KALAN.get(),base())),
-    BAKING_MAT_BAMBOO("baking_mat_bamboo", () -> new UDBlockItem(BlocksRegistry.BAKING_MAT_BAMBOO.get(), base(),true), 200, null),
+    BAKING_MAT_BAMBOO("baking_mat_bamboo", () -> new UDBlockItem(BlocksRegistry.BAKING_MAT_BAMBOO.get(), base()), 200, null),
     ROLLING_PIN_WOOD("rolling_pin_wood", () -> new RollingPinItem(UDToolMaterials.RP_WOOD, base())),
 
     //Wild Vegetables

@@ -24,7 +24,7 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(UbesDelightMod.ITEM_GROUP, "Ube's Delight");
         translationBuilder.add(MOD_ID + "container."+ItemsRegistry.HALO_HALO_FEAST.get(), "Glass Bottle Required.");
 
-        translationBuilder.add(TOOLTIP + ""+ItemsRegistry.KALAN.get(), "Traditional Filipino Clay Oven.");
+        translationBuilder.add(TOOLTIP + ItemsRegistry.KALAN.get(), "Traditional Filipino Clay Oven.");
         translationBuilder.add(TOOLTIP + "knife", "Knife Required.");
 
         translationBuilder.add(TOOLTIP + "baking_mat.invalid_item", "Invalid Items");
