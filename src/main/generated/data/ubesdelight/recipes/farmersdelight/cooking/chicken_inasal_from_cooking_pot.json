@@ -11,9 +11,6 @@
     },
     {
       "tag": "c:tea_ingredients/sweet/weak"
-    },
-    {
-      "tag": "c:food_wrappers/lumpia_wrapper"
     }
   ],
   "recipe_book_tab": "meals",

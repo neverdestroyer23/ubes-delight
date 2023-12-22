@@ -142,8 +142,7 @@ public class CookingRecipes {
         CookingPotRecipeJsonBuilder.create(CookingPotRecipeCategory.MEALS, ItemsRegistry.CHICKEN_INASAL.get(), 2.0F, 200,
                         List.of(Ingredient.fromTag(CommonTags.C_RAW_CHICKEN),
                                 Ingredient.fromTag(CommonTags.C_CROPS_LEMONGRASS),
-                                Ingredient.fromTag(CommonTags.C_TEA_INGREDIENTS_SWEET_WEAK),
-                                Ingredient.fromTag(CommonTags.C_FOOD_WRAPPERS_LUMPIA_WRAPPER)))
+                                Ingredient.fromTag(CommonTags.C_TEA_INGREDIENTS_SWEET_WEAK)))
                 .criterion(RecipeUtil.hasItemTag(CompatibilityTags.FARMERS_DELIGHT_CABBAGE_ROLL_INGREDIENTS), RecipeProvider.conditionsFromTag(CompatibilityTags.FARMERS_DELIGHT_CABBAGE_ROLL_INGREDIENTS))
                 .criterion(RecipeUtil.hasItemTag(CommonTags.C_CROPS_LEMONGRASS), RecipeProvider.conditionsFromTag(CommonTags.C_CROPS_LEMONGRASS))
                 .criterion(RecipeUtil.hasItemTag(CommonTags.C_TEA_INGREDIENTS_SWEET_WEAK), RecipeProvider.conditionsFromTag(CommonTags.C_TEA_INGREDIENTS_SWEET_WEAK))

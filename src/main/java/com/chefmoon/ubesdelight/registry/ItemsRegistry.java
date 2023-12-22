@@ -71,9 +71,9 @@ public enum ItemsRegistry {
     //Finger Foods
     SINANGAG("sinangag", () -> new UDConsumableItem(food(FoodItem.SINANGAG.get(), Items.BOWL, 16), true)),
     KINILAW("kinilaw", () -> new UDConsumableItem(food(FoodItem.KINILAW.get(), Items.BOWL, 16), true)),
-    LUMPIA("lumpia", () -> new UDConsumableItem(food(FoodItem.LUMPIA.get()))),
-    TOCINO("tocino", () -> new UDConsumableItem(food(FoodItem.TOCINO.get()))),
-    CHICKEN_INASAL("chicken_inasal", () -> new UDConsumableItem(food(FoodItem.CHICKEN_INASAL.get()))),
+    LUMPIA("lumpia", () -> new Item(foodBase(FoodItem.LUMPIA.get()))),
+    TOCINO("tocino", () -> new Item(foodBase(FoodItem.TOCINO.get()))),
+    CHICKEN_INASAL("chicken_inasal", () -> new Item(foodBase(FoodItem.CHICKEN_INASAL.get()))),
 
     //Meals
     CHICKEN_INASAL_RICE("chicken_inasal_rice", () -> new UDConsumableItem(food(FoodItem.CHICKEN_INASAL_RICE.get(), Items.BOWL, 16), true)),
@@ -88,7 +88,7 @@ public enum ItemsRegistry {
     COOKIE_UBE("cookie_ube", () -> new UDConsumableItem(food(FoodItem.COOKIES.get())), null, .85f),
     COOKIE_GINGER("cookie_ginger", () -> new UDConsumableItem(food(FoodItem.COOKIES.get())), null, .85f),
 
-    LECHE_FLAN("leche_flan", () -> new UDConsumableItem(food(FoodItem.LECHE_FLAN.get())), null, .85f),
+    LECHE_FLAN("leche_flan", () -> new Item(foodBase(FoodItem.LECHE_FLAN.get())), null, .85f),
     UBE_CAKE_SLICE("ube_cake_slice", () -> new UDConsumableItem(food(FoodItem.UBE_CAKE_SLICE.get())), null, .85f),
 
     //Baking
@@ -209,6 +209,9 @@ public enum ItemsRegistry {
     }
     private static FabricItemSettings noStack() {
         return new FabricItemSettings().maxCount(1);
+    }
+    private static FabricItemSettings foodBase(FoodComponent food) {
+        return new FabricItemSettings().food(food);
     }
     private static FabricItemSettings food(FoodComponent food) {
         return new FabricItemSettings().food(food).recipeRemainder(Items.AIR);
