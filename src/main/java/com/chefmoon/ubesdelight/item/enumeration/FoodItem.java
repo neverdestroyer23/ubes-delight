@@ -22,7 +22,7 @@ public enum FoodItem {
     LUMPIA(7, .7f, null,0.f, true, false, false),
     TOCINO(8, .7f, null,.0f, true, true, false),
     CHICKEN_INASAL(8, .7f, null,.0f, true, true, false),
-
+    
     //Meals
     CHICKEN_INASAL_RICE(13, .75f, () -> new StatusEffectInstance(EffectsRegistry.NOURISHMENT.get(), UDConsumableItem.LONG_DURATION, 0),1.f, true, false, false),
     TOSILOG(13, .75f, () -> new StatusEffectInstance(EffectsRegistry.NOURISHMENT.get(), UDConsumableItem.LONG_DURATION, 0),1.f, true, false, false),
@@ -31,6 +31,9 @@ public enum FoodItem {
     BULALO(14, .75f, () -> new StatusEffectInstance(EffectsRegistry.COMFORT.get(), UDConsumableItem.LONG_DURATION, 0),1.f, true, false, false),
     ARROZ_CALDO(14, .75f, () -> new StatusEffectInstance(EffectsRegistry.COMFORT.get(), UDConsumableItem.LONG_DURATION, 0),1.f, true, false, false),
     MECHADO(14, .75f, () -> new StatusEffectInstance(EffectsRegistry.COMFORT.get(), UDConsumableItem.LONG_DURATION, 0),1.f, true, false, false),
+    //PLEASE DO NOT ADD SINIGANG IF YOU WANT THIS TO BE COMPATIBLE WITH DELIGHTFUL
+    // or make it toggleable idk
+
 
 
     //Drinkables
@@ -44,6 +47,8 @@ public enum FoodItem {
     //Non-whole vegetables
     GARLIC_CHOP(1, .4f),
     GINGER_CHOP(1, .4f),
+    // maybe add sliced ube instead of directly crafting it into ube stuff
+    // SLICED_UBE(1, .4f) like this?
 
     //Sweets
     LECHE_FLAN(3, .4f),
@@ -51,7 +56,8 @@ public enum FoodItem {
     POLVORONE(2, .2f, null,.0f, false, true, false),
 
     //Slices
-    UBE_CAKE_SLICE(2, .1f, () -> new StatusEffectInstance(StatusEffects.NIGHT_VISION, UDConsumableItem.BRIEF_DURATION, 0), 1.f, false, true, false),
+    UBE_CAKE_SLICE(2, .1f, () -> new StatusEffectInstance(StatusEffects.NIGHT_VISION, UDConsumableItem.MEDIUM_DURATION, 0), 1.f, false, true, false),
+    // can i plz make textures for ube cake and polvorone
 
     //Bread
     PANDESAL(8, .8f),
